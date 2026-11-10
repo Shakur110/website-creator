@@ -1,13 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
-import {
-  BrowserFrame,
-  CtaBand,
-  ImagePlaceholder,
-  ProjectImage,
-  Reveal,
-  domainOf,
-} from "@/components/site/parts";
+import { BrowserFrame, CtaBand, ProjectImage, Reveal, domainOf } from "@/components/site/parts";
 import { getNextProject, getProject } from "@/lib/projects";
 
 /** Trim to a length on a word boundary, for search-result descriptions. */
@@ -111,7 +104,7 @@ function CaseStudy() {
             </div>
           </div>
           <div className="animate-rise mt-14" style={{ animationDelay: "150ms" }}>
-            <ProjectImage project={p} eager />
+            <ProjectImage project={p} eager sizes="(min-width: 1344px) 1264px, 100vw" />
           </div>
         </div>
       </section>
@@ -236,13 +229,7 @@ function CaseStudy() {
             </span>
           </div>
           <div className="md:col-span-7">
-            {next.cover ? (
-              <BrowserFrame src={next.cover} alt={`${next.title} website`} url={next.liveUrl} />
-            ) : (
-              <div className="aspect-[16/10] overflow-hidden rounded-2xl">
-                <ImagePlaceholder label={next.title} sub={next.industry} />
-              </div>
-            )}
+            <ProjectImage project={next} />
           </div>
         </Link>
       </section>

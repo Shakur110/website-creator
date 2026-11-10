@@ -137,7 +137,34 @@ export function BrowserFrame({
   );
 }
 
-export function ProjectImage({ project, eager = false }: { project: Project; eager?: boolean }) {
+export function ProjectImage({
+  project,
+  eager = false,
+  sizes = "(min-width: 1024px) 50vw, 100vw",
+}: {
+  project: Project;
+  eager?: boolean;
+  sizes?: string;
+}) {
+  if (project.cover && project.coverIsShowcase) {
+    // A finished presentation board: show it as-is, no extra browser frame.
+    return (
+      <div className="aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-surface frame">
+        <img
+          src={project.cover}
+          srcSet={
+            project.coverLarge ? `${project.cover} 1200w, ${project.coverLarge} 2000w` : undefined
+          }
+          sizes={sizes}
+          width={1200}
+          height={750}
+          alt={`${project.title} website design, shown on ${domainOf(project.liveUrl) || "desktop"}`}
+          loading={eager ? "eager" : "lazy"}
+          className="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.02]"
+        />
+      </div>
+    );
+  }
   return (
     <BrowserFrame
       src={project.cover}
