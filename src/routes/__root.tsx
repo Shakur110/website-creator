@@ -18,23 +18,17 @@ function NotFoundComponent() {
   return (
     <section className="container-x pb-32 pt-40 md:pt-52">
       <p className="eyebrow">Error 404</p>
-      <h1 className="display mt-6 max-w-4xl text-6xl md:text-[7rem]">
-        This page has <em className="text-bronze">moved on.</em>
+      <h1 className="display mt-6 max-w-4xl text-5xl md:text-7xl">
+        This page has <em>moved on.</em>
       </h1>
       <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
         The page you're looking for doesn't exist or has been moved. Try the work, or get in touch.
       </p>
       <div className="mt-10 flex flex-wrap gap-3">
-        <Link
-          to="/work"
-          className="bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-bronze"
-        >
+        <Link to="/work" className="btn btn-primary">
           View my work
         </Link>
-        <Link
-          to="/"
-          className="border border-foreground px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-primary hover:text-primary-foreground"
-        >
+        <Link to="/" className="btn btn-outline">
           Back to home
         </Link>
       </div>
@@ -52,8 +46,8 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   return (
     <section className="container-x pb-32 pt-40 md:pt-52">
       <p className="eyebrow">Something went wrong</p>
-      <h1 className="display mt-6 max-w-4xl text-6xl md:text-[7rem]">
-        This page didn't <em className="text-bronze">load.</em>
+      <h1 className="display mt-6 max-w-4xl text-5xl md:text-7xl">
+        This page didn't <em>load.</em>
       </h1>
       <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
         Please try again, or head back to the homepage.
@@ -64,14 +58,11 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
             router.invalidate();
             reset();
           }}
-          className="bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-bronze"
+          className="btn btn-primary"
         >
           Try again
         </button>
-        <a
-          href="/"
-          className="border border-foreground px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-primary hover:text-primary-foreground"
-        >
+        <a href="/" className="btn btn-outline">
           Back to home
         </a>
       </div>

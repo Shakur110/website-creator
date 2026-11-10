@@ -34,41 +34,36 @@ function Work() {
   return (
     <>
       <PageHero
-        eyebrow={`Portfolio — ${projects.length} Projects`}
+        eyebrow={`Portfolio · ${projects.length} projects`}
         title={
           <>
-            Selected <em className="text-bronze">work.</em>
+            Websites I've <em>designed & built.</em>
           </>
         }
         intro="Websites for clinics, consultancies, service businesses and schools, designed and built since 2021."
       />
       <section className="container-x pb-28 md:pb-32">
-        <div
-          role="group"
-          aria-label="Filter projects"
-          className="flex flex-wrap gap-2 border-b border-border pb-6"
-        >
+        <div role="group" aria-label="Filter projects" className="flex flex-wrap gap-2">
           {filters.map((c) => (
             <button
               key={c}
               type="button"
               aria-pressed={filter === c}
               onClick={() => setFilter(c)}
-              className={`px-4 py-2 text-sm transition-colors ${
+              className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                 filter === c
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "border-brand bg-brand text-white"
+                  : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
               }`}
             >
               {c}
             </button>
           ))}
         </div>
-        <div key={filter} className="mt-16 grid gap-x-10 gap-y-20 md:grid-cols-2">
+        <div key={filter} className="mt-12 grid gap-x-10 gap-y-16 md:grid-cols-2">
           {list.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 2) * 80} className={i % 2 === 1 ? "md:mt-24" : ""}>
+            <Reveal key={p.slug} delay={(i % 2) * 80}>
               <ProjectCard project={p} />
-              <p className="mt-3 text-sm text-muted-foreground">{p.category}</p>
             </Reveal>
           ))}
         </div>

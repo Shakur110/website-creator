@@ -54,7 +54,7 @@ function About() {
         eyebrow="About"
         title={
           <>
-            A little <em className="text-bronze">about me.</em>
+            A little <em>about me.</em>
           </>
         }
       />
@@ -106,7 +106,7 @@ function About() {
                 delay={i * 60}
                 className="group bg-surface p-8 transition-colors hover:bg-background md:p-12"
               >
-                <span className="text-sm text-bronze-ink">{n}</span>
+                <span className="text-sm text-brand">{n}</span>
                 <h3 className="display mt-6 text-4xl">{t}</h3>
                 <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">{d}</p>
               </Reveal>

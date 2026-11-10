@@ -80,7 +80,7 @@ function Contact() {
   };
 
   const field =
-    "w-full border-0 border-b border-border bg-transparent py-3 text-lg outline-none transition-colors focus:border-foreground";
+    "w-full border-0 border-b border-border bg-transparent py-3 text-lg outline-none transition-colors focus:border-brand";
   const links = (
     [
       ["Email", contactLinks.email, contactLinks.email ? `mailto:${contactLinks.email}` : ""],
@@ -97,10 +97,10 @@ function Contact() {
         eyebrow="Contact"
         title={
           <>
-            Let's build something <em className="text-bronze">meaningful.</em>
+            Let's talk about <em>your website.</em>
           </>
         }
-        intro="Tell me about your business, your website goals, or a project you're planning. I'd be happy to explore how I can help."
+        intro="Tell me about your business and what you need. I'll reply with questions, ideas and a clear next step."
       />
       <section className="container-x pb-28 md:pb-32">
         <div className="grid gap-16 md:grid-cols-12">
@@ -108,7 +108,7 @@ function Contact() {
             {links.length > 0 && (
               <>
                 <p className="eyebrow">Direct</p>
-                <ul className="mb-8 mt-6 border-t border-foreground/80">
+                <ul className="mb-8 mt-6 border-t border-border">
                   {links.map(([label, value, href]) => (
                     <li
                       key={label}
@@ -128,14 +128,16 @@ function Contact() {
                 </ul>
               </>
             )}
-            <p className="eyebrow">What happens next</p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{responseNote}</p>
+            <div className="rounded-2xl bg-brand-soft p-6">
+              <p className="eyebrow">What happens next</p>
+              <p className="mt-3 leading-relaxed">{responseNote}</p>
+            </div>
           </aside>
 
           <form
             noValidate
             onSubmit={onSubmit}
-            className="grid gap-10 md:col-span-7 md:col-start-6 sm:grid-cols-2"
+            className="grid gap-10 md:col-span-7 md:col-start-6 sm:grid-cols-2 rounded-[2rem] border border-border bg-white p-6 frame md:p-10"
           >
             <Field label="Full name *" error={errors.name}>
               <input name="name" autoComplete="name" className={field} />
@@ -167,10 +169,7 @@ function Contact() {
               <textarea name="details" rows={5} className={`${field} resize-none`} />
             </Field>
             <div className="sm:col-span-2">
-              <button
-                type="submit"
-                className="group inline-flex items-center gap-3 bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-bronze"
-              >
+              <button type="submit" className="group btn btn-primary">
                 Send enquiry{" "}
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </button>
@@ -187,9 +186,9 @@ function Contact() {
               {status === "unconfigured" && (
                 <div
                   role="alert"
-                  className="mt-6 flex gap-3 border border-bronze/40 bg-accent p-5 text-sm"
+                  className="mt-6 flex gap-3 border border-brand/40 bg-accent p-5 text-sm"
                 >
-                  <AlertCircle className="h-5 w-5 shrink-0 text-bronze" />
+                  <AlertCircle className="h-5 w-5 shrink-0 text-brand" />
                   <p>
                     Sorry, this form isn't accepting messages right now, so your enquiry was{" "}
                     <strong>not sent</strong>. Please try again later.

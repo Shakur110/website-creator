@@ -33,7 +33,7 @@ function Services() {
         eyebrow="Services"
         title={
           <>
-            What I can help you <em className="text-bronze">build.</em>
+            What I can help you <em>build.</em>
           </>
         }
         intro="From new website builds to complete redesigns, I create modern, functional, and responsive websites that help businesses communicate their value and connect with their audiences."
@@ -48,9 +48,9 @@ function Services() {
             >
               <div className="md:col-span-5">
                 <div className="flex items-center gap-4">
-                  <span className="text-sm text-bronze-ink">Service {s.n}</span>
+                  <span className="text-sm text-brand">Service {s.n}</span>
                   <Icon
-                    className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-bronze"
+                    className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-brand"
                     strokeWidth={1.25}
                   />
                 </div>
@@ -64,7 +64,7 @@ function Services() {
                       key={x}
                       className="flex items-center gap-3 border-b border-border py-3 text-sm"
                     >
-                      <span className="h-1 w-1 bg-bronze" /> {x}
+                      <span className="h-1 w-1 bg-brand" /> {x}
                     </li>
                   ))}
                 </ul>

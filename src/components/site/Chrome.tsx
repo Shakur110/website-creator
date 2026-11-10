@@ -8,6 +8,7 @@ const nav = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/work", label: "Work" },
+  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -33,25 +34,22 @@ export function SiteHeader() {
       }`}
     >
       <div className="container-x flex h-18 items-center justify-between py-5">
-        <Link to="/" className="text-sm font-bold tracking-[0.2em]" onClick={() => setOpen(false)}>
-          ONJOKO TUNDE<span className="text-bronze">.</span>
+        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <Logo />
         </Link>
-        <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
               activeOptions={{ exact: n.to === "/" }}
-              className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-foreground"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-brand"
             >
               {n.label}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className="group inline-flex items-center gap-2 border border-foreground px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-primary hover:text-primary-foreground"
-          >
-            Let's Talk{" "}
+          <Link to="/contact" className="group btn btn-primary !py-2.5">
+            Let's talk{" "}
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
           </Link>
         </nav>
@@ -72,18 +70,18 @@ export function SiteHeader() {
           <ul className="space-y-2">
             {nav.map((n, i) => (
               <li key={n.to} className="animate-rise" style={{ animationDelay: `${i * 50}ms` }}>
-                <Link to={n.to} onClick={() => setOpen(false)} className="display block text-6xl">
+                <Link
+                  to={n.to}
+                  onClick={() => setOpen(false)}
+                  className="display block text-5xl data-[status=active]:text-brand"
+                >
                   {n.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="inline-flex items-center justify-center gap-2 bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground"
-          >
-            Let's Talk <ArrowUpRight className="h-4 w-4" />
+          <Link to="/contact" onClick={() => setOpen(false)} className="btn btn-primary">
+            Let's talk <ArrowUpRight className="h-4 w-4" />
           </Link>
         </nav>
       )}
@@ -99,15 +97,13 @@ export function SiteFooter() {
     { label: "WhatsApp", href: contactLinks.whatsapp },
   ].filter((s) => s.href);
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-border bg-surface">
       <div className="container-x grid gap-12 py-20 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="text-sm font-bold tracking-[0.2em]">
-            ONJOKO TUNDE<span className="text-bronze">.</span>
-          </p>
+          <Logo />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Independent website designer and digital solutions specialist, creating thoughtful,
-            responsive websites for businesses since 2021.
+            Freelance website designer building WordPress, Elementor and Wix websites for businesses
+            in the US, UK, Canada and Australia since 2021.
           </p>
         </div>
         <div className="md:col-span-3">
@@ -151,7 +147,7 @@ export function SiteFooter() {
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Back to top"
-            className="flex h-12 w-12 items-center justify-center border border-border transition-colors hover:bg-primary hover:text-primary-foreground"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-white transition-colors hover:border-brand hover:bg-brand hover:text-white"
           >
             <ArrowUp className="h-4 w-4" />
           </button>
@@ -162,5 +158,19 @@ export function SiteFooter() {
         <p>Website Designer & Digital Solutions Specialist</p>
       </div>
     </footer>
+  );
+}
+
+function Logo() {
+  return (
+    <span className="flex items-center gap-2.5">
+      <span
+        aria-hidden
+        className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand text-sm font-bold text-white"
+      >
+        OT
+      </span>
+      <span className="text-[15px] font-bold tracking-tight">Onjoko Tunde</span>
+    </span>
   );
 }

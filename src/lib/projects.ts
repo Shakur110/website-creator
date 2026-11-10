@@ -1,6 +1,27 @@
-// Central project data. Edit names, descriptions, images, tech and links here only.
-// To add a showcase image: upload it with lovable-assets into src/assets/projects/<slug>.asset.json
-// and import it below. Projects without an image show a labelled placeholder.
+// Central project data. Edit names, descriptions, images, platforms and links here only.
+//
+// HOW TO ADD A PROJECT'S WEBSITE LINK
+//   liveUrl: "https://www.example.com",
+//   → shows a "Live" badge on the project card, the address in the browser frame,
+//     and a "Visit example.com" button on the case study.
+//
+// HOW TO ADD A PROJECT COVER (the main screenshot)
+//   Either upload it in Lovable (it creates src/assets/projects/<name>.asset.json; import it
+//   below like the others and set  cover: myImport.url ), or put the file in
+//   public/projects/ and set  cover: "/projects/my-project.webp" .
+//   Best size: a desktop screenshot of the top of the homepage, 1600 × 1000 px, .webp or .jpg.
+//   It is shown inside a browser window and cropped from the top, so any height works.
+//
+// HOW TO ADD MORE SCREENSHOTS (case study "The finished website" section)
+//   Give a gallery item a src, e.g. in public/projects/:
+//   gallery: [
+//     { id: "x-desktop", label: "Services page", kind: "desktop", src: "/projects/x-services.webp" },
+//     { id: "x-mobile", label: "Mobile homepage", kind: "mobile", src: "/projects/x-mobile.webp" },
+//   ],
+//   Items without a src are hidden, so the page never shows empty boxes.
+//
+// PLATFORMS:  technologies: ["WordPress", "Elementor"]   → shown as "Platform" on the case study.
+// STORY (optional, recommended): challenge, solution, result, testimonial.
 import thriveWm from "@/assets/projects/thrive-wm.asset.json";
 import fwulong from "@/assets/projects/fwulong.asset.json";
 import medelite from "@/assets/projects/medelite.asset.json";

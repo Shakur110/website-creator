@@ -1,6 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { CtaBand, ImagePlaceholder, Reveal } from "@/components/site/parts";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import {
+  BrowserFrame,
+  CtaBand,
+  ImagePlaceholder,
+  ProjectImage,
+  Reveal,
+  domainOf,
+} from "@/components/site/parts";
 import { getNextProject, getProject } from "@/lib/projects";
 
 /** Trim to a length on a word boundary, for search-result descriptions. */
@@ -38,8 +45,8 @@ export const Route = createFileRoute("/work/$slug")({
   },
   notFoundComponent: () => (
     <div className="container-x pb-40 pt-48">
-      <h1 className="display text-6xl">Project not found.</h1>
-      <Link to="/work" className="link-underline mt-8 inline-block text-sm font-semibold">
+      <h1 className="display text-5xl">Project not found.</h1>
+      <Link to="/work" className="btn btn-primary mt-8">
         Back to all work
       </Link>
     </div>
@@ -51,89 +58,122 @@ function CaseStudy() {
   const { project: p, next } = Route.useLoaderData();
   const facts = [
     ["Industry", p.industry],
-    ["Category", p.category],
-    ["Role", "Website Design & Development"],
-    ...(p.technologies.length ? [["Platforms", p.technologies.join(", ")]] : []),
+    ["Website type", p.category],
+    ["My role", "Design & development"],
+    ...(p.technologies.length ? [["Platform", p.technologies.join(", ")]] : []),
   ];
   const story = [
     ["The challenge", p.challenge],
     ["What I did", p.solution],
     ["The result", p.result],
   ].filter((s): s is [string, string] => Boolean(s[1]));
-  const gallery = p.gallery.filter((img) => img.src);
-  // Fill the last row of the 3-column highlights grid so no empty cell shows.
-  const lastSpan = ["", "lg:col-span-3", "lg:col-span-2"][p.highlights.length % 3];
+  const desktop = p.gallery.filter((img) => img.src && img.kind !== "mobile");
+  const mobile = p.gallery.filter((img) => img.src && img.kind === "mobile");
+
   return (
     <>
-      <section className="container-x pt-32 md:pt-44">
-        <Link
-          to="/work"
-          className="link-underline inline-flex items-center gap-2 text-sm text-muted-foreground"
-        >
-          <ArrowLeft className="h-4 w-4" /> All work
-        </Link>
-        <p className="eyebrow animate-rise mt-10">
-          Project {p.number} — {p.industry}
-        </p>
-        <h1 className="display animate-rise mt-6 max-w-5xl text-6xl md:text-[7rem]">{p.title}</h1>
+      {/* Header */}
+      <section className="relative overflow-hidden">
         <div
-          className="frame animate-rise mt-14 aspect-[16/10] overflow-hidden bg-surface"
-          style={{ animationDelay: "150ms" }}
-        >
-          {p.cover ? (
-            <img
-              src={p.cover}
-              alt={`${p.title} website showcase`}
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <ImagePlaceholder label={p.title} />
-          )}
+          aria-hidden
+          className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-brand-soft blur-3xl"
+        />
+        <div className="container-x relative pt-32 md:pt-40">
+          <Link
+            to="/work"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-brand"
+          >
+            <ArrowLeft className="h-4 w-4" /> All work
+          </Link>
+          <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-8">
+              <p className="eyebrow animate-rise">{p.industry}</p>
+              <h1 className="display animate-rise mt-4 text-5xl md:text-7xl">{p.title}</h1>
+              <p className="animate-rise mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {p.overview}
+              </p>
+            </div>
+            <div className="animate-rise flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
+              {p.liveUrl && (
+                <a
+                  href={p.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group btn btn-primary"
+                >
+                  Visit {domainOf(p.liveUrl)}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
+                </a>
+              )}
+              <Link to="/contact" className="btn btn-outline">
+                Start a similar project
+              </Link>
+            </div>
+          </div>
+          <div className="animate-rise mt-14" style={{ animationDelay: "150ms" }}>
+            <ProjectImage project={p} eager />
+          </div>
         </div>
       </section>
 
-      <section className="container-x py-24 md:py-28">
+      {/* Facts + story */}
+      <section className="container-x py-20 md:py-28">
         <div className="grid gap-14 md:grid-cols-12">
           <Reveal className="md:col-span-4">
-            <dl className="border-t border-foreground/80">
+            <dl className="rounded-2xl border border-border bg-surface p-6">
               {facts.map(([k, v]) => (
                 <div
                   key={k}
-                  className="flex justify-between gap-6 border-b border-border py-4 text-sm"
+                  className="flex justify-between gap-6 border-b border-border py-3.5 text-sm last:border-0"
                 >
                   <dt className="text-muted-foreground">{k}</dt>
-                  <dd className="text-right">{v}</dd>
+                  <dd className="text-right font-semibold">{v}</dd>
                 </div>
               ))}
+              {p.liveUrl && (
+                <div className="flex justify-between gap-6 pt-3.5 text-sm">
+                  <dt className="text-muted-foreground">Live site</dt>
+                  <dd>
+                    <a
+                      href={p.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-semibold text-brand underline-offset-4 hover:underline"
+                    >
+                      {domainOf(p.liveUrl)}
+                    </a>
+                  </dd>
+                </div>
+              )}
             </dl>
-            {p.liveUrl && (
-              <a
-                href={p.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="group mt-8 inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-bronze"
-              >
-                Visit live website{" "}
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
-              </a>
-            )}
           </Reveal>
-          <Reveal className="space-y-14 md:col-span-7 md:col-start-6" delay={100}>
-            <Block title="Project overview">
-              <p>{p.overview}</p>
-            </Block>
+          <Reveal className="space-y-12 md:col-span-7 md:col-start-6" delay={100}>
             {story.map(([title, text]) => (
-              <Block key={title} title={title}>
-                <p>{text}</p>
-              </Block>
+              <div key={title}>
+                <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
+                <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{text}</p>
+              </div>
             ))}
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight">What the website includes</h2>
+              <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                {p.highlights.map((h) => (
+                  <li key={h} className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand">
+                      <Check className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="leading-relaxed">{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             {p.testimonial && (
-              <figure className="border-l-2 border-bronze pl-6">
-                <blockquote className="display text-3xl leading-snug">
+              <figure className="rounded-2xl bg-brand-soft p-8">
+                <blockquote className="text-xl font-medium leading-relaxed">
                   “{p.testimonial.quote}”
                 </blockquote>
                 <figcaption className="mt-4 text-sm text-muted-foreground">
-                  {p.testimonial.name}
+                  <span className="font-semibold text-foreground">{p.testimonial.name}</span>
                   {p.testimonial.role ? `, ${p.testimonial.role}` : ""}
                 </figcaption>
               </figure>
@@ -142,82 +182,71 @@ function CaseStudy() {
         </div>
       </section>
 
-      <section className="bg-surface py-24 md:py-28">
-        <div className="container-x">
-          <Reveal>
-            <p className="eyebrow">Design & development highlights</p>
-            <ul className="mt-10 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-              {p.highlights.map((h, i) => (
-                <li
-                  key={h}
-                  className={`bg-surface p-8 ${i === p.highlights.length - 1 ? lastSpan : ""}`}
-                >
-                  <span className="text-sm text-bronze-ink">{String(i + 1).padStart(2, "0")}</span>
-                  <p className="display mt-4 text-3xl">{h}</p>
-                </li>
+      {/* Screenshots: only shown once you add them */}
+      {(desktop.length > 0 || mobile.length > 0) && (
+        <section className="bg-surface py-20 md:py-28">
+          <div className="container-x">
+            <Reveal>
+              <p className="eyebrow">The finished website</p>
+            </Reveal>
+            <div className="mt-10 grid gap-8 md:grid-cols-12">
+              {desktop.map((img) => (
+                <Reveal key={img.id} className={mobile.length ? "md:col-span-8" : "md:col-span-12"}>
+                  <BrowserFrame
+                    src={img.src}
+                    alt={`${p.title} — ${img.label}`}
+                    url={p.liveUrl}
+                    aspect="aspect-[16/10]"
+                  />
+                </Reveal>
               ))}
-            </ul>
-          </Reveal>
-        </div>
-      </section>
-
-      {gallery.length > 0 && (
-        <section className="container-x py-24 md:py-28">
-          <Reveal>
-            <p className="eyebrow">Final website showcase</p>
-          </Reveal>
-          <div className="mt-12 grid gap-10 md:grid-cols-12">
-            {gallery.map((img, i) => (
-              <Reveal
-                key={img.id}
-                className={
-                  img.kind === "mobile"
-                    ? "aspect-[9/16] md:col-span-4"
-                    : i === 0
-                      ? "aspect-[16/10] md:col-span-12"
-                      : "aspect-[4/3] md:col-span-8"
-                }
-              >
-                <img
-                  src={img.src}
-                  alt={`${p.title} — ${img.label}`}
-                  loading="lazy"
-                  className="frame h-full w-full object-cover object-top"
-                />
-              </Reveal>
-            ))}
+              {mobile.map((img) => (
+                <Reveal key={img.id} className="md:col-span-4">
+                  <div className="mx-auto max-w-[18rem] overflow-hidden rounded-[2.2rem] border-[10px] border-navy bg-navy frame">
+                    <img
+                      src={img.src}
+                      alt={`${p.title} — ${img.label}`}
+                      loading="lazy"
+                      className="aspect-[9/19] w-full rounded-[1.5rem] object-cover object-top"
+                    />
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
       )}
 
-      <section className="container-x pb-24">
+      {/* Next project */}
+      <section className="container-x pt-20 md:pt-28">
         <Link
           to="/work/$slug"
           params={{ slug: next.slug }}
-          className="group block border-t border-foreground/80 pt-10"
+          className="group grid items-center gap-8 rounded-[2rem] border border-border p-6 transition-colors hover:border-brand md:grid-cols-12 md:p-10"
         >
-          <p className="eyebrow">Next project</p>
-          <div className="mt-4 flex items-center justify-between gap-6">
-            <h2 className="display text-5xl transition-transform duration-500 group-hover:translate-x-3 md:text-7xl">
+          <div className="md:col-span-5">
+            <p className="eyebrow">Next project</p>
+            <h2 className="display mt-3 text-4xl transition-colors group-hover:text-brand md:text-5xl">
               {next.title}
             </h2>
-            <ArrowRight
-              className="h-8 w-8 shrink-0 transition-transform group-hover:translate-x-2"
-              strokeWidth={1.25}
-            />
+            <p className="mt-3 text-muted-foreground">{next.industry}</p>
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand">
+              View case study{" "}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </span>
+          </div>
+          <div className="md:col-span-7">
+            {next.cover ? (
+              <BrowserFrame src={next.cover} alt={`${next.title} website`} url={next.liveUrl} />
+            ) : (
+              <div className="aspect-[16/10] overflow-hidden rounded-2xl">
+                <ImagePlaceholder label={next.title} sub={next.industry} />
+              </div>
+            )}
           </div>
         </Link>
       </section>
       <CtaBand />
     </>
-  );
-}
-
-function Block({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <h2 className="display text-4xl">{title}</h2>
-      <div className="mt-4 text-lg leading-relaxed text-muted-foreground">{children}</div>
-    </div>
   );
 }

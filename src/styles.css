@@ -6,11 +6,11 @@
 
 @theme inline {
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
@@ -26,8 +26,11 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-bronze: var(--bronze);
-  --color-bronze-ink: var(--bronze-ink);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+  --color-navy: var(--navy);
+  --color-sky: var(--sky);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -35,32 +38,40 @@
   --color-ring: var(--ring);
 }
 
+/*
+ * Palette: bright royal blue on white, near-black ink, navy for dark bands.
+ * Contrast (WCAG): brand #2351de on white 6.4:1, white on brand 6.4:1,
+ * muted text on white 6.0:1, sky on navy > 9:1.
+ */
 :root {
-  --radius: 0.25rem;
+  --radius: 1rem;
   --background: oklch(1 0 0);
-  --surface: oklch(0.97 0.004 85);
-  --foreground: oklch(0.2 0 0);
+  --surface: oklch(0.975 0.008 265);
+  --foreground: oklch(0.18 0.03 265);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0 0);
+  --card-foreground: oklch(0.18 0.03 265);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0 0);
-  --primary: oklch(0.2 0 0);
-  --primary-foreground: oklch(0.99 0.002 85);
-  --secondary: oklch(0.97 0.004 85);
-  --secondary-foreground: oklch(0.2 0 0);
-  --muted: oklch(0.97 0.004 85);
-  --muted-foreground: oklch(0.54 0 0);
-  --accent: oklch(0.94 0.012 80);
-  --accent-foreground: oklch(0.2 0 0);
-  --bronze: oklch(0.63 0.05 75);
-  /* Darker bronze for small text: 5.5:1 on white, 5:1 on surface (WCAG AA) */
-  --bronze-ink: oklch(0.52 0.05 75);
+  --popover-foreground: oklch(0.18 0.03 265);
+  --primary: oklch(0.5 0.22 265);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.975 0.008 265);
+  --secondary-foreground: oklch(0.18 0.03 265);
+  --muted: oklch(0.975 0.008 265);
+  --muted-foreground: oklch(0.5 0.02 265);
+  --accent: oklch(0.95 0.03 265);
+  --accent-foreground: oklch(0.18 0.03 265);
+  --brand: oklch(0.5 0.22 265);
+  --brand-hover: oklch(0.42 0.2 265);
+  --brand-soft: oklch(0.95 0.03 265);
+  --navy: oklch(0.22 0.08 265);
+  --sky: oklch(0.8 0.1 250);
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.006 90);
-  --input: oklch(0.92 0.006 90);
-  --ring: oklch(0.63 0.05 75);
-  --shadow-frame: 0 30px 60px -30px oklch(0.2 0 0 / 0.25), 0 0 0 1px oklch(0.2 0 0 / 0.05);
+  --border: oklch(0.92 0.012 265);
+  --input: oklch(0.92 0.012 265);
+  --ring: oklch(0.5 0.22 265);
+  --shadow-frame:
+    0 40px 80px -40px oklch(0.3 0.12 265 / 0.35), 0 0 0 1px oklch(0.18 0.03 265 / 0.06);
 }
 
 @layer base {
@@ -77,28 +88,40 @@
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background: var(--bronze);
+    background: var(--brand);
     color: var(--primary-foreground);
   }
   :focus-visible {
-    outline: 2px solid var(--bronze-ink);
+    outline: 2px solid var(--brand);
     outline-offset: 3px;
   }
 }
 
+/* Headlines: tight, bold sans. An <em> inside becomes a blue serif italic accent. */
 @utility display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 0.98;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  & em {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    color: var(--brand);
+  }
 }
 
 @utility eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-weight: 600;
-  color: var(--muted-foreground);
+  font-weight: 700;
+  color: var(--brand);
 }
 
 @utility frame {
@@ -107,12 +130,67 @@
 
 @utility container-x {
   width: 100%;
-  max-width: 88rem;
+  max-width: 84rem;
   margin-inline: auto;
   padding-inline: 1.25rem;
   @media (min-width: 768px) {
     padding-inline: 2.5rem;
   }
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.9rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@utility btn-primary {
+  background: var(--brand);
+  color: var(--primary-foreground);
+  &:hover {
+    background: var(--brand-hover);
+  }
+}
+
+@utility btn-outline {
+  border: 1px solid oklch(0.18 0.03 265 / 0.18);
+  color: var(--foreground);
+  &:hover {
+    border-color: var(--foreground);
+  }
+}
+
+@utility btn-light {
+  background: oklch(1 0 0);
+  color: var(--navy);
+  &:hover {
+    background: var(--sky);
+  }
+}
+
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
 }
 
 @utility link-underline {
@@ -123,6 +201,49 @@
   transition: background-size 0.4s ease;
   &:hover {
     background-size: 100% 1px;
+  }
+}
+
+/* Long-form article text for the blog */
+@utility prose-article {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: oklch(0.3 0.03 265);
+  & > * + * {
+    margin-top: 1.4em;
+  }
+  & h2 {
+    margin-top: 2.2em;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--foreground);
+  }
+  & ul,
+  & ol {
+    padding-left: 1.25em;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & li + li {
+    margin-top: 0.5em;
+  }
+  & li::marker {
+    color: var(--brand);
+  }
+  & strong {
+    color: var(--foreground);
+    font-weight: 700;
+  }
+  & a {
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 }
 
