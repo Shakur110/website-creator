@@ -1,9 +1,17 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, ImageIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { Project } from "@/lib/projects";
 
-export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+export function Reveal({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -23,23 +31,53 @@ export function Reveal({ children, className = "", delay = 0 }: { children: Reac
     return () => io.disconnect();
   }, []);
   return (
-    <div ref={ref} data-visible={visible} className={`reveal ${className}`} style={{ transitionDelay: `${delay}ms` }}>
+    <div
+      ref={ref}
+      data-visible={visible}
+      className={`reveal ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
       {children}
     </div>
   );
 }
 
-export function ImagePlaceholder({ id, label, className = "" }: { id: string; label: string; className?: string }) {
+/**
+ * Shown where a project has no image yet. Visitors see a calm typographic card
+ * (never file names or "placeholder" wording).
+ */
+export function ImagePlaceholder({
+  label,
+  className = "",
+}: {
+  id?: string;
+  label: string;
+  className?: string;
+}) {
   return (
-    <div className={`flex h-full w-full flex-col items-center justify-center gap-3 border border-dashed border-muted-foreground/30 bg-surface p-6 text-center ${className}`}>
-      <ImageIcon className="h-6 w-6 text-bronze" strokeWidth={1.25} />
-      <p className="eyebrow">{label}</p>
-      <code className="text-xs text-muted-foreground">{id}</code>
+    <div
+      role="img"
+      aria-label={label}
+      className={`relative flex h-full w-full items-end overflow-hidden bg-surface p-6 md:p-10 ${className}`}
+    >
+      <span
+        aria-hidden
+        className="display pointer-events-none absolute -right-4 -top-6 select-none text-[9rem] leading-none text-foreground/[0.04] md:text-[14rem]"
+      >
+        {label.charAt(0)}
+      </span>
+      <p className="display relative text-3xl text-foreground/70 md:text-5xl">{label}</p>
     </div>
   );
 }
 
-export function ProjectImage({ project, className = "" }: { project: Project; className?: string }) {
+export function ProjectImage({
+  project,
+  className = "",
+}: {
+  project: Project;
+  className?: string;
+}) {
   return project.cover ? (
     <img
       src={project.cover}
@@ -48,11 +86,17 @@ export function ProjectImage({ project, className = "" }: { project: Project; cl
       className={`h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03] ${className}`}
     />
   ) : (
-    <ImagePlaceholder id={`${project.slug}/cover`} label="Project cover image" />
+    <ImagePlaceholder label={project.title} />
   );
 }
 
-export function ProjectCard({ project, aspect = "aspect-[16/10]" }: { project: Project; aspect?: string }) {
+export function ProjectCard({
+  project,
+  aspect = "aspect-[16/10]",
+}: {
+  project: Project;
+  aspect?: string;
+}) {
   return (
     <Link to="/work/$slug" params={{ slug: project.slug }} className="group block">
       <div className={`${aspect} overflow-hidden bg-surface`}>
@@ -71,14 +115,26 @@ export function ProjectCard({ project, aspect = "aspect-[16/10]" }: { project: P
   );
 }
 
-export function SectionHead({ eyebrow, title, intro }: { eyebrow: string; title: ReactNode; intro?: string }) {
+export function SectionHead({
+  eyebrow,
+  title,
+  intro,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  intro?: string;
+}) {
   return (
     <Reveal className="grid gap-6 md:grid-cols-12 md:items-end">
       <div className="md:col-span-7">
         <p className="eyebrow">{eyebrow}</p>
-        <h2 className="display mt-5 text-5xl md:text-7xl">{title}</h2>
+        <h2 className="display mt-5 text-5xl md:text-6xl">{title}</h2>
       </div>
-      {intro && <p className="max-w-md text-base leading-relaxed text-muted-foreground md:col-span-5 md:justify-self-end">{intro}</p>}
+      {intro && (
+        <p className="max-w-md text-base leading-relaxed text-muted-foreground md:col-span-5 md:justify-self-end">
+          {intro}
+        </p>
+      )}
     </Reveal>
   );
 }
@@ -97,10 +153,10 @@ export function CtaBand({
   button?: string;
 }) {
   return (
-    <section className="bg-surface py-28 md:py-40">
+    <section className="bg-surface py-28 md:py-32">
       <div className="container-x">
         <Reveal>
-          <h2 className="display max-w-5xl text-6xl md:text-8xl">{title}</h2>
+          <h2 className="display max-w-5xl text-5xl md:text-6xl">{title}</h2>
           <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">{copy}</p>
             <Link
@@ -117,15 +173,29 @@ export function CtaBand({
   );
 }
 
-export function PageHero({ eyebrow, title, intro }: { eyebrow: string; title: ReactNode; intro?: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  intro,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  intro?: string;
+}) {
   return (
     <section className="container-x pb-16 pt-36 md:pb-24 md:pt-48">
       <p className="eyebrow animate-rise">{eyebrow}</p>
-      <h1 className="display animate-rise mt-6 max-w-5xl text-6xl md:text-[8.5rem]" style={{ animationDelay: "80ms" }}>
+      <h1
+        className="display animate-rise mt-6 max-w-5xl text-6xl md:text-[7rem]"
+        style={{ animationDelay: "80ms" }}
+      >
         {title}
       </h1>
       {intro && (
-        <p className="animate-rise mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "160ms" }}>
+        <p
+          className="animate-rise mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground"
+          style={{ animationDelay: "160ms" }}
+        >
           {intro}
         </p>
       )}

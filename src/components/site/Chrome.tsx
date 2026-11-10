@@ -27,7 +27,9 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled || open ? "border-b border-border bg-background/90 backdrop-blur-md" : "border-b border-transparent"
+        scrolled || open
+          ? "border-b border-border bg-background/90 backdrop-blur-md"
+          : "border-b border-transparent"
       }`}
     >
       <div className="container-x flex h-18 items-center justify-between py-5">
@@ -49,7 +51,8 @@ export function SiteHeader() {
             to="/contact"
             className="group inline-flex items-center gap-2 border border-foreground px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-primary hover:text-primary-foreground"
           >
-            Let's Talk <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
+            Let's Talk{" "}
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
           </Link>
         </nav>
         <button
@@ -62,7 +65,10 @@ export function SiteHeader() {
         </button>
       </div>
       {open && (
-        <nav aria-label="Mobile" className="container-x flex h-[calc(100dvh-4.5rem)] flex-col justify-between pb-10 pt-6 md:hidden">
+        <nav
+          aria-label="Mobile"
+          className="container-x flex h-[calc(100dvh-4.5rem)] flex-col justify-between pb-10 pt-6 md:hidden"
+        >
           <ul className="space-y-2">
             {nav.map((n, i) => (
               <li key={n.to} className="animate-rise" style={{ animationDelay: `${i * 50}ms` }}>
@@ -90,7 +96,8 @@ export function SiteFooter() {
     { label: "Email", href: contactLinks.email ? `mailto:${contactLinks.email}` : "" },
     { label: "LinkedIn", href: contactLinks.linkedin },
     { label: "Fiverr", href: contactLinks.fiverr },
-  ];
+    { label: "WhatsApp", href: contactLinks.whatsapp },
+  ].filter((s) => s.href);
   return (
     <footer className="border-t border-border bg-background">
       <div className="container-x grid gap-12 py-20 md:grid-cols-12">
@@ -99,16 +106,16 @@ export function SiteFooter() {
             ONJOKO TUNDE<span className="text-bronze">.</span>
           </p>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Independent website designer and digital solutions specialist, creating thoughtful, responsive websites for
-            businesses since 2021.
+            Independent website designer and digital solutions specialist, creating thoughtful,
+            responsive websites for businesses since 2021.
           </p>
         </div>
         <div className="md:col-span-3">
           <p className="eyebrow">Navigate</p>
-          <ul className="mt-5 space-y-2 text-sm">
+          <ul className="mt-3 text-sm">
             {nav.map((n) => (
               <li key={n.to}>
-                <Link to={n.to} className="link-underline">
+                <Link to={n.to} className="link-underline inline-block py-2.5">
                   {n.label}
                 </Link>
               </li>
@@ -116,19 +123,28 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="md:col-span-3">
-          <p className="eyebrow">Elsewhere</p>
-          <ul className="mt-5 space-y-2 text-sm">
-            {socials.map((s) => (
-              <li key={s.label}>
-                {s.href ? (
-                  <a href={s.href} target="_blank" rel="noreferrer" className="link-underline">
+          <p className="eyebrow">{socials.length ? "Elsewhere" : "Get in touch"}</p>
+          <ul className="mt-3 text-sm">
+            {socials.length ? (
+              socials.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="link-underline inline-block py-2.5"
+                  >
                     {s.label}
                   </a>
-                ) : (
-                  <span className="text-muted-foreground">{s.label} — link to be added</span>
-                )}
+                </li>
+              ))
+            ) : (
+              <li>
+                <Link to="/contact" className="link-underline inline-block py-2.5">
+                  Start a project
+                </Link>
               </li>
-            ))}
+            )}
           </ul>
         </div>
         <div className="md:col-span-1 md:justify-self-end">
