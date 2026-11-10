@@ -29,7 +29,7 @@ function Services() {
       />
       <section className="container-x pb-28 md:pb-40">
         {services.map((s, i) => {
-          const Icon = icons[i];
+          const Icon = icons[i] ?? LayoutTemplate;
           return (
             <Reveal key={s.n} className="group grid gap-10 border-t border-border py-16 md:grid-cols-12 md:py-24">
               <div className="md:col-span-5">

@@ -31,7 +31,7 @@ const layout = [
 ];
 
 function Index() {
-  const hero = featuredProjects.find((p) => p.slug === "thrive-wm") ?? featuredProjects[0];
+  const hero = (featuredProjects.find((p) => p.slug === "thrive-wm") ?? featuredProjects[0])!;
   return (
     <>
       {/* Hero */}
@@ -104,7 +104,7 @@ function Index() {
         />
         <div className="mt-20 grid gap-x-10 gap-y-20 md:grid-cols-12">
           {featuredProjects.map((p, i) => (
-            <Reveal key={p.slug} className={layout[i % layout.length]}>
+            <Reveal key={p.slug} className={layout[i % layout.length] ?? ""}>
               <ProjectCard project={p} />
             </Reveal>
           ))}

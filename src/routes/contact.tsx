@@ -124,7 +124,7 @@ function Contact() {
   );
 }
 
-function Field({ label, error, className = "", children }: { label: string; error?: string; className?: string; children: React.ReactNode }) {
+function Field({ label, error, className = "", children }: { label: string; error?: string | undefined; className?: string; children: React.ReactNode }) {
   return (
     <label className={`block ${className}`}>
       <span className="eyebrow">{label}</span>
