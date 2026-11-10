@@ -60,7 +60,7 @@ function About() {
       <section className="container-x pb-28 md:pb-32">
         <div className="grid gap-14 md:grid-cols-12">
           {portrait && (
-            <Reveal className="aspect-[4/5] md:col-span-5">
+            <Reveal className="aspect-[4/5] overflow-hidden rounded-[1.75rem] frame md:col-span-5">
               <img src={portrait} alt="Onjoko Tunde" className="h-full w-full object-cover" />
             </Reveal>
           )}
