@@ -10,7 +10,7 @@ export const Route = createFileRoute("/blog/")({
       {
         name: "description",
         content:
-          "Practical advice on website platforms, redesigns and planning a new business website, from freelance website designer Onjoko Tunde.",
+          "Practical advice on website platforms, redesigns and planning a new business website, from web designer and automation specialist Onjoko Tunde.",
       },
       { property: "og:title", content: "Blog — Onjoko Tunde" },
       {

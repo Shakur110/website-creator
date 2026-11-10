@@ -81,7 +81,7 @@ function Article() {
               </div>
             </div>
           </div>
-          <div className="mx-auto mt-12 aspect-[21/9] max-w-5xl overflow-hidden rounded-[1.5rem]">
+          <div className="mx-auto mt-12 aspect-[16/9] max-w-5xl overflow-hidden rounded-[1.5rem]">
             <PostCover post={post} />
           </div>
         </header>

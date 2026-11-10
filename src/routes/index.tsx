@@ -2,7 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   ArrowUpRight,
+  Bot,
   LayoutTemplate,
+  Workflow,
   MessagesSquare,
   PenTool,
   RefreshCcw,
@@ -13,23 +15,30 @@ import {
 } from "lucide-react";
 import { CtaBand, ProjectCard, ProjectImage, Reveal, SectionHead } from "@/components/site/parts";
 import { PostCard } from "@/components/site/blog";
-import { featuredProjects, portrait, projects, services, toolGroups } from "@/lib/projects";
+import {
+  featuredProjects,
+  portrait,
+  projects,
+  services,
+  siteStats,
+  toolGroups,
+} from "@/lib/projects";
 import { posts } from "@/lib/posts";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Onjoko Tunde — Freelance Website Designer (WordPress, Elementor & Wix)" },
+      { title: "Onjoko Tunde — Website Design, CRM Automation & AI Tools" },
       {
         name: "description",
         content:
-          "Freelance website designer building WordPress, Elementor and Wix websites for service businesses, clinics and consultancies in the US, UK, Canada and Australia.",
+          "100+ websites since 2021. I build WordPress, Elementor and Wix websites and connect them to CRM automations and AI tools for businesses in the US, UK, Canada and Australia.",
       },
-      { property: "og:title", content: "Onjoko Tunde — Freelance Website Designer" },
+      { property: "og:title", content: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
       {
         property: "og:description",
         content:
-          "Website design, redesign, ecommerce and landing pages for growing businesses. Since 2021.",
+          "Websites, CRM automation and AI tools that help growing businesses win and keep more clients.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,7 +47,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const serviceIcons = [LayoutTemplate, RefreshCcw, ShoppingBag, Target];
+const serviceIcons = [LayoutTemplate, RefreshCcw, ShoppingBag, Target, Workflow, Bot];
 
 const process = [
   {
@@ -59,20 +68,19 @@ const process = [
   {
     icon: Rocket,
     title: "Launch & handover",
-    text: "I launch the site, connect your domain and forms, and show you how to update it yourself.",
+    text: "I launch the site, connect your domain, forms and CRM, and show you how to run it all yourself.",
   },
 ];
 
 function Index() {
   const hero = (featuredProjects.find((p) => p.slug === "thrive-wm") ?? featuredProjects[0])!;
   const grid = featuredProjects.filter((p) => p.slug !== hero.slug).slice(0, 4);
-  const industries = new Set(projects.map((p) => p.group)).size;
   const platforms = toolGroups[0]?.items ?? [];
   const stats = [
-    [`${projects.length}`, "Websites delivered"],
-    ["2021", "Freelancing since"],
-    [`${industries}`, "Industries served"],
-    ["4", "Countries focused on"],
+    [siteStats.websites, "Websites delivered"],
+    [siteStats.since, "Freelancing since"],
+    ["3", "Services in one place: web, CRM, AI"],
+    ["4", "Core markets: US, UK, CA, AU"],
   ];
 
   return (
@@ -87,20 +95,21 @@ function Index() {
           <div className="lg:col-span-6">
             <p className="chip animate-rise bg-white">
               <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden />
-              Freelance website designer · since 2021
+              Web design · CRM automation · AI tools
             </p>
             <h1
               className="display animate-rise mt-7 text-5xl sm:text-6xl lg:text-7xl"
               style={{ animationDelay: "80ms" }}
             >
-              Websites that turn visitors into <em>clients.</em>
+              Websites and automations that turn visitors into <em>clients.</em>
             </h1>
             <p
               className="animate-rise mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground"
               style={{ animationDelay: "160ms" }}
             >
-              I design and build WordPress, Elementor and Wix websites for service businesses,
-              clinics and consultancies in the US, UK, Canada and Australia.
+              I design and build WordPress, Elementor and Wix websites, then connect them to CRM
+              automations and AI tools so every lead is captured, followed up and booked. For
+              businesses in the US, UK, Canada and Australia.
             </p>
             <div
               className="animate-rise mt-9 flex flex-wrap gap-3"
@@ -172,7 +181,7 @@ function Index() {
               Recent websites for <em>real businesses.</em>
             </>
           }
-          intro="Clinics, consultancies, academies and service companies, each built around what their customers need to find and do."
+          intro={`${projects.length} highlights from ${siteStats.websites} websites I've built for clinics, consultancies, academies, manufacturers and service companies.`}
         />
         <div className="mt-16 grid gap-x-10 gap-y-16 md:grid-cols-2">
           {grid.map((p, i) => (
@@ -183,7 +192,7 @@ function Index() {
         </div>
         <div className="mt-16 flex justify-center">
           <Link to="/work" className="group btn btn-outline">
-            View all {projects.length} projects
+            See all featured projects
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
@@ -196,11 +205,11 @@ function Index() {
             eyebrow="Services"
             title={
               <>
-                What I can <em>build for you.</em>
+                Websites, CRM and <em>AI, in one place.</em>
               </>
             }
           />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => {
               const Icon = serviceIcons[i] ?? LayoutTemplate;
               return (
@@ -269,10 +278,10 @@ function Index() {
               Hi, I'm Onjoko. <em>I build websites that work.</em>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              I've been designing and building websites for independent clients since 2021, from
-              therapy practices and dental clinics to maritime consultancies and beauty academies. I
-              choose the right platform for each business and make sure the finished site is easy
-              for you to run.
+              Since 2021 I've built more than 100 websites for clients from therapy practices and
+              dental clinics to manufacturers and maritime consultancies. Today I also set up CRM
+              automations and AI tools, so your website doesn't just look good: it captures leads,
+              follows up and saves you hours every week.
             </p>
             <Link to="/about" className="group btn btn-primary mt-8">
               More about me

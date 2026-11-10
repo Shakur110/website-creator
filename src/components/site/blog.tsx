@@ -30,12 +30,26 @@ export function PostBody({ blocks }: { blocks: Block[] }) {
               <li key={li}>{inline(li)}</li>
             ))}
           </ul>
-        ) : (
+        ) : "ol" in b ? (
           <ol key={i}>
             {b.ol.map((li) => (
               <li key={li}>{inline(li)}</li>
             ))}
           </ol>
+        ) : (
+          <figure key={i} className="!my-10">
+            <img
+              src={b.img}
+              alt={b.alt}
+              loading="lazy"
+              className="w-full rounded-2xl border border-border frame"
+            />
+            {b.caption && (
+              <figcaption className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {b.caption}
+              </figcaption>
+            )}
+          </figure>
         ),
       )}
     </div>

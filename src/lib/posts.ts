@@ -6,10 +6,16 @@
 //   { h2: "A heading" }                → section heading
 //   { ul: ["item", "item"] }           → bullet list
 //   { ol: ["step", "step"] }           → numbered list
+//   { img: "/blog/photo.webp", alt: "What the image shows", caption: "Optional caption" }
 //
 // `cover` is optional: put an image in public/blog/ and write "/blog/your-image.webp".
 
-export type Block = { p: string } | { h2: string } | { ul: string[] } | { ol: string[] };
+export type Block =
+  | { p: string }
+  | { h2: string }
+  | { ul: string[] }
+  | { ol: string[] }
+  | { img: string; alt: string; caption?: string };
 
 export interface Post {
   slug: string;
@@ -30,6 +36,7 @@ export const posts: Post[] = [
       "The platform you choose decides how much your site can grow, what it costs to run and how easy it is to update. Here's a plain-English comparison.",
     category: "Platforms",
     date: "2026-11-10",
+    cover: "/blog/platforms-cover.svg",
     body: [
       {
         p: "One of the first questions I hear from new clients is which platform their website should be built on. There's no single right answer, but there is usually a right answer **for your business**. It depends on what the site needs to do, who will update it and how much you expect it to grow.",
@@ -91,6 +98,7 @@ export const posts: Post[] = [
       "Your website might be costing you enquiries without you noticing. These are the warning signs I look for first.",
     category: "Redesign",
     date: "2026-11-10",
+    cover: "/blog/redesign-cover.svg",
     body: [
       {
         p: "A website rarely breaks overnight. More often it slowly falls behind: the business changes, customers' expectations rise and the site stays the same. Here are seven signs it's time for a redesign.",
@@ -106,6 +114,12 @@ export const posts: Post[] = [
       { h2: "3. It doesn't explain what you do in a few seconds" },
       {
         p: "A first-time visitor should understand who you help, what you offer and what to do next almost immediately. If your homepage opens with a vague slogan, your message is getting lost.",
+      },
+      {
+        img: "/projects/cozy-almonds-cleaning-1200.webp",
+        alt: "Cozy Almonds Cleaning website: a clear headline, Google rating and a quote form in the first screen",
+        caption:
+          "Cozy Almonds Cleaning's homepage says exactly what they do, shows their Google rating and puts the quote form in the first screen.",
       },
       { h2: "4. Enquiries have dropped or never arrived" },
       {
@@ -145,6 +159,7 @@ export const posts: Post[] = [
       "A little preparation makes your project faster, your quote more accurate and the finished website better. Here's a checklist.",
     category: "Planning",
     date: "2026-11-10",
+    cover: "/blog/checklist-cover.svg",
     body: [
       {
         p: "You don't need to have everything figured out before contacting a website designer. But a few answers ready in advance will make your first conversation more useful and help you get an accurate quote.",
@@ -169,6 +184,12 @@ export const posts: Post[] = [
           "Real photos of your team, premises or work. These build far more trust than stock images.",
           "Reviews or testimonials from past clients.",
         ],
+      },
+      {
+        img: "/projects/dent-hub-1200.webp",
+        alt: "DentHub website showing real photos of the dental team and clinic",
+        caption:
+          "Real photos of the team and the clinic, like these on DentHub's website, build far more trust than stock images.",
       },
       { h2: "5. Websites you like" },
       {
@@ -195,7 +216,9 @@ export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
 /** Rough reading time at ~220 words per minute. */
 export const readingTime = (post: Post) => {
   const words = post.body
-    .flatMap((b) => ("p" in b ? [b.p] : "h2" in b ? [b.h2] : "ul" in b ? b.ul : b.ol))
+    .flatMap((b) =>
+      "p" in b ? [b.p] : "h2" in b ? [b.h2] : "ul" in b ? b.ul : "ol" in b ? b.ol : [],
+    )
     .join(" ")
     .split(/\s+/).length;
   return Math.max(1, Math.round(words / 220));

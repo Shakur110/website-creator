@@ -24,7 +24,16 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
-const types = ["Website Design", "Website Redesign", "Ecommerce Website", "Landing Page", "Other"];
+const types = [
+  "Website Design",
+  "Website Redesign",
+  "Ecommerce Website",
+  "Landing Page",
+  "CRM Setup & Automation",
+  "AI Tools & Automation",
+  "Website + CRM + AI",
+  "Other",
+];
 const budgets = [
   "Prefer not to say",
   "Under $1,000",

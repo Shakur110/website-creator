@@ -78,16 +78,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Onjoko Tunde — Website Designer" },
+      { title: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
       {
         name: "description",
-        content: "Independent website designer and digital solutions specialist.",
+        content: "Web designer and CRM and AI automation specialist for growing businesses.",
       },
       { name: "author", content: "Onjoko Tunde" },
-      { property: "og:title", content: "Onjoko Tunde — Website Designer" },
+      { property: "og:title", content: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
       {
         property: "og:description",
-        content: "Independent website designer and digital solutions specialist.",
+        content: "Web designer and CRM and AI automation specialist for growing businesses.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -98,13 +98,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          name: "Onjoko Tunde — Website Designer",
+          name: "Onjoko Tunde — Websites, CRM Automation & AI Tools",
           description:
-            "Freelance website design, redesign, ecommerce and landing pages on WordPress, Elementor and Wix for businesses in the US, UK, Canada and Australia.",
+            "Website design and redesign on WordPress, Elementor and Wix, CRM setup and automation, and AI tools for businesses in the US, UK, Canada and Australia.",
           founder: {
             "@type": "Person",
             name: "Onjoko Tunde",
-            jobTitle: "Website Designer & Digital Solutions Specialist",
+            jobTitle: "Web Designer & CRM and AI Automation Specialist",
           },
           areaServed: ["US", "GB", "CA", "AU"],
           foundingDate: "2021",

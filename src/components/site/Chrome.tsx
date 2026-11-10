@@ -102,8 +102,8 @@ export function SiteFooter() {
         <div className="md:col-span-5">
           <Logo />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Freelance website designer building WordPress, Elementor and Wix websites for businesses
-            in the US, UK, Canada and Australia since 2021.
+            Websites, CRM automation and AI tools for businesses in the US, UK, Canada and
+            Australia. 100+ websites delivered since 2021.
           </p>
         </div>
         <div className="md:col-span-3">
@@ -155,7 +155,7 @@ export function SiteFooter() {
       </div>
       <div className="container-x flex flex-col justify-between gap-2 border-t border-border py-6 text-xs text-muted-foreground md:flex-row">
         <p>© {new Date().getFullYear()} Onjoko Tunde. All rights reserved.</p>
-        <p>Website Designer & Digital Solutions Specialist</p>
+        <p>Web Design · CRM Automation · AI Tools</p>
       </div>
     </footer>
   );

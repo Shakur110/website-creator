@@ -5,17 +5,16 @@ import { portrait, toolGroups } from "@/lib/projects";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Onjoko Tunde, Website Designer" },
+      { title: "About — Onjoko Tunde, Web Designer & Automation Specialist" },
       {
         name: "description",
         content:
-          "Freelance website designer working on independent client projects since 2021, across industries and platforms.",
+          "Freelance web designer and CRM and AI automation specialist. 100+ websites built since 2021 for businesses across many industries.",
       },
       { property: "og:title", content: "About Onjoko Tunde" },
       {
         property: "og:description",
-        content:
-          "A freelance website designer focused on responsive, user-friendly and functional websites.",
+        content: "Websites, CRM automation and AI tools for growing businesses.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -70,16 +69,19 @@ function About() {
             delay={100}
           >
             <p className="display text-4xl text-foreground md:text-5xl">
-              I'm Onjoko Tunde — a freelance website designer and digital solutions professional.
+              I'm Onjoko Tunde. I build websites, CRM automations and AI tools for growing
+              businesses.
             </p>
             <p>
-              Since 2021, I have worked on independent client projects, designing and developing
-              websites for businesses across a range of industries — from healthcare and
-              professional services to education, consulting, construction and specialist trades.
+              Since 2021 I have designed and built more than 100 websites for independent clients
+              across healthcare, professional services, education, consulting, manufacturing,
+              construction and specialist trades.
             </p>
             <p>
-              Along the way I have worked with different website platforms, choosing the right tools
-              for each project rather than forcing every business into the same template.
+              Along the way I saw the same problem again and again: a good website brings in
+              enquiries, but leads get lost in inboxes and follow-up eats hours. So I now also set
+              up CRMs, automated follow-ups and booking, and practical AI tools, so the whole
+              journey from first visit to paying client runs smoothly.
             </p>
             <p>
               Every project starts with listening. I take time to understand what a client needs,

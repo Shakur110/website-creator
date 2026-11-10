@@ -1,21 +1,29 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, LayoutTemplate, RefreshCcw, ShoppingBag, Target } from "lucide-react";
+import {
+  ArrowUpRight,
+  LayoutTemplate,
+  RefreshCcw,
+  ShoppingBag,
+  Target,
+  Bot,
+  Workflow,
+} from "lucide-react";
 import { CtaBand, PageHero, Reveal } from "@/components/site/parts";
 import { services } from "@/lib/projects";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Website Design, Redesign, Ecommerce & Landing Pages" },
+      { title: "Services — Website Design, CRM Automation & AI Tools | Onjoko Tunde" },
       {
         name: "description",
         content:
-          "Website design, website redesign, ecommerce development and landing page design by Onjoko Tunde.",
+          "Website design and redesign, ecommerce, landing pages, CRM setup and automation, and AI tools for growing businesses, by Onjoko Tunde.",
       },
       { property: "og:title", content: "Services — Onjoko Tunde" },
       {
         property: "og:description",
-        content: "Modern, functional and responsive websites for businesses of every size.",
+        content: "Websites, CRM automation and AI tools for growing businesses.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -24,7 +32,7 @@ export const Route = createFileRoute("/services")({
   component: Services,
 });
 
-const icons = [LayoutTemplate, RefreshCcw, ShoppingBag, Target];
+const icons = [LayoutTemplate, RefreshCcw, ShoppingBag, Target, Workflow, Bot];
 
 function Services() {
   return (
@@ -36,7 +44,7 @@ function Services() {
             What I can help you <em>build.</em>
           </>
         }
-        intro="From new website builds to complete redesigns, I create modern, functional, and responsive websites that help businesses communicate their value and connect with their audiences."
+        intro="Websites that win trust, CRM automations that follow up for you, and AI tools that save hours every week. Pick one, or let me connect them all."
       />
       <section className="container-x pb-28 md:pb-32">
         {services.map((s, i) => {

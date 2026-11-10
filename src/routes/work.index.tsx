@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { CtaBand, PageHero, ProjectCard, Reveal } from "@/components/site/parts";
-import { CATEGORIES, projects } from "@/lib/projects";
+import { CATEGORIES, projects, siteStats } from "@/lib/projects";
 
 export const Route = createFileRoute("/work/")({
   head: () => ({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/work/")({
       {
         name: "description",
         content:
-          "Twelve website design and development projects across healthcare, consulting, education, services and more.",
+          "Featured projects from 100+ websites built since 2021 across healthcare, consulting, education, manufacturing, services and more.",
       },
       { property: "og:title", content: "Selected Work — Onjoko Tunde" },
       {
@@ -34,13 +34,13 @@ function Work() {
   return (
     <>
       <PageHero
-        eyebrow={`Portfolio · ${projects.length} projects`}
+        eyebrow={`Portfolio · ${projects.length} featured of ${siteStats.websites} websites`}
         title={
           <>
             Websites I've <em>designed & built.</em>
           </>
         }
-        intro="Websites for clinics, consultancies, service businesses and schools, designed and built since 2021."
+        intro={`A selection from more than 100 websites I've designed and built since 2021. Want examples from your industry? Just ask.`}
       />
       <section className="container-x pb-28 md:pb-32">
         <div role="group" aria-label="Filter projects" className="flex flex-wrap gap-2">

@@ -427,7 +427,45 @@ export const services = [
       "Call-to-action optimization",
     ],
   },
+  {
+    n: "05",
+    title: "CRM Setup & Automation",
+    short:
+      "Connect your website to a CRM so every lead is captured, followed up and tracked automatically.",
+    description:
+      "Stop losing enquiries in your inbox. I set up your CRM, connect it to your website forms and build automations that follow up with leads, remind clients about appointments and keep your pipeline up to date.",
+    includes: [
+      "CRM setup and pipelines",
+      "Website forms connected to your CRM",
+      "Automated follow-up emails and SMS",
+      "Appointment booking and reminders",
+      "Lead tagging and notifications",
+      "Reporting on where leads come from",
+    ],
+  },
+  {
+    n: "06",
+    title: "AI Tools & Workflow Automation",
+    short:
+      "Use AI tools to answer enquiries, create content and take repetitive admin off your plate.",
+    description:
+      "Practical AI for small and growing businesses. I help you choose and set up AI tools that save time every week, from website chat assistants to automated workflows between the apps you already use.",
+    includes: [
+      "AI chat assistants for your website",
+      "AI-assisted content and copywriting",
+      "Automated workflows between your apps",
+      "Lead qualification and routing",
+      "Team training on AI tools",
+      "Ongoing improvements",
+    ],
+  },
 ];
+
+/** Headline numbers shown on the homepage. */
+export const siteStats = {
+  websites: "100+",
+  since: "2021",
+};
 
 export const toolGroups = [
   {
@@ -445,6 +483,19 @@ export const toolGroups = [
       "Website Structure & UX",
     ],
   },
+  {
+    title: "CRM & Automation",
+    items: [
+      "CRM Setup & Pipelines",
+      "Lead Capture & Follow-up",
+      "Email & SMS Automation",
+      "Booking & Reminders",
+    ],
+  },
+  {
+    title: "AI Tools",
+    items: ["AI Chat Assistants", "AI Content Tools", "AI Workflow Automation"],
+  },
 ];
 
 /**
@@ -453,7 +504,7 @@ export const toolGroups = [
  * opens the visitor's email app with their enquiry addressed to you.
  */
 export const contactLinks = {
-  email: "",
+  email: "onjokoshakur@gmail.com",
   linkedin: "",
   fiverr: "",
   whatsapp: "", // full link, e.g. https://wa.me/2348000000000
