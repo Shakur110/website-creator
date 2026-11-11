@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUp, ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { contactLinks } from "@/lib/projects";
@@ -172,5 +172,32 @@ function Logo() {
       </span>
       <span className="text-[15px] font-bold tracking-tight">Onjoko Tunde</span>
     </span>
+  );
+}
+
+/** Phone-only "Let's talk" bar that slides up once the visitor starts scrolling. */
+export function MobileCta() {
+  const [show, setShow] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  useEffect(() => {
+    const on = () => setShow(window.scrollY > 600);
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
+  if (pathname.startsWith("/contact")) return null;
+  return (
+    <div
+      className={`fixed inset-x-3 bottom-3 z-40 transition-all duration-300 md:hidden ${
+        show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
+      }`}
+    >
+      <div className="flex items-center justify-between gap-3 rounded-full border border-border bg-white/95 py-2 pl-5 pr-2 shadow-xl shadow-navy/10 backdrop-blur">
+        <span className="text-sm font-semibold">Have a project in mind?</span>
+        <Link to="/contact" className="btn btn-primary !px-5 !py-2.5">
+          Let's talk
+        </Link>
+      </div>
+    </div>
   );
 }

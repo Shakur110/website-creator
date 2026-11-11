@@ -7,9 +7,11 @@ import {
   Target,
   Bot,
   Workflow,
+  Plus,
 } from "lucide-react";
 import { CtaBand, PageHero, Reveal } from "@/components/site/parts";
 import { services } from "@/lib/projects";
+import { faqs } from "@/lib/faqs";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -27,6 +29,20 @@ export const Route = createFileRoute("/services")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Services,
@@ -86,6 +102,35 @@ function Services() {
             </Reveal>
           );
         })}
+      </section>
+      <section className="bg-surface py-20 md:py-28">
+        <div className="container-x grid gap-12 md:grid-cols-12">
+          <Reveal className="md:col-span-4">
+            <p className="eyebrow">FAQ</p>
+            <h2 className="display mt-4 text-4xl md:text-5xl">
+              Questions clients <em>often ask.</em>
+            </h2>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              Don't see yours? Ask me directly and I'll get back to you.
+            </p>
+            <Link to="/contact" className="btn btn-primary mt-7">
+              Ask a question
+            </Link>
+          </Reveal>
+          <Reveal className="md:col-span-8" delay={80}>
+            <div className="divide-y divide-border rounded-2xl border border-border bg-white">
+              {faqs.map((f) => (
+                <details key={f.q} className="group px-6 py-5 md:px-8">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold [&::-webkit-details-marker]:hidden">
+                    {f.q}
+                    <Plus className="h-5 w-5 shrink-0 text-brand transition-transform duration-300 group-open:rotate-45" />
+                  </summary>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </section>
       <CtaBand />
     </>

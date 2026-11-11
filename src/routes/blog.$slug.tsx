@@ -1,14 +1,28 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { CtaBand } from "@/components/site/parts";
-import { PostBody, PostCard, PostCover, PostMeta } from "@/components/site/blog";
-import { getPost, posts } from "@/lib/posts";
+import {
+  PostBody,
+  PostCard,
+  PostCover,
+  PostMeta,
+  ReadingProgress,
+  ShareButtons,
+  TableOfContents,
+} from "@/components/site/blog";
+import { getPost, publishedPosts } from "@/lib/posts";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
     const post = getPost(params.slug);
     if (!post) throw notFound();
-    return { post, more: posts.filter((p) => p.slug !== post.slug).slice(0, 2) };
+    const others = publishedPosts().filter((p) => p.slug !== post.slug);
+    // Prefer related posts from the same category, then the newest others.
+    const more = [
+      ...others.filter((p) => p.category === post.category),
+      ...others.filter((p) => p.category !== post.category),
+    ].slice(0, 2);
+    return { post, more };
   },
   head: ({ loaderData }) => {
     const post = loaderData?.post;
@@ -59,6 +73,7 @@ function Article() {
   const { post, more } = Route.useLoaderData();
   return (
     <>
+      <ReadingProgress />
       <article>
         <header className="container-x pt-32 md:pt-40">
           <div className="mx-auto max-w-3xl">
@@ -87,7 +102,16 @@ function Article() {
         </header>
         <div className="container-x py-16 md:py-20">
           <div className="mx-auto max-w-[42rem]">
+            <div className="mb-10">
+              <TableOfContents blocks={post.body} />
+            </div>
             <PostBody blocks={post.body} />
+            <div className="mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-border pt-8">
+              <ShareButtons title={post.title} />
+              <Link to="/blog" className="text-sm font-semibold text-brand hover:underline">
+                More articles
+              </Link>
+            </div>
           </div>
         </div>
       </article>

@@ -23,7 +23,7 @@ import {
   siteStats,
   toolGroups,
 } from "@/lib/projects";
-import { posts } from "@/lib/posts";
+import { publishedPosts } from "@/lib/posts";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -76,6 +76,7 @@ function Index() {
   const hero = (featuredProjects.find((p) => p.slug === "thrive-wm") ?? featuredProjects[0])!;
   const grid = featuredProjects.filter((p) => p.slug !== hero.slug).slice(0, 4);
   const platforms = toolGroups[0]?.items ?? [];
+  const latestPosts = publishedPosts().slice(0, 3);
   const stats = [
     [siteStats.websites, "Websites delivered"],
     [siteStats.since, "Freelancing since"],
@@ -169,6 +170,29 @@ function Index() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Live client sites */}
+      <section
+        aria-label="Live client websites"
+        className="marquee overflow-hidden border-b border-border py-6"
+      >
+        <div className="marquee-track flex w-max gap-3">
+          {[...projects, ...projects].map((p, i) => (
+            <a
+              key={`${p.slug}-${i}`}
+              href={p.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              tabIndex={i >= projects.length ? -1 : undefined}
+              aria-hidden={i >= projects.length ? true : undefined}
+              className="chip shrink-0 whitespace-nowrap bg-white transition-colors hover:border-brand hover:text-brand"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+              {p.liveUrl?.replace(/^https?:\/\//, "")}
+            </a>
+          ))}
         </div>
       </section>
 
@@ -292,7 +316,7 @@ function Index() {
       </section>
 
       {/* Blog */}
-      {posts.length > 0 && (
+      {latestPosts.length > 0 && (
         <section className="container-x pb-8">
           <SectionHead
             eyebrow="From the blog"
@@ -303,7 +327,7 @@ function Index() {
             }
           />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {posts.slice(0, 3).map((post, i) => (
+            {latestPosts.map((post, i) => (
               <Reveal key={post.slug} delay={i * 60} className="h-full">
                 <PostCard post={post} />
               </Reveal>

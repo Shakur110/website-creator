@@ -9,6 +9,9 @@
 //   { img: "/blog/photo.webp", alt: "What the image shows", caption: "Optional caption" }
 //
 // `cover` is optional: put an image in public/blog/ and write "/blog/your-image.webp".
+//
+// Scheduling: a post whose `date` is in the future stays hidden until that day.
+// `category` should be one of BLOG_CATEGORIES so the blog's filter can group it.
 
 export type Block =
   | { p: string }
@@ -16,6 +19,15 @@ export type Block =
   | { ul: string[] }
   | { ol: string[] }
   | { img: string; alt: string; caption?: string };
+
+export const BLOG_CATEGORIES = [
+  "Websites",
+  "CRM & Automation",
+  "AI Tools",
+  "Planning",
+  "Platforms",
+  "Redesign",
+] as const;
 
 export interface Post {
   slug: string;
@@ -211,7 +223,13 @@ export const posts: Post[] = [
   },
 ];
 
-export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
+const todayISO = () => new Date().toISOString().slice(0, 10);
+
+/** Posts whose date has arrived, newest first. Use this everywhere on the site. */
+export const publishedPosts = () =>
+  posts.filter((p) => p.date <= todayISO()).sort((a, b) => b.date.localeCompare(a.date));
+
+export const getPost = (slug: string) => publishedPosts().find((p) => p.slug === slug);
 
 /** Rough reading time at ~220 words per minute. */
 export const readingTime = (post: Post) => {

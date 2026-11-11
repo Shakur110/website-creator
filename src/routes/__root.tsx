@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { SiteHeader, SiteFooter } from "../components/site/Chrome";
+import { MobileCta, SiteHeader, SiteFooter } from "../components/site/Chrome";
 
 function NotFoundComponent() {
   return (
@@ -156,6 +156,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <SiteFooter />
+      <MobileCta />
     </QueryClientProvider>
   );
 }
