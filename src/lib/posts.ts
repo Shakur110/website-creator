@@ -43,6 +43,98 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "why-your-website-is-slow-and-what-to-do-about-it",
+    title: "Why your website is slow and what to do about it",
+    excerpt:
+      "Slow pages lose visitors before they read a word. Here are the usual causes, how to check your own site and the fixes worth doing first.",
+    category: "Websites",
+    date: "2026-11-19",
+    body: [
+      {
+        p: "You open your own website on your phone and wait. The logo appears, then a blank space, then the page jumps around as images load. If it feels slow to you, it feels slower to a stranger who has never heard of your business and has three other options in the next tab.",
+      },
+      {
+        p: "The good news is that most slow business websites are slow for the same handful of reasons. You don't need to understand code to find out which ones apply to you, and many of the fixes are simple.",
+      },
+      { h2: "How to check your speed in ten minutes" },
+      {
+        p: "Before changing anything, get a rough picture of where you stand. Free testing tools, for example Google's PageSpeed Insights, will load your page and give you a score plus a list of issues. Run it on your homepage and on one or two of your most important pages, such as a service page or contact page.",
+      },
+      {
+        p: "Don't obsess over the score itself; it varies between tests. What matters is the list of problems underneath it, and how the site feels on a real phone using mobile data rather than your office Wi-Fi.",
+      },
+      {
+        ol: [
+          "Test your homepage and two key pages, on mobile settings.",
+          "Write down the top three issues each test flags.",
+          "Open the site on your own phone away from Wi-Fi and note anything that feels sluggish.",
+        ],
+      },
+      { h2: "Cause 1: images that are far too big" },
+      {
+        p: "This is the most common problem I see, by a long way. A photo straight from a phone or camera can be several megabytes and thousands of pixels wide. Your website might only display it at the size of a postcard, but visitors still download the whole thing.",
+      },
+      {
+        p: "The fix is to resize images to roughly the size they're shown on the page, compress them, and use a modern format such as WebP where your platform supports it. On WordPress, an image optimisation plugin can handle much of this automatically for new and existing images. On Wix and Shopify, the platform does some of the work, but uploading sensibly sized images in the first place still helps.",
+      },
+      { h2: "Cause 2: too many plugins, apps and add-ons" },
+      {
+        p: "Every plugin on a WordPress site, and every app on a Shopify store, can add its own code to your pages. One or two are fine. Twenty, several of which you installed once to try something and forgot about, can add up quickly.",
+      },
+      {
+        p: "Go through your list and ask of each one: do I still use this, and does it need to run on every page? Remove the ones you don't need. Be aware that some leave code behind after you uninstall them, which is worth having someone check if your site still feels heavy afterwards.",
+      },
+      { h2: "Cause 3: hosting that can't keep up" },
+      {
+        p: 'If your site is on WordPress, your hosting matters a lot. The cheapest shared plans put your website on a server with many others, and when those sites get busy, yours slows down. A slow first response from the server, which testing tools often call "server response time", is a common sign.',
+      },
+      {
+        p: "Better hosting doesn't have to mean expensive hosting. A reputable host, for example Hostinger, with caching switched on and a server located reasonably close to your customers usually makes a noticeable difference. Hosted platforms like Shopify and Wix manage this side for you, so if your store or Wix site is slow, the cause is more likely to be in the list above or below.",
+      },
+      { h2: "Cause 4: page builders and heavy themes" },
+      {
+        p: "Page builders such as Elementor are a great way to build and edit a site without code, and I use them often. But they can produce bloated pages if every section is stacked with animations, sliders, background videos and widgets that each load their own files.",
+      },
+      {
+        ul: [
+          "Replace homepage sliders with one strong image and a clear headline.",
+          "Remove background videos unless they really earn their place.",
+          "Cut entrance animations on text and buttons.",
+          "Turn off theme features and builder widgets you don't use, where the settings allow it.",
+        ],
+      },
+      { h2: "Cause 5: third-party scripts" },
+      {
+        p: "Chat widgets, booking tools, social feeds, review badges, tracking pixels and embedded maps all load code from other companies' servers. Each one is a small delay, and you have no control over how fast those servers respond.",
+      },
+      {
+        p: 'Keep the ones that bring you enquiries or that you genuinely rely on for information. For the rest, ask whether a simple link would do the same job. An Instagram feed on the homepage, for example, can often be replaced by a button that says "Follow us on Instagram".',
+      },
+      { h2: "A quick speed checklist" },
+      {
+        ul: [
+          "Resize and compress every large image, and use WebP where you can.",
+          "Delete plugins or apps you no longer use.",
+          "Switch on caching if you're on WordPress.",
+          "Review your hosting if the server response is slow.",
+          "Simplify sliders, videos and animations.",
+          "Remove third-party widgets that don't pay their way.",
+          "Re-test after each change so you know what helped.",
+        ],
+      },
+      {
+        p: "Make one change at a time and test again. That way, if something breaks or a change makes no difference, you know exactly which step to look at. And always take a backup before removing plugins or changing themes.",
+      },
+      { h2: "When to get help" },
+      {
+        p: "If you've worked through the obvious fixes and your site is still slow, the problem is usually deeper: a theme that needs replacing, leftover code from old apps, or a builder layout that needs rebuilding more efficiently. That's the point where an hour of expert time saves you a week of guessing.",
+      },
+      {
+        p: "If you'd like me to look at why your website or Shopify store is slow, or you're thinking about a rebuild anyway, get in touch. I'm happy to take a look and tell you plainly what's worth fixing first.",
+      },
+    ],
+  },
+  {
     slug: "how-to-plan-your-website-pages-before-you-hire-a-designer",
     title: "How to plan your website pages before you hire a designer",
     excerpt:
