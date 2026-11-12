@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { CtaBand, ProjectCard, ProjectImage, Reveal, SectionHead } from "@/components/site/parts";
 import { PostCard } from "@/components/site/blog";
+import { Testimonials } from "@/components/site/testimonials";
 import {
   featuredProjects,
   portrait,
@@ -221,6 +222,8 @@ function Index() {
           </Link>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* Services */}
       <section className="bg-surface py-24 md:py-32">
