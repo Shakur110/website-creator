@@ -9,6 +9,7 @@ import {
   Linkedin,
   MessageCircle,
   RefreshCcw,
+  ShoppingBag,
   Sparkles,
   Twitter,
   Workflow,
@@ -88,6 +89,7 @@ export function PostMeta({ post }: { post: Post }) {
 
 const coverStyle: Record<string, { icon: typeof Globe; from: string }> = {
   "CRM & Automation": { icon: Workflow, from: "from-[#1f8a70]" },
+  Shopify: { icon: ShoppingBag, from: "from-[#4a7c1f]" },
   "AI Tools": { icon: Sparkles, from: "from-[#6d3be0]" },
   Planning: { icon: ClipboardList, from: "from-brand" },
   Platforms: { icon: LayoutTemplate, from: "from-brand" },

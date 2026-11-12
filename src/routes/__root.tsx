@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "ProfessionalService",
           name: "Onjoko Tunde — Websites, CRM Automation & AI Tools",
           description:
-            "Website design and redesign on WordPress, Elementor and Wix, CRM setup and automation, and AI tools for businesses in the US, UK, Canada and Australia.",
+            "Website design and redesign on WordPress, Elementor, Shopify and Wix, Shopify store help, CRM setup and automation, and AI tools for businesses in the US, UK, Canada and Australia.",
           founder: {
             "@type": "Person",
             name: "Onjoko Tunde",

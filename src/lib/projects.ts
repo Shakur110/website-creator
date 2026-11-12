@@ -397,18 +397,19 @@ export const services = [
   },
   {
     n: "03",
-    title: "Ecommerce Website Development",
+    title: "Shopify & Ecommerce Stores",
     short:
-      "Functional ecommerce experiences that make it easier to present and sell products online.",
+      "Shopify stores that look premium, load fast and turn browsers into buyers, plus WooCommerce on WordPress.",
     description:
-      "Create well-structured online stores that make it easier for businesses to showcase products, organize their catalogues, and provide a smooth shopping experience.",
+      "New Shopify store, a redesign, or help with the one you have. I set up and customise Shopify themes, organise products and collections, connect the right apps for reviews, email capture and subscriptions, and clean up slow stores. For WordPress sites I build with WooCommerce.",
     includes: [
-      "Ecommerce website design",
-      "Product presentation",
-      "Category organization",
-      "Shopping experience",
-      "Store functionality",
-      "Responsive layouts",
+      "Shopify store setup and theme design",
+      "Theme customisation and store redesign",
+      "Products, collections and checkout setup",
+      "Reviews, email capture and subscription apps",
+      "Speed improvements and app clean-up",
+      "Moving your store to Shopify",
+      "WooCommerce stores on WordPress",
     ],
   },
   {
@@ -470,7 +471,7 @@ export const siteStats = {
 export const toolGroups = [
   {
     title: "Website Platforms",
-    items: ["WordPress", "Elementor", "Wix", "Hostinger", "WooCommerce"],
+    items: ["WordPress", "Elementor", "Shopify", "Wix", "WooCommerce", "Hostinger"],
   },
   {
     title: "Design & Development",

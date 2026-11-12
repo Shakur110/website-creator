@@ -12,7 +12,7 @@ written; edit it in `src/lib/posts.ts` instead.
 Going live: Lovable publishes snapshots. Click Publish → Update in Lovable at least once a week so the
 live site holds the next week's articles.
 
-Pillars: Websites · CRM & Automation · AI Tools (plus Planning, Platforms, Redesign).
+Pillars: Websites · Shopify · CRM & Automation · AI Tools (plus Planning, Platforms, Redesign).
 
 | Date       | Category         | Title                                                                     | Angle                                                                                               | Status    |
 | ---------- | ---------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------- |
@@ -24,29 +24,35 @@ Pillars: Websites · CRM & Automation · AI Tools (plus Planning, Platforms, Red
 | 2026-11-17 | AI Tools         | Should you add an AI chat assistant to your website?                      | When it helps, when it annoys, what it should and shouldn't answer, handing off to a human.         | scheduled |
 | 2026-11-18 | Planning         | How to plan your website pages before you hire a designer                 | Sitemap basics, one goal per page, common page lists by business type.                              | scheduled |
 | 2026-11-19 | Websites         | Why your website is slow and what to do about it                          | Images, plugins, hosting, too many scripts; quick checks with free tools.                           | planned   |
-| 2026-11-20 | CRM & Automation | Appointment reminders: the simple automation that cuts no-shows           | Email/SMS reminder timing, confirmation links, rescheduling.                                        | planned   |
-| 2026-11-21 | AI Tools         | How to use AI to write website content without sounding like a robot      | Give it facts, your voice, examples; edit for specifics; what not to outsource.                     | planned   |
-| 2026-11-22 | Websites         | Mobile-first design: what it means for your business website              | Thumb-friendly buttons, readable text, tap-to-call, test on your own phone.                         | planned   |
-| 2026-11-23 | CRM & Automation | Connecting your website forms to a CRM: a beginner's guide                | Form fields that matter, tagging lead source, notifications, avoiding duplicates.                   | planned   |
-| 2026-11-24 | Platforms        | WordPress maintenance: what needs doing every month                       | Updates, backups, security, uptime, form tests; DIY vs care plan.                                   | planned   |
-| 2026-11-25 | AI Tools         | AI tools and customer data: what small businesses should be careful about | Don't paste sensitive data, check settings, keep a human in the loop.                               | planned   |
-| 2026-11-26 | Websites         | Trust signals: how to make visitors believe you before they call          | Reviews, real photos, credentials, clear contact details, case studies.                             | planned   |
-| 2026-11-27 | CRM & Automation | Building a simple sales pipeline in your CRM                              | Stages from new lead to won, what moves a deal, weekly review habit.                                | planned   |
-| 2026-11-28 | Redesign         | Website redesign vs refresh: which one do you actually need?              | Signs for each, what a refresh covers, budget/time differences in general terms.                    | planned   |
-| 2026-11-29 | AI Tools         | Using AI to save hours on admin: workflows worth automating               | Email triage, invoice reminders, data entry between apps, meeting summaries.                        | planned   |
-| 2026-11-30 | Websites         | Calls to action that work: where to put them and what to say              | Primary vs secondary CTA, specific wording, repeating CTAs down the page.                           | planned   |
-| 2026-12-01 | CRM & Automation | Email automation sequences every service business should have             | Welcome, enquiry follow-up, post-service review request, re-engagement.                             | planned   |
-| 2026-12-02 | Planning         | How to prepare content and photos for your new website                    | Writing about your services, photo checklist, gathering reviews.                                    | planned   |
-| 2026-12-03 | Websites         | Landing pages vs homepages: when you need a separate page                 | Ads and campaigns, one offer, removing distractions.                                                | planned   |
-| 2026-12-04 | AI Tools         | Writing better prompts for business tasks: a simple framework             | Role, task, context, examples, format; reusable templates.                                          | planned   |
-| 2026-12-05 | CRM & Automation | How to ask for reviews automatically after every job                      | Timing, short message, direct link, follow-up once.                                                 | planned   |
-| 2026-12-06 | Websites         | Local SEO basics for service businesses                                   | Google Business Profile, consistent NAP, location pages, reviews.                                   | planned   |
-| 2026-12-07 | Platforms        | Wix or WordPress for a growing business: when to switch                   | Signs you've outgrown a builder, what moving involves.                                              | planned   |
-| 2026-12-08 | AI Tools         | AI lead qualification: answering 'is this a good fit?' faster             | Form questions, scoring, routing, keeping it fair and human.                                        | planned   |
-| 2026-12-09 | Websites         | Accessibility basics every business website should get right              | Contrast, alt text, headings, keyboard use, readable forms.                                         | planned   |
-| 2026-12-10 | CRM & Automation | Website + CRM + AI: what a joined-up lead journey looks like              | Visitor → form → CRM → automated follow-up → booked call, step by step.                             | planned   |
-| 2026-12-11 | Planning         | Questions to ask before hiring a web designer                             | Platform, ownership, timeline, revisions, support, examples in your industry.                       | planned   |
+| 2026-11-20 | Shopify          | Is Shopify right for your business? A plain-English guide                 | Who Shopify suits, what it costs to run in general terms, alternatives like WooCommerce and Wix.    | planned   |
+| 2026-11-21 | CRM & Automation | Appointment reminders: the simple automation that cuts no-shows           | Email/SMS reminder timing, confirmation links, rescheduling.                                        | planned   |
+| 2026-11-22 | AI Tools         | How to use AI to write website content without sounding like a robot      | Give it facts, your voice, examples; edit for specifics; what not to outsource.                     | planned   |
+| 2026-11-23 | Websites         | Mobile-first design: what it means for your business website              | Thumb-friendly buttons, readable text, tap-to-call, test on your own phone.                         | planned   |
+| 2026-11-24 | CRM & Automation | Connecting your website forms to a CRM: a beginner's guide                | Form fields that matter, tagging lead source, notifications, avoiding duplicates.                   | planned   |
+| 2026-11-25 | Shopify          | 7 Shopify store fixes that can lift sales without a redesign              | Homepage clarity, product photos, reviews, shipping info, trust badges, email capture, speed.       | planned   |
+| 2026-11-26 | Platforms        | WordPress maintenance: what needs doing every month                       | Updates, backups, security, uptime, form tests; DIY vs care plan.                                   | planned   |
+| 2026-11-27 | AI Tools         | AI tools and customer data: what small businesses should be careful about | Don't paste sensitive data, check settings, keep a human in the loop.                               | planned   |
+| 2026-11-28 | Websites         | Trust signals: how to make visitors believe you before they call          | Reviews, real photos, credentials, clear contact details, case studies.                             | planned   |
+| 2026-11-29 | CRM & Automation | Building a simple sales pipeline in your CRM                              | Stages from new lead to won, what moves a deal, weekly review habit.                                | planned   |
+| 2026-11-30 | Shopify          | Why your Shopify store is slow (and the apps behind it)                   | How apps add code, auditing installed apps, removing leftovers, image sizes, theme choice.          | planned   |
+| 2026-12-01 | Redesign         | Website redesign vs refresh: which one do you actually need?              | Signs for each, what a refresh covers, budget/time differences in general terms.                    | planned   |
+| 2026-12-02 | AI Tools         | Using AI to save hours on admin: workflows worth automating               | Email triage, invoice reminders, data entry between apps, meeting summaries.                        | planned   |
+| 2026-12-03 | Websites         | Calls to action that work: where to put them and what to say              | Primary vs secondary CTA, specific wording, repeating CTAs down the page.                           | planned   |
+| 2026-12-04 | CRM & Automation | Email automation sequences every service business should have             | Welcome, enquiry follow-up, post-service review request, re-engagement.                             | planned   |
+| 2026-12-05 | Shopify          | Email capture on Shopify: turning visitors into subscribers               | Pop-up timing, offers, welcome flow, connecting to an email platform.                               | planned   |
+| 2026-12-06 | Planning         | How to prepare content and photos for your new website                    | Writing about your services, photo checklist, gathering reviews.                                    | planned   |
+| 2026-12-07 | Websites         | Landing pages vs homepages: when you need a separate page                 | Ads and campaigns, one offer, removing distractions.                                                | planned   |
+| 2026-12-08 | AI Tools         | Writing better prompts for business tasks: a simple framework             | Role, task, context, examples, format; reusable templates.                                          | planned   |
+| 2026-12-09 | CRM & Automation | How to ask for reviews automatically after every job                      | Timing, short message, direct link, follow-up once.                                                 | planned   |
+| 2026-12-10 | Shopify          | Moving to Shopify from another platform: what to plan for                 | Products, customers, orders, redirects, SEO, testing before launch.                                 | planned   |
+| 2026-12-11 | Websites         | Local SEO basics for service businesses                                   | Google Business Profile, consistent NAP, location pages, reviews.                                   | planned   |
+| 2026-12-12 | Platforms        | Wix or WordPress for a growing business: when to switch                   | Signs you've outgrown a builder, what moving involves.                                              | planned   |
+| 2026-12-13 | AI Tools         | AI lead qualification: answering 'is this a good fit?' faster             | Form questions, scoring, routing, keeping it fair and human.                                        | planned   |
+| 2026-12-14 | Websites         | Accessibility basics every business website should get right              | Contrast, alt text, headings, keyboard use, readable forms.                                         | planned   |
+| 2026-12-15 | Shopify          | Subscriptions on Shopify: when repeat orders make sense                   | Consumable products, subscribe-and-save, apps, customer portal.                                     | planned   |
+| 2026-12-16 | CRM & Automation | Website + CRM + AI: what a joined-up lead journey looks like              | Visitor → form → CRM → automated follow-up → booked call, step by step.                             | planned   |
+| 2026-12-17 | Planning         | Questions to ask before hiring a web designer                             | Platform, ownership, timeline, revisions, support, examples in your industry.                       | planned   |
 
 ## When the list runs out
 
-Add 30 new rows in the same format, rotating through the three pillars, before writing the next article.
+Add 30 new rows in the same format, rotating through the four pillars, before writing the next article.

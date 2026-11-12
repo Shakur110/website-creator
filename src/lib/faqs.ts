@@ -7,6 +7,10 @@ export const faqs: { q: string; a: string }[] = [
     a: "It depends on what your business needs. I build on WordPress (often with Elementor), Wix and other builders, and I'll recommend one based on your goals, budget and who will update the site.",
   },
   {
+    q: "Do you help with Shopify stores?",
+    a: "Yes. I build new Shopify stores, redesign and customise existing themes, set up products, collections and apps such as reviews, email capture and subscriptions, and speed up stores slowed down by too many apps.",
+  },
+  {
     q: "Do I own my website when it's finished?",
     a: "Yes. The website, its content and the accounts it runs on are set up in your name, and I hand everything over at launch.",
   },

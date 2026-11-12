@@ -22,6 +22,7 @@ export type Block =
 
 export const BLOG_CATEGORIES = [
   "Websites",
+  "Shopify",
   "CRM & Automation",
   "AI Tools",
   "Planning",

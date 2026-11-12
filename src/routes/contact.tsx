@@ -27,6 +27,7 @@ export const Route = createFileRoute("/contact")({
 const types = [
   "Website Design",
   "Website Redesign",
+  "Shopify Store",
   "Ecommerce Website",
   "Landing Page",
   "CRM Setup & Automation",

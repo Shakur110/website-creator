@@ -16,11 +16,11 @@ import { faqs } from "@/lib/faqs";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Website Design, CRM Automation & AI Tools | Onjoko Tunde" },
+      { title: "Services — Websites, Shopify, CRM Automation & AI Tools | Onjoko Tunde" },
       {
         name: "description",
         content:
-          "Website design and redesign, ecommerce, landing pages, CRM setup and automation, and AI tools for growing businesses, by Onjoko Tunde.",
+          "Website design and redesign, Shopify stores and ecommerce, landing pages, CRM setup and automation, and AI tools for growing businesses, by Onjoko Tunde.",
       },
       { property: "og:title", content: "Services — Onjoko Tunde" },
       {

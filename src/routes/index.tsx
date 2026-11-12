@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "100+ websites since 2021. I build WordPress, Elementor and Wix websites and connect them to CRM automations and AI tools for businesses in the US, UK, Canada and Australia.",
+          "100+ websites since 2021. I build WordPress, Elementor, Shopify and Wix websites and connect them to CRM automations and AI tools for businesses in the US, UK, Canada and Australia.",
       },
       { property: "og:title", content: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
       {
@@ -108,7 +108,7 @@ function Index() {
               className="animate-rise mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground"
               style={{ animationDelay: "160ms" }}
             >
-              I design and build WordPress, Elementor and Wix websites, then connect them to CRM
+              I design and build WordPress, Shopify and Wix websites, then connect them to CRM
               automations and AI tools so every lead is captured, followed up and booked. For
               businesses in the US, UK, Canada and Australia.
             </p>
