@@ -96,6 +96,7 @@ function Contact() {
       ["Email", contactLinks.email, contactLinks.email ? `mailto:${contactLinks.email}` : ""],
       ["Book a call", "Schedule 20 minutes", contactLinks.calendly],
       ["WhatsApp", "Message me", contactLinks.whatsapp],
+      ["Phone", "+234 813 115 5547", contactLinks.phone ? `tel:${contactLinks.phone}` : ""],
       ["LinkedIn", "View profile", contactLinks.linkedin],
       ["Fiverr", "View reviews", contactLinks.fiverr],
     ] as const

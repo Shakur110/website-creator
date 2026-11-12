@@ -95,6 +95,7 @@ export function SiteFooter() {
     { label: "LinkedIn", href: contactLinks.linkedin },
     { label: "Fiverr", href: contactLinks.fiverr },
     { label: "WhatsApp", href: contactLinks.whatsapp },
+    { label: "+234 813 115 5547", href: contactLinks.phone ? `tel:${contactLinks.phone}` : "" },
   ].filter((s) => s.href);
   return (
     <footer className="border-t border-border bg-surface">

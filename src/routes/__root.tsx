@@ -107,6 +107,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             jobTitle: "Web Designer & CRM and AI Automation Specialist",
           },
           areaServed: ["US", "GB", "CA", "AU"],
+          telephone: "+2348131155547",
+          email: "onjokoshakur@gmail.com",
           foundingDate: "2021",
         }),
       },

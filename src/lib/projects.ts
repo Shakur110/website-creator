@@ -508,7 +508,8 @@ export const contactLinks = {
   email: "onjokoshakur@gmail.com",
   linkedin: "",
   fiverr: "",
-  whatsapp: "", // full link, e.g. https://wa.me/2348000000000
+  phone: "+2348131155547",
+  whatsapp: "https://wa.me/2348131155547",
   calendly: "", // booking link, e.g. https://calendly.com/yourname/intro
 };
 
