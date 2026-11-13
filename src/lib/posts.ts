@@ -43,6 +43,109 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "is-shopify-right-for-your-business",
+    title: "Is Shopify right for your business? A plain-English guide",
+    excerpt:
+      "Who Shopify suits, what running a store on it involves, and when WooCommerce or Wix might be the better fit for what you sell.",
+    category: "Shopify",
+    date: "2026-11-20",
+    body: [
+      {
+        p: "You want to sell online, and everyone seems to say \"just use Shopify\". But you're not sure whether it fits a business like yours, what it actually takes to run, or whether you'd be better off adding a shop to the website you already have.",
+      },
+      {
+        p: "I build and improve Shopify stores, and I also build shops on WooCommerce and Wix. So here is how I talk clients through the decision, without the jargon.",
+      },
+      { h2: "What Shopify actually is" },
+      {
+        p: "Shopify is a hosted platform built for selling. You pay a monthly subscription, and in return Shopify looks after the hosting, security, checkout and the technical plumbing. You choose a theme, add your products, connect payments and shipping, and you have a working store.",
+      },
+      {
+        p: "The key word is **hosted**. You don't install anything, update software or worry about your server going down on a busy day. That is the main reason people choose it, and it's a good reason.",
+      },
+      { h2: "Who Shopify suits best" },
+      { p: "In my experience, Shopify is a strong fit when:" },
+      {
+        ul: [
+          "Selling products is the main thing your business does, not a side feature.",
+          "You have more than a handful of products, or plan to grow the range.",
+          "You want a reliable checkout without managing technical updates yourself.",
+          "You ship physical products and need stock, orders and shipping in one place.",
+          "You want to sell in more than one place, such as your website and social media.",
+          "You'd rather spend your time on products and marketing than on maintenance.",
+        ],
+      },
+      {
+        p: "A clothing brand, a skincare line, a speciality food business or a homeware shop are all classic Shopify businesses. The platform is designed around their day-to-day: adding products, processing orders, running offers and following up with customers.",
+      },
+      { h2: "When something else might be better" },
+      {
+        p: "Shopify isn't the right answer for everyone. These are the situations where I often suggest looking elsewhere:",
+      },
+      {
+        ul: [
+          "**You mainly sell services.** If you're a cleaner, consultant or coach who sells the odd package or gift voucher, a booking tool or a simple payment option on your existing site is usually enough.",
+          "**You already have a WordPress site you love.** WooCommerce adds a shop to WordPress, so your content, blog and store live together. It's flexible, but you take on more of the maintenance.",
+          "**You sell a few items and want everything in one simple builder.** Wix has built-in selling that works well for small ranges, and it keeps things in one familiar place.",
+          "**Your products need very unusual setups.** Complex custom quotes or highly bespoke ordering can be done on Shopify, but it may need extra apps or development, so it's worth checking first.",
+        ],
+      },
+      { h2: "What running a Shopify store really involves" },
+      {
+        p: "Shopify removes the technical upkeep, but it doesn't run the shop for you. Before you commit, it helps to know where your time will actually go.",
+      },
+      {
+        ul: [
+          "**Product content:** clear photos, honest descriptions, sizes, materials and prices for every item.",
+          "**Orders and shipping:** packing, sending, tracking and handling returns.",
+          "**Apps:** extra features such as reviews or email marketing usually come from apps, and some have their own monthly costs.",
+          "**Marketing:** a store doesn't bring visitors by itself. Email, social media and search all need ongoing effort.",
+          "**Customer questions:** delivery times, sizing and refunds will land in your inbox.",
+        ],
+      },
+      {
+        p: "On cost, I'd think in terms of three parts: the Shopify subscription, payment processing on each sale, and any paid apps or a premium theme. Check Shopify's own pricing page for current plans, and add up the apps you'll need before you decide. Paid apps are often the cost people forget.",
+      },
+      { h2: "A quick checklist to help you decide" },
+      {
+        p: "Answer these honestly. The more you say yes to, the better Shopify is likely to suit you.",
+      },
+      {
+        ol: [
+          "Is selling products the main way your business makes money?",
+          "Do you expect to sell more than ten or so products within the next year?",
+          "Would you rather pay a monthly fee than handle updates and security yourself?",
+          "Do you need stock tracking, shipping rates and order management in one place?",
+          "Do you want to sell on social media or in person as well as on your website?",
+          "Are you happy for your store to be separate from any existing website, or to move your whole site to Shopify?",
+        ],
+      },
+      {
+        p: "If you said yes to most of these, Shopify is probably a good home. If you said no to the first two, start by looking at a simpler option on the platform you already use.",
+      },
+      { h2: "Mistakes I see when people start on Shopify" },
+      {
+        ul: [
+          "Installing lots of apps in the first week, then forgetting what each one does. Every app can slow the store down and add a bill.",
+          "Picking a theme because the demo looks beautiful, then filling it with photos that don't match the style.",
+          "Leaving shipping costs, delivery times and returns vague. Unclear policies are one of the most common reasons people leave at checkout.",
+          "Launching without placing a few test orders on a phone to check the whole journey.",
+          "Treating the store as finished on launch day instead of improving it month by month.",
+        ],
+      },
+      { h2: "My honest take" },
+      {
+        p: "For a business whose main job is selling physical products, Shopify is usually the most practical choice. It lets you focus on what you sell rather than on keeping a website running. For service businesses, or for people who only sell a few things, it can be more platform than you need.",
+      },
+      {
+        p: "The right choice depends on what you sell, how you want to grow and how much you want to manage yourself. A short conversation before you start can save you from moving platforms a year later.",
+      },
+      {
+        p: "If you're weighing up Shopify, or you already have a store that isn't selling the way you hoped, feel free to get in touch. I'm happy to look at your situation and help you work out the right setup, whether that's a new Shopify store, improvements to your current one, or a CRM and automations to follow up with customers.",
+      },
+    ],
+  },
+  {
     slug: "why-your-website-is-slow-and-what-to-do-about-it",
     title: "Why your website is slow and what to do about it",
     excerpt:
