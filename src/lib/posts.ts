@@ -43,6 +43,109 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "appointment-reminders-cut-no-shows",
+    title: "Appointment reminders: the simple automation that cuts no-shows",
+    excerpt:
+      "How to set up email and text reminders that people actually act on: when to send them, what to say, and how to make rescheduling easy.",
+    category: "CRM & Automation",
+    date: "2026-11-21",
+    body: [
+      {
+        p: "You block out an hour for a client, prepare for it, and they simply don't turn up. No call, no message. When it happens once it's annoying. When it happens every week, it's lost income and a calendar slot someone else could have used.",
+      },
+      {
+        p: "Most no-shows aren't rude. People forget, mix up the time, or mean to cancel and never get round to it. A well-timed reminder deals with all three, and it's one of the easiest automations a service business can set up.",
+      },
+      { h2: "Why a reminder works better than you'd think" },
+      {
+        p: "When someone books with you, the appointment feels important. A week later it's one item among dozens in their head. A reminder brings it back to the front at the moment they can still do something about it.",
+      },
+      {
+        p: 'Just as useful: a reminder gives people an easy way to say "I can\'t make it". A cancellation two days ahead is far better than an empty chair, because you can offer that slot to someone else.',
+      },
+      { h2: "When to send reminders" },
+      {
+        p: "There's no single perfect schedule, but this is the pattern I set up for most clients and then adjust once we see how their customers respond:",
+      },
+      {
+        ul: [
+          "**Straight after booking:** a confirmation with the date, time, location or video link, and what to bring or prepare.",
+          "**Two or three days before:** a reminder with a clear link to confirm, reschedule or cancel.",
+          "**The day before, or a few hours before:** a short text with the time and address. This is the one that catches people who simply forgot.",
+        ],
+      },
+      {
+        p: "For appointments booked weeks in advance, add one more reminder about a week out. For same-week bookings, the confirmation and the day-before message are usually enough. More than three or four messages for one appointment starts to feel like nagging.",
+      },
+      { h2: "Email or text?" },
+      {
+        p: "Use both, for different jobs. Email is good for the confirmation, because it can hold the details: directions, parking, forms to fill in, your cancellation policy. Text messages are better for the final nudge, because people tend to read them quickly and they don't get lost in a busy inbox.",
+      },
+      {
+        p: "Always ask for permission to send texts when people book, and give them a simple way to opt out. Rules on marketing and messaging differ between the US, UK, Canada and Australia, so keep reminders strictly about the appointment and check what applies where your customers are.",
+      },
+      { h2: "What a good reminder says" },
+      {
+        p: "Keep it short and make the next step obvious. A reminder that someone has to read twice gets ignored. Every message should include:",
+      },
+      {
+        ul: [
+          "Your business name, so they know who it's from straight away.",
+          'The day, date and time, written out plainly ("Tuesday 3 March at 2:30pm"), with the time zone if you work with clients online.',
+          "Where it is: the address, or the video link for online meetings.",
+          "One link to confirm, reschedule or cancel.",
+          "Anything they need to bring or do beforehand, in one line.",
+        ],
+      },
+      {
+        p: 'Write it the way you\'d speak to a client. "Hi Sarah, just a reminder that your consultation with us is tomorrow at 10am" works better than a block of formal text.',
+      },
+      { h2: "Make rescheduling easy, not awkward" },
+      {
+        p: "This is the part many businesses skip. If changing an appointment means phoning during office hours, a lot of people will put it off and then not show up. If it's one click to pick a new time, they'll do it.",
+      },
+      {
+        p: "Most online booking tools let customers reschedule or cancel themselves, within limits you set, such as no changes less than 24 hours before. Link that page in every reminder. You'll get more cancellations, but they arrive in time to be useful, and that's the point.",
+      },
+      { h2: "How to set it up" },
+      {
+        p: "You don't need anything complicated. Here are the steps I follow:",
+      },
+      {
+        ol: [
+          "Check what you already have. Many booking tools and CRMs, for example HubSpot or Zoho, include reminder features you may not have switched on.",
+          "Make sure bookings land in one place: a booking page on your website connected to your calendar and your CRM.",
+          "Collect a mobile number and email address at booking, with consent for appointment texts.",
+          "Write your confirmation and two reminder messages, using the checklist above.",
+          "Set the timing for each message, and add a link to reschedule or cancel.",
+          "Book a test appointment yourself and check every message arrives correctly on your phone and in your inbox.",
+          "After a month, look at your no-shows and late cancellations, and adjust the timing or wording if needed.",
+        ],
+      },
+      { h2: "Going a step further" },
+      {
+        p: 'Once the basics work, a few small additions can help. When someone cancels, your system can alert you, or notify a waiting list, so the slot gets filled. When someone does miss an appointment, an automatic "Sorry we missed you, would you like to rebook?" message often brings them back without you having to chase.',
+      },
+      {
+        p: "And after the appointment, a short thank-you message is a natural moment to ask for a review or suggest the next booking. Keep each step simple; you can always add more later.",
+      },
+      { h2: "A quick reminder checklist" },
+      {
+        ul: [
+          "Confirmation sent immediately after booking",
+          "A reminder two or three days before, with a reschedule link",
+          "A short text the day before or a few hours before",
+          "Every message includes who, when, where and one clear link",
+          "Text consent collected and opt-out working",
+          "Tested end to end with a real booking",
+        ],
+      },
+      {
+        p: "If you'd like help setting up booking and reminders on your website, or connecting them to your CRM so nothing slips through, get in touch. I'm happy to look at what you have now and suggest the simplest way to cut down on empty slots.",
+      },
+    ],
+  },
+  {
     slug: "is-shopify-right-for-your-business",
     title: "Is Shopify right for your business? A plain-English guide",
     excerpt:
