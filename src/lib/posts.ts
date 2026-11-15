@@ -43,6 +43,98 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "use-ai-to-write-website-content-without-sounding-like-a-robot",
+    title: "How to use AI to write website content without sounding like a robot",
+    excerpt:
+      "AI can speed up your website copy, but only if you feed it real facts and your own voice, then edit hard. Here's the process I use.",
+    category: "AI Tools",
+    date: "2026-11-22",
+    body: [
+      {
+        p: 'You know you need better words on your website, so you ask an AI tool to write your About page. It comes back in seconds, and it sounds like every other business on the internet: "passionate", "dedicated", "tailored solutions". You could swap your name for a competitor\'s and nobody would notice.',
+      },
+      {
+        p: "The problem isn't the tool. It's what we give it. AI writes generic copy when it gets generic input. Give it your real facts, your real customers and your real way of speaking, and it becomes a genuinely useful writing partner.",
+      },
+      { h2: "Why AI copy sounds the same" },
+      {
+        p: "AI writing tools are trained on huge amounts of text, so when you ask a vague question they give you the most average answer. \"Write a homepage for a cleaning company\" produces the average cleaning company homepage. That's exactly what you don't want, because your website's job is to show why you are not average.",
+      },
+      {
+        p: "The fix is simple to describe and takes a little effort to do: put more of your business into the prompt than you expect the AI to put into the answer.",
+      },
+      { h2: "Step 1: Give it facts it can't guess" },
+      {
+        p: "Before I ask an AI tool to draft anything for a client, I collect the raw material first. This is the part that makes the difference, and it's the part only you can provide:",
+      },
+      {
+        ul: [
+          "What you actually do, in plain words, and what you don't do.",
+          "Who your customers are, where they are, and what problem they had when they found you.",
+          "The questions people ask you most often on the phone or by email.",
+          "What makes you different: how you work, how quickly you respond, what's included.",
+          "Words and phrases your customers use when they describe you.",
+        ],
+      },
+      {
+        p: "Paste all of that into the conversation first. Then ask for the page. You'll notice the draft immediately gets more specific, because it finally has something specific to work with.",
+      },
+      { h2: "Step 2: Show it your voice" },
+      {
+        p: "If you want copy that sounds like you, give the tool examples of you. A few emails you've sent to customers, a social post you were happy with, or even a voice note you've transcribed. Then tell it plainly: \"Write in this tone. Short sentences. No buzzwords.\"",
+      },
+      {
+        p: 'It also helps to give it a short list of words to avoid. Mine usually includes things like "cutting-edge", "seamless", "elevate" and "one-stop shop". Banning a handful of tired phrases does a surprising amount of work.',
+      },
+      { h2: "Step 3: Ask for options, not a finished page" },
+      {
+        p: "Rather than asking for a whole page in one go, I ask for pieces. Five possible headlines. Three ways to open the About section. A short and a long version of a service description. Then I pick the best parts and combine them.",
+      },
+      {
+        p: "This keeps you in charge. You're choosing and shaping, not just accepting whatever comes out first.",
+      },
+      { h2: "Step 4: Edit for specifics and truth" },
+      {
+        p: "This is the step people skip, and it's the one that matters most. Read every line and ask two questions: is this true, and could a competitor say exactly the same thing?",
+      },
+      {
+        p: "AI tools can confidently add things that aren't true, like years of experience you don't have, guarantees you don't offer or awards you never won. Anything like that has to go. And any sentence that could belong to anyone should either be made specific or cut.",
+      },
+      {
+        p: 'For example, "We provide excellent customer service" says nothing. "We reply to every enquiry the same working day" says something, but only if it\'s true.',
+      },
+      { h2: "What I don't hand over to AI" },
+      {
+        p: "Some parts of a website are too important to outsource completely. I always write or heavily rewrite these by hand with the business owner:",
+      },
+      {
+        ul: [
+          "**Prices, policies and guarantees.** These need to be exact and checked.",
+          "**Customer stories and reviews.** Only real ones, in the customer's own words.",
+          "**Your About story.** AI can tidy it up, but the story itself has to come from you.",
+          "**Anything legal or medical.** Get a qualified person to check it.",
+        ],
+      },
+      { h2: "A quick checklist before you publish" },
+      {
+        ol: [
+          "Read it out loud. If you wouldn't say it to a customer, rewrite it.",
+          "Check every fact, number and claim against reality.",
+          "Cut any sentence a competitor could copy word for word.",
+          "Make sure each page has one clear next step, like calling, booking or getting a quote.",
+          "Ask someone who knows your business to read it and tell you if it sounds like you.",
+        ],
+      },
+      { h2: "AI is the first draft, not the last word" },
+      {
+        p: "Used this way, AI saves real time. It gets you past the blank page, gives you options you might not have thought of, and helps tidy up your own rough notes. But the facts, the voice and the final edit still need a human who knows the business.",
+      },
+      {
+        p: "If you'd like help writing or refreshing the content on your website, setting up your Shopify store, or putting practical AI tools and automations to work in your business, get in touch. I'm happy to look at what you have and suggest where to start.",
+      },
+    ],
+  },
+  {
     slug: "appointment-reminders-cut-no-shows",
     title: "Appointment reminders: the simple automation that cuts no-shows",
     excerpt:
