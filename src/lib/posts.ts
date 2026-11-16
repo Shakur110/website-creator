@@ -43,6 +43,93 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "mobile-first-design-what-it-means-for-your-business-website",
+    title: "Mobile-first design: what it means for your business website",
+    excerpt:
+      "Many of your visitors meet your business on a phone. Here's what mobile-first design means in practice and how to check your own site in ten minutes.",
+    category: "Websites",
+    date: "2026-11-23",
+    body: [
+      {
+        p: "You've probably only ever looked at your website properly on a laptop. It looks fine there. But a lot of your customers find you on a phone, often standing in a queue or sitting in a car, with one thumb and a few spare seconds.",
+      },
+      {
+        p: "If your site makes them pinch, zoom and hunt for your phone number, many of them simply go back to the search results and tap the next business. Mobile-first design is about making sure that doesn't happen.",
+      },
+      { h2: 'What "mobile-first" actually means' },
+      {
+        p: "Mobile-first is a way of planning a website. Instead of designing the big desktop version and then squeezing it onto a small screen, you start with the phone. You decide what someone on a phone needs most, put that first, and then add extra room and detail for larger screens.",
+      },
+      {
+        p: "It's not the same as having a site that \"works on mobile\". Most modern themes on WordPress, Shopify, Wix and other platforms are responsive, which means the layout rearranges itself to fit the screen. That's a good start, but a layout that technically fits can still be awkward to use. Mobile-first means thinking about how the page **feels** on a phone, not just whether it fits.",
+      },
+      { h2: "Why it matters for a small business" },
+      {
+        p: "When I review sites for clients, the phone version is usually where the biggest problems hide. The owner checked the desktop version carefully, and the mobile version was left to the theme. Common things I see:",
+      },
+      {
+        ul: [
+          "The phone number is shown as plain text, so it can't be tapped to call.",
+          "The menu opens into a long list that pushes everything else off the screen.",
+          "A large image or slider fills the first screen, so the visitor has to scroll before learning what the business does.",
+          "Buttons are small and placed close together, so people tap the wrong one.",
+          "Forms ask for too much, and typing on a phone keyboard makes every extra field feel twice as long.",
+          "Pop-ups cover the whole screen with a close button that's hard to find.",
+        ],
+      },
+      {
+        p: "None of these break the site. They just add friction, and on a phone, friction is what makes people give up.",
+      },
+      { h2: "The essentials of a phone-friendly business site" },
+      {
+        p: "Here's what I aim for on every site I build or improve, whether it's a service business on WordPress or a Shopify store.",
+      },
+      {
+        ul: [
+          "**Say what you do in the first screen.** A short headline and one line about who you help should be visible without scrolling.",
+          "**Make contact one tap away.** A tap-to-call phone number, a WhatsApp or message link if you use one, and a clear button to book or get a quote.",
+          "**Thumb-friendly buttons.** Big enough to tap easily, with space around them, and placed where a thumb naturally reaches.",
+          "**Readable text.** Body text large enough to read without zooming, short paragraphs, and strong contrast between text and background.",
+          "**A simple menu.** Keep it to the pages people actually need. Put your main call to action outside the menu so it's always visible.",
+          "**Light images.** Photos sized for the web so the page loads quickly on mobile data.",
+          "**Short forms.** Only ask for what you need to reply. Name, contact details and one message box is often enough to start.",
+        ],
+      },
+      { h2: "Test your own site in ten minutes" },
+      {
+        p: "You don't need any special tools for a first check. Pick up your own phone, switch off Wi-Fi so you're on mobile data, and go through these steps as if you were a new customer:",
+      },
+      {
+        ol: [
+          "Search for your business or open your homepage. Count how long it takes before the page is usable.",
+          "Without scrolling, ask yourself: can I tell what this business does and where it works?",
+          "Try to call you. Is the number tappable, and is it easy to find?",
+          "Open the menu, visit two pages, and try to get back to the homepage.",
+          "Fill in your own contact form and submit it. Check the message actually arrives.",
+          "Read a full page of text. Did you need to zoom at any point?",
+          "Repeat the test on a different phone if you can, ideally an older or smaller one.",
+        ],
+      },
+      {
+        p: "Write down anything that annoyed you, even slightly. If it annoyed you on your own site, it's annoying your customers too.",
+      },
+      { h2: "Fixing it without starting again" },
+      {
+        p: "The good news is that most mobile problems can be fixed without a full redesign. Making the phone number tappable, adding a sticky call or booking button, shrinking oversized images, trimming the menu and shortening forms are usually small jobs. Page builders like Elementor let you adjust spacing, font sizes and visibility for mobile separately, so you can tidy the phone layout without touching the desktop one.",
+      },
+      {
+        p: "If the site was built years ago on an older theme that was never designed for phones, it may be time for a bigger refresh. But start with the checklist above. It will tell you quickly whether you're looking at a few tweaks or a deeper job.",
+      },
+      { h2: "Start with the phone, then go bigger" },
+      {
+        p: "Mobile-first isn't a trend or a technical term to worry about. It's simply respecting how your customers already find you. If your site is clear, fast and easy to act on with one thumb, it will usually work well on a big screen too.",
+      },
+      {
+        p: "If you'd like a second pair of eyes on how your website or Shopify store works on a phone, or help connecting your enquiry forms to a CRM and simple automations, get in touch. I'm happy to take a look and tell you what I'd fix first.",
+      },
+    ],
+  },
+  {
     slug: "use-ai-to-write-website-content-without-sounding-like-a-robot",
     title: "How to use AI to write website content without sounding like a robot",
     excerpt:
