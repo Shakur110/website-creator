@@ -43,6 +43,127 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "connecting-your-website-forms-to-a-crm",
+    title: "Connecting your website forms to a CRM: a beginner's guide",
+    excerpt:
+      "How to get every website enquiry into your CRM automatically, with the right fields, a clear lead source and no duplicates.",
+    category: "CRM & Automation",
+    date: "2026-11-24",
+    body: [
+      {
+        p: "Someone fills in the contact form on your website. An email lands in your inbox. Then someone has to copy the details into your CRM, if they remember, and if the email didn't end up in spam.",
+      },
+      {
+        p: "That small manual step is where a lot of enquiries quietly go missing. Connecting your forms straight to your CRM removes it, and it's one of the most useful bits of setup a small business can do.",
+      },
+      {
+        h2: 'What "connecting" actually means',
+      },
+      {
+        p: "When your form is connected, every submission creates or updates a contact record in your CRM automatically. The person's details, their message and where they came from are all saved in one place the moment they press send.",
+      },
+      {
+        p: "There are a few common ways to do this, and which one fits depends on your website platform and your CRM:",
+      },
+      {
+        ul: [
+          "**A built-in integration.** Many CRMs, for example HubSpot or Zoho, offer their own form or a plugin that links to WordPress, Wix and other builders.",
+          "**Your form tool's own connection.** Some form plugins, including the forms in Elementor, can send submissions to popular CRMs or to a webhook.",
+          "**A connector service in the middle.** Tools that pass data between apps can take a form submission and create a CRM contact, which is handy when there's no direct link.",
+          "**The CRM's own embedded form.** You place the CRM's form on your page, so submissions go straight in.",
+        ],
+      },
+      {
+        p: 'None of these is "best" in every case. I usually start by checking what your website and CRM already support before adding anything new, because fewer moving parts means fewer things to break.',
+      },
+      {
+        h2: "The form fields that matter",
+      },
+      {
+        p: "A long form puts people off, and a form that's too short leaves you guessing. For most service businesses, these fields are enough to start a useful conversation:",
+      },
+      {
+        ul: [
+          "Name.",
+          "Email address.",
+          "Phone number, marked optional unless you really need it.",
+          "What they need help with, ideally as a short dropdown of your main services.",
+          "A message box for anything else.",
+          "A consent tickbox if you plan to send marketing emails.",
+        ],
+      },
+      {
+        p: "The dropdown is worth the effort. Free-text answers are hard to sort later, but a fixed list means your CRM can group enquiries by service and route them to the right person.",
+      },
+      {
+        p: 'Make sure each form field maps to a matching field in your CRM. If your form says "Service needed" but the CRM has nowhere to put it, that information gets dropped or dumped into a notes field nobody reads.',
+      },
+      {
+        h2: "Tag every lead with its source",
+      },
+      {
+        p: "Knowing where an enquiry came from is one of the most valuable things a CRM can tell you, and it's easy to miss when setting up forms. At the very least, record which form or page the enquiry came from.",
+      },
+      {
+        p: 'Most setups can also pass along a hidden field with the page address, or the campaign details from an ad link. You don\'t need anything fancy. Even a simple "Lead source: Website - Contact page" or "Website - Quote form" lets you see over a few months which pages actually bring in work.',
+      },
+      {
+        h2: "Set up the right notifications",
+      },
+      {
+        p: "Getting leads into the CRM is half the job. Someone still needs to know they've arrived. I usually set up two things:",
+      },
+      {
+        ol: [
+          "**An instant acknowledgement to the customer.** A short, friendly email confirming you've received their message and when they can expect to hear back.",
+          "**An alert to your team.** An email or app notification to whoever handles new enquiries, with the key details and a link to the contact in the CRM.",
+        ],
+      },
+      {
+        p: 'If several people share the work, use the service dropdown or a simple rule to assign each lead to one owner. A lead that "everyone" is responsible for is often a lead nobody follows up.',
+      },
+      {
+        h2: "Avoid duplicate contacts",
+      },
+      {
+        p: "Duplicates creep in when the same person fills in a form twice, uses a different form, or is already in your CRM from an earlier job. Before long you have three records for one customer and nobody knows which is right.",
+      },
+      {
+        p: "Most CRMs can match new submissions to existing contacts by email address and update the record instead of creating a new one. Check that this is switched on. If you use a connector service, set it to search for an existing contact first, then create one only if none is found.",
+      },
+      {
+        p: "It also helps to keep your form's email field required and checked for a valid format. A typo in the email address is one of the most common reasons a lead can't be matched or contacted.",
+      },
+      {
+        h2: "A simple checklist before you go live",
+      },
+      {
+        ol: [
+          "List every form on your website, including quote, booking and newsletter forms.",
+          "Decide which fields each form needs and remove the rest.",
+          "Map each form field to a field in your CRM.",
+          "Add a lead source for each form.",
+          "Switch on duplicate matching by email address.",
+          "Set up the customer acknowledgement and the team alert.",
+          "Submit a test enquiry from each form and check the CRM record, both emails and the lead source.",
+          "Repeat the test on your phone, and again after any website update.",
+        ],
+      },
+      {
+        p: "That last step matters more than it looks. Plugin updates, theme changes and new CRM settings can quietly break a connection. A test submission once a month takes two minutes and can save you from weeks of lost enquiries.",
+      },
+      {
+        h2: "Start small and build from there",
+      },
+      {
+        p: "Once your forms feed your CRM reliably, other improvements become much easier: automated follow-up emails, a simple sales pipeline, review requests after a job. But they all depend on clean, complete data coming in at the start. Get the form connection right first.",
+      },
+      {
+        p: "If you'd like help connecting your website forms to your CRM, or tidying up a setup that's become messy, get in touch. I'm happy to look at what you have and suggest the simplest way to make it work.",
+      },
+    ],
+  },
+  {
     slug: "mobile-first-design-what-it-means-for-your-business-website",
     title: "Mobile-first design: what it means for your business website",
     excerpt:
