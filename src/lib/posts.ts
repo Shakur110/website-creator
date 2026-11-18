@@ -43,6 +43,133 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "7-shopify-store-fixes-that-can-lift-sales-without-a-redesign",
+    title: "7 Shopify store fixes that can lift sales without a redesign",
+    excerpt:
+      "Seven practical changes to your Shopify store's homepage, product pages and checkout path that can help more visitors buy, no redesign needed.",
+    category: "Shopify",
+    date: "2026-11-25",
+    body: [
+      {
+        p: "Your Shopify store gets visitors, but not as many of them buy as you hoped. The tempting answer is a full redesign: new theme, new layout, new everything.",
+      },
+      {
+        p: "In my experience, that's often not where the problem is. Most stores I look at lose sales to a handful of small, fixable gaps. Here are the seven I check first, and none of them need you to start again.",
+      },
+      {
+        h2: "1. Make the homepage say what you sell in seconds",
+      },
+      {
+        p: "A new visitor should understand what your store sells, and who it's for, within a few seconds of landing. Big lifestyle images and vague slogans look nice but often leave people guessing.",
+      },
+      {
+        p: "Check the top of your homepage on a phone. Is there a plain headline about your products? Is there one clear button that takes people to your best sellers or main collection? If the answer is no, that's your first fix. It's usually a text and button change, not a new theme.",
+      },
+      {
+        h2: "2. Improve your product photos",
+      },
+      {
+        p: "Online shoppers can't pick up your product, so your photos have to do that job. One small image on a white background rarely answers enough questions.",
+      },
+      {
+        ul: [
+          "Show the product from several angles, including close-ups of texture, stitching or labels.",
+          "Add at least one photo of the product in use, so people can judge size and scale.",
+          "Keep lighting and backgrounds consistent across your catalogue so the store looks cared for.",
+          "Compress images before uploading so they stay sharp without slowing the page down.",
+        ],
+      },
+      {
+        p: "You don't need a professional studio to start. Good natural light, a clean background and a steady phone can make a real difference.",
+      },
+      {
+        h2: "3. Put reviews where buyers make decisions",
+      },
+      {
+        p: "Reviews help people trust a store they haven't bought from before. But many stores collect them and then hide them at the very bottom of the product page, below everything else.",
+      },
+      {
+        p: "Show a star rating near the product title and price, and the full reviews further down. If you're just starting out and don't have many yet, set up an automatic email asking recent customers for a review a little while after delivery. Most review apps can do this for you. Please don't add made-up reviews; it damages trust quickly when people notice.",
+      },
+      {
+        h2: "4. Be clear about shipping and returns",
+      },
+      {
+        p: "Surprise shipping costs at checkout are one of the most common reasons people give up on a purchase. The fix is simple: tell them early.",
+      },
+      {
+        ul: [
+          "Add a short shipping line under the price or the Add to Cart button, such as when it ships and roughly how long delivery takes.",
+          "If you offer free shipping over a certain order value, say so in the announcement bar at the top of the store.",
+          "Summarise your returns policy in one or two sentences on product pages, with a link to the full policy.",
+          "If you ship internationally, say which countries you cover so overseas visitors aren't left wondering.",
+        ],
+      },
+      {
+        h2: "5. Add trust signals that are real",
+      },
+      {
+        p: 'Shoppers want reassurance that a real business is behind the store. Generic "100% secure" badges don\'t do much on their own. Real details do.',
+      },
+      {
+        p: "A short About page with your story and a real photo, a visible contact email or phone number, clear payment options, and a simple FAQ all help. If your products have genuine credentials, for example certifications or materials you can back up, mention them near the product description.",
+      },
+      {
+        h2: "6. Capture emails from people who aren't ready to buy",
+      },
+      {
+        p: "Most first-time visitors won't buy on their first visit. If they leave without a trace, you've lost them. A simple email signup gives you a second chance.",
+      },
+      {
+        p: "Offer something useful in return, like early access to new products or a small first-order discount, and keep the popup polite: wait a few seconds before showing it and make it easy to close on mobile. Then connect it to an email tool, for example Klaviyo or Shopify's own email features, so new subscribers get a short welcome series and people who leave items in their cart get a reminder.",
+      },
+      {
+        h2: "7. Speed up the store",
+      },
+      {
+        p: "A slow store tests people's patience, especially on mobile data. Speed problems on Shopify usually come from a few familiar places:",
+      },
+      {
+        ul: [
+          "Large, uncompressed images, especially in homepage sliders.",
+          "Too many apps, including ones you stopped using but never fully removed.",
+          "Autoplay videos and heavy animations above the fold.",
+          "Several tracking and chat scripts loading on every page.",
+        ],
+      },
+      {
+        p: "Go through your installed apps and remove anything you don't actively use. Some apps leave code behind after uninstalling, so it's worth checking your theme too, or asking someone to do it for you.",
+      },
+      {
+        h2: "A quick checklist to work through",
+      },
+      {
+        ol: [
+          "Read your homepage on a phone. Can you tell what the store sells in five seconds?",
+          "Pick your three best sellers and add better photos to each.",
+          "Move star ratings up near the price and switch on review request emails.",
+          "Add a shipping and returns line to your product page template.",
+          "Make sure your contact details and About page are easy to find.",
+          "Set up an email signup and a basic abandoned cart reminder.",
+          "Remove apps you don't use and compress your largest images.",
+          "Place a test order on your phone from start to finish.",
+        ],
+      },
+      {
+        p: "Do them one at a time and give each change a few weeks before judging it. Small, steady improvements are easier to measure than a big overhaul, and they keep your store selling while you work on it.",
+      },
+      {
+        h2: "When a redesign does make sense",
+      },
+      {
+        p: "Sometimes a store really has outgrown its theme: it's hard to update, it looks dated, or it can't do what the business needs. But it's worth fixing the basics first. If sales still fall short after that, you'll go into a redesign knowing exactly what needs to change.",
+      },
+      {
+        p: "If you'd like a second pair of eyes on your Shopify store, or help working through any of these fixes, get in touch. I'm happy to look at what you have and point out the changes most likely to help.",
+      },
+    ],
+  },
+  {
     slug: "connecting-your-website-forms-to-a-crm",
     title: "Connecting your website forms to a CRM: a beginner's guide",
     excerpt:
