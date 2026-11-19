@@ -43,6 +43,124 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "wordpress-maintenance-what-needs-doing-every-month",
+    title: "WordPress maintenance: what needs doing every month",
+    excerpt:
+      "A plain-English monthly checklist for keeping a WordPress site secure, backed up and working, plus how to decide between DIY and a care plan.",
+    category: "Platforms",
+    date: "2026-11-26",
+    body: [
+      {
+        p: "Your WordPress site launched, it looked great, and then life got busy. Months later a plugin warning appears, the contact form has quietly stopped sending emails, or the site is suddenly showing something strange.",
+      },
+      {
+        p: 'WordPress is flexible and powerful, but it isn\'t a "set it and forget it" platform. A little regular care keeps it secure, fast and working. Here is the routine I recommend to the business owners I build for, and how to decide whether to do it yourself or hand it over.',
+      },
+      {
+        h2: "Why WordPress needs regular care",
+      },
+      {
+        p: "A WordPress site is made of several moving parts: WordPress itself, your theme (and often a page builder like Elementor), and a collection of plugins. Each one is updated by a different team on its own schedule.",
+      },
+      {
+        p: "Updates fix bugs, close security holes and keep everything compatible with each other. When a site goes months without updates, the gaps add up. Outdated plugins are one of the most common ways small business sites get into trouble, and the longer you wait, the bigger and riskier the catch-up becomes.",
+      },
+      {
+        h2: "Step one: back up before you touch anything",
+      },
+      {
+        p: "Backups are your safety net. If an update breaks a page, or something worse happens, a recent backup lets you put the site back the way it was.",
+      },
+      {
+        ul: [
+          "Make sure backups run automatically, at least weekly, and daily if your site changes often (for example a shop taking orders).",
+          "Back up both the files and the database. The database holds your pages, posts, form entries and orders.",
+          "Keep at least one copy somewhere other than your hosting account, such as cloud storage.",
+          "Take a fresh backup right before you run updates, not just on the regular schedule.",
+          "Every few months, check that a backup can actually be restored. A backup you've never tested is a hope, not a plan.",
+        ],
+      },
+      {
+        p: "Many hosting providers, including Hostinger, offer backup tools in their dashboard. Check what yours includes and how long backups are kept.",
+      },
+      {
+        h2: "The monthly WordPress checklist",
+      },
+      {
+        p: "Once a month, set aside an hour and work through this list in order:",
+      },
+      {
+        ol: [
+          "Take a full backup and confirm it finished.",
+          "Update plugins, one at a time or in small groups, checking the site after each.",
+          "Update your theme and page builder, then check your key pages still look right.",
+          "Update WordPress itself when a new version is available.",
+          "Delete plugins and themes you no longer use. Deactivated plugins can still be a risk.",
+          "Submit every form on the site and confirm the email arrives where it should.",
+          "Click through your main pages on a phone and a computer, looking for broken layouts or links.",
+          "Check your site's speed and look out for anything that has slowed down since last month.",
+          "Review user accounts and remove anyone who no longer needs access.",
+          "If you run WooCommerce, place a test order to make sure checkout and emails work.",
+        ],
+      },
+      {
+        p: "The form test is the one people skip most often, and it matters. A broken contact form doesn't show an error to you. It just means enquiries stop arriving, and you may not notice for weeks.",
+      },
+      {
+        h2: "Security and uptime: the ongoing basics",
+      },
+      {
+        p: "Alongside the monthly routine, a few settings should be in place all the time:",
+      },
+      {
+        ul: [
+          "**Strong passwords and two-factor login** for every admin account.",
+          "**A security plugin or host-level protection** that blocks repeated login attempts and scans for known problems.",
+          "**An SSL certificate** so your site loads over https. Most hosts provide this, but check it renews.",
+          "**Uptime monitoring** that emails you if the site goes down, so you hear about it before a customer does.",
+          "**Fewer admins.** Give staff and freelancers the lowest level of access they need.",
+        ],
+      },
+      {
+        h2: "When an update goes wrong",
+      },
+      {
+        p: "Occasionally an update clashes with another plugin or your theme. A page might look broken, or a feature might stop working. Don't panic, and don't start changing lots of things at once.",
+      },
+      {
+        p: "Note which update you ran last, since that is usually the cause. You can often roll back that one plugin, or restore the backup you took before updating. Then check whether the plugin's developer has released a fix, and try again later. This is exactly why updating in small groups helps: you always know where to look.",
+      },
+      {
+        h2: "DIY or a care plan?",
+      },
+      {
+        p: "Plenty of business owners handle maintenance themselves, and that's fine. Doing it yourself tends to suit you if:",
+      },
+      {
+        ul: [
+          "Your site is fairly simple, with a small number of plugins.",
+          "You're comfortable logging into WordPress and following a checklist.",
+          "You will genuinely block out time for it every month.",
+        ],
+      },
+      {
+        p: "A care plan, where a developer or agency handles updates, backups, monitoring and fixes for a monthly fee, tends to make more sense if your site takes bookings or sells products, if downtime would cost you enquiries, or if you know the monthly hour will keep slipping. The real cost of skipped maintenance is usually a rushed, stressful repair later.",
+      },
+      {
+        p: "Whichever route you choose, the important part is that someone owns the job and it happens on a schedule.",
+      },
+      {
+        h2: "Keep a simple log",
+      },
+      {
+        p: "Finally, keep a short note each month: the date, what was updated, anything that went wrong and how it was fixed. It takes two minutes. If a problem appears later, that log tells you or your developer exactly what changed and when.",
+      },
+      {
+        p: "If you'd like a hand keeping your WordPress site healthy, or you want help with your Shopify store, CRM or automations, feel free to get in touch. I'm happy to take a look and tell you what your site needs.",
+      },
+    ],
+  },
+  {
     slug: "7-shopify-store-fixes-that-can-lift-sales-without-a-redesign",
     title: "7 Shopify store fixes that can lift sales without a redesign",
     excerpt:
