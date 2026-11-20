@@ -43,6 +43,93 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "ai-tools-and-customer-data-what-to-be-careful-about",
+    title: "AI tools and customer data: what small businesses should be careful about",
+    excerpt:
+      "Simple rules for using AI tools with customer information: what not to paste in, which settings to check, and where a human should stay involved.",
+    category: "AI Tools",
+    date: "2026-11-27",
+    body: [
+      {
+        p: "AI tools are now part of everyday work for a lot of small businesses. You paste in an email to get a better reply, drop in a spreadsheet to get a summary, or connect a chatbot to your website. It saves time, and it is easy to forget what you just shared.",
+      },
+      {
+        p: "Your customers trusted you with their names, phone numbers, order history and sometimes much more. Before that information goes into an AI tool, it is worth pausing for a moment. Here is how I think about it when I set up AI tools for clients, in plain English.",
+      },
+      { h2: "Why this matters more than it seems" },
+      {
+        p: "When you type into an AI tool, that text leaves your computer and is processed on someone else's servers. Depending on the tool, your plan and your settings, it may be stored, reviewed or used to improve the service. Many tools are careful about this, but you should know the answer for the ones you use rather than assume.",
+      },
+      {
+        p: "There is also the legal side. Businesses in the UK, Canada and Australia, and many US states, have privacy rules about how customer data is collected, stored and shared. I am not a lawyer, and I won't pretend the rules are identical everywhere, but the common thread is simple: you are responsible for what happens to your customers' information, including when a tool you chose handles it.",
+      },
+      { h2: "What not to paste into a general AI tool" },
+      {
+        p: "My rule of thumb: if you wouldn't put it in an email to a stranger, don't paste it into a general-purpose AI chat. In particular, keep these out:",
+      },
+      {
+        ul: [
+          "Payment details, card numbers or bank information.",
+          "Passwords, login links or API keys for your website, store or CRM.",
+          "Health, medical or other sensitive personal details.",
+          "Full customer lists or exports with names, emails and phone numbers.",
+          "Anything covered by a confidentiality agreement with a client or supplier.",
+        ],
+      },
+      {
+        p: 'The good news is that you rarely need the personal details to get the help you want. If you are asking for help with a reply to a complaint, replace the customer\'s name with "the customer" and remove the order number. The AI can write just as good a reply without knowing who it is for.',
+      },
+      { h2: "Check the settings before you rely on a tool" },
+      {
+        p: "Most popular AI tools have settings or plan options that change how your data is handled. They are often a few clicks deep, so it pays to look once and write down what you find. When I review a tool for a client, these are the questions I try to answer:",
+      },
+      {
+        ul: [
+          "Is my content used to train or improve the tool, and can I switch that off?",
+          "How long are my conversations or uploaded files kept, and can I delete them?",
+          "Is there a business or team plan with stronger data protections than the free version?",
+          "Who in my team has access, and does each person have their own login?",
+          "If the tool connects to my CRM, inbox or store, what exactly can it read and change?",
+        ],
+      },
+      {
+        p: "That last point matters most for automations. When an AI tool is connected to your CRM or Shopify store, it can often see far more than the one task needs. Give it the narrowest access that still works. If it only needs to read new form enquiries, it shouldn't be able to export your whole customer list.",
+      },
+      { h2: "Keep a human in the loop" },
+      {
+        p: "AI is good at drafting, sorting and summarising. It is not good at knowing when something is sensitive, unusual or simply wrong. That is why I build most client automations so a person checks the output before it reaches a customer.",
+      },
+      {
+        p: "For example, an AI tool can draft a reply to every new enquiry and put it in your CRM for review. Someone on your team reads it, fixes anything off and clicks send. You still save most of the time, but nothing goes out that a person hasn't seen. Once you trust a particular type of message, such as a simple booking confirmation, you can decide whether that one is safe to send automatically.",
+      },
+      { h2: "A simple AI data checklist for your business" },
+      {
+        p: "You don't need a long policy document to start. Run through these steps once, write the answers on a single page and share it with your team:",
+      },
+      {
+        ol: [
+          "List every AI tool your team uses, including free ones people signed up for themselves.",
+          "For each tool, check the data and training settings and switch on the most private option that still works for you.",
+          "Agree what must never be pasted in: payment details, passwords, sensitive personal data and full customer exports.",
+          "Remove names and identifying details from anything you share, unless the tool is approved for customer data.",
+          "Limit connected tools to the access they need, and remove access you no longer use.",
+          "Decide which AI outputs a person must check before they reach a customer.",
+          "Review the list every few months, because tools and settings change.",
+        ],
+      },
+      {
+        p: "It is also worth updating your website's privacy policy if you use AI tools that handle customer information, so people know how their data is processed. A legal professional can help you get the wording right.",
+      },
+      { h2: "Careful doesn't mean avoiding AI" },
+      {
+        p: "None of this is a reason to stay away from AI tools. Used well, they save small teams hours every week. Being careful just means choosing tools on purpose, setting them up properly and keeping a person involved where it counts. That is a much better position than finding out later that half your team has been pasting customer lists into whatever tool they found first.",
+      },
+      {
+        p: "If you'd like help setting up AI tools, a CRM or automations that save time without putting your customers' information at risk, feel free to get in touch. I'm happy to look at what you're using now and suggest a sensible setup for your website, Shopify store or CRM.",
+      },
+    ],
+  },
+  {
     slug: "wordpress-maintenance-what-needs-doing-every-month",
     title: "WordPress maintenance: what needs doing every month",
     excerpt:
