@@ -43,6 +43,118 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "trust-signals-make-visitors-believe-you-before-they-call",
+    title: "Trust signals: how to make visitors believe you before they call",
+    excerpt:
+      "The reviews, photos, details and proof that help a stranger trust your business website enough to pick up the phone or fill in your form.",
+    category: "Websites",
+    date: "2026-11-28",
+    body: [
+      {
+        p: "Someone lands on your website. They have never heard of you, they have three other tabs open with your competitors, and they are trying to decide who to contact. They will not read every word. They are scanning for one thing: can I trust this business?",
+      },
+      {
+        p: "If your site does not answer that question quickly, they move on, even if you are the best option. The good news is that trust is not magic. It comes from a handful of specific signals, and most of them are easy to add.",
+      },
+      { h2: "What a trust signal actually is" },
+      {
+        p: "A trust signal is anything on your website that tells a visitor you are real, you are reliable and other people have had a good experience with you. It is proof, not promises.",
+      },
+      {
+        p: 'Saying "we offer excellent service" is a promise. Showing a review from a named customer who describes what you did for them is proof. Visitors have learned to skip over the first kind and look for the second.',
+      },
+      { h2: "Reviews and testimonials that feel real" },
+      {
+        p: 'Reviews are usually the strongest signal you have, but how you show them matters. A single line like "Great service!" with no name attached does very little. Visitors have seen too many made-up testimonials to believe that.',
+      },
+      {
+        p: "When I add reviews to a client's site, I look for these qualities:",
+      },
+      {
+        ul: [
+          "A real first name, and a town or business name where the customer is happy to share it.",
+          "Specific details about the job, the problem or the result, in the customer's own words.",
+          "A mix of reviews that cover your main services, not five that all say the same thing.",
+          "Placement near the decision points: on service pages and close to your contact form, not only on a separate reviews page.",
+        ],
+      },
+      {
+        p: "If you collect reviews on Google or another review platform, you can show a selection of those on your site too. Just make sure you only use reviews that customers actually left. Never write or edit them yourself.",
+      },
+      { h2: "Real photos of you, your team and your work" },
+      {
+        p: "Stock photos of smiling people in suits are easy to spot, and they quietly tell visitors you might be hiding something. Real photos do the opposite.",
+      },
+      {
+        p: "You do not need a professional shoot to start. Clear, well-lit photos of you, your team, your van, your workspace or your finished jobs go a long way. For product businesses, photos of real products being used work better than flat images on a white background alone.",
+      },
+      {
+        p: "A photo of the owner on the About page and next to the contact form is one of the simplest changes I make. People like to know who they are about to speak to.",
+      },
+      { h2: "Clear contact details and a real location" },
+      {
+        p: "It sounds obvious, but many small business sites make it hard to find basic information. If a visitor has to hunt for your phone number, they start to wonder why.",
+      },
+      {
+        ul: [
+          "Show a phone number and email address in the header or footer of every page.",
+          "Make the phone number tap-to-call on mobile.",
+          "Include your business address or the areas you serve.",
+          "Add your opening hours and how quickly you usually reply to enquiries.",
+          "Use a business email address on your own domain rather than a free personal one.",
+        ],
+      },
+      { h2: "Credentials, memberships and guarantees" },
+      {
+        p: "If you hold licences, qualifications, insurance or memberships of trade bodies that matter in your industry, say so clearly. A short line with the name of the body is enough. Only list ones you genuinely hold and keep them up to date.",
+      },
+      {
+        p: "Guarantees work the same way. If you offer a workmanship guarantee, a satisfaction promise or a clear refund policy, put it where people are deciding, not buried in the small print. Be precise about what it covers so it builds trust rather than raising questions.",
+      },
+      { h2: "Show your work with short case studies" },
+      {
+        p: "A case study does not have to be long. A few sentences on what the customer needed, what you did and how it turned out, plus a photo or two, is often more convincing than a page of sales copy.",
+      },
+      {
+        p: 'Keep them honest. Describe the work plainly and avoid inventing numbers you cannot back up. If a customer is happy to be named, ask their permission first. If not, describe them in general terms, such as "a family-run bakery" or "a cleaning company in Manchester".',
+      },
+      { h2: "The small details that quietly matter" },
+      {
+        p: "Some trust signals are not things you add, but problems you remove. Visitors notice when something feels neglected.",
+      },
+      {
+        ul: [
+          "A copyright year in the footer that is several years out of date.",
+          'Broken links, empty pages or "coming soon" sections that never arrived.',
+          "Spelling mistakes in headings.",
+          "A missing security padlock in the browser because the site has no SSL certificate.",
+          "A blog whose latest post is from years ago.",
+        ],
+      },
+      { h2: "A quick trust check for your own website" },
+      {
+        p: "Open your website on your phone, pretend you are a new customer and work through these steps:",
+      },
+      {
+        ol: [
+          "Can you find a phone number within five seconds of landing on the homepage?",
+          "Is there at least one real review visible without scrolling far?",
+          "Do you see a real photo of the person or team behind the business?",
+          "Is it clear where you work or who you serve?",
+          "Are your credentials, insurance or guarantees mentioned on your service pages?",
+          "Is there at least one example of past work with a short description?",
+          "Is everything up to date, from the footer year to your opening hours?",
+        ],
+      },
+      {
+        p: "If you answered no to two or more, that is where I would start. These changes are usually quicker and cheaper than a redesign, and they help every visitor who arrives.",
+      },
+      {
+        p: "If you would like a second pair of eyes on your website, Shopify store or the way enquiries are followed up in your CRM, feel free to get in touch. I am happy to take a look and point out the trust gaps worth fixing first.",
+      },
+    ],
+  },
+  {
     slug: "ai-tools-and-customer-data-what-to-be-careful-about",
     title: "AI tools and customer data: what small businesses should be careful about",
     excerpt:
