@@ -43,6 +43,114 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "building-a-simple-sales-pipeline-in-your-crm",
+    title: "Building a simple sales pipeline in your CRM",
+    excerpt:
+      "How to set up a few clear pipeline stages in your CRM, decide what moves a deal forward, and review it weekly so no lead is forgotten.",
+    category: "CRM & Automation",
+    date: "2026-11-29",
+    body: [
+      {
+        p: 'You have enquiries coming in from your website, your phone and your inbox. Some turn into paying work, some go quiet, and a few you simply forget about. When someone asks how many jobs you have in the works, the honest answer is often "I\'d have to check."',
+      },
+      {
+        p: "A sales pipeline fixes that. It is a simple visual list of every live opportunity and where it stands. Most CRMs have one built in, but many small businesses either never set it up or set it up with so many stages that nobody uses it. Here is how I keep it simple.",
+      },
+      { h2: "What a sales pipeline actually is" },
+      {
+        p: 'Think of a row of columns, like a whiteboard with sticky notes. Each column is a stage, such as "New lead" or "Quote sent". Each sticky note is a deal: one potential customer and the job they might buy. As the conversation moves forward, you drag the deal to the next column.',
+      },
+      {
+        p: "In a CRM, for example HubSpot or Zoho, this board is usually called a pipeline or deals view. The deal is linked to the contact record, so their emails, notes and form submissions sit in one place.",
+      },
+      {
+        p: "The point is not the software. The point is that at any moment you can open one screen and see what is waiting on you, what is waiting on the customer, and what needs a nudge.",
+      },
+      { h2: "Start with five stages, not fifteen" },
+      {
+        p: "The most common mistake I see is a pipeline that tries to describe every tiny step. If moving a deal feels like admin, people stop doing it, and the board goes out of date within a fortnight. For most service businesses, these stages are enough:",
+      },
+      {
+        ol: [
+          "**New lead.** Someone has enquired, but you have not spoken to them yet.",
+          "**In conversation.** You have replied or had a call, and you are working out what they need.",
+          "**Quote or proposal sent.** They have a price in front of them.",
+          "**Won.** They have said yes, paid a deposit or signed.",
+          "**Lost.** They have said no, chosen someone else or stopped replying after your follow-ups.",
+        ],
+      },
+      {
+        p: 'If you book site visits or discovery calls, you might add a "Call booked" stage between New lead and In conversation. Add a stage only when it changes what you do next. If two stages always lead to the same action, merge them.',
+      },
+      { h2: "Decide what moves a deal forward" },
+      {
+        p: "Every stage needs a clear rule for getting in and getting out. Without one, two people on your team will put the same deal in different columns, and the board stops meaning anything.",
+      },
+      {
+        p: "Write the rules down in one line each. For example:",
+      },
+      {
+        ul: [
+          "A deal moves to **In conversation** once you have had a real two-way exchange, not just sent an auto-reply.",
+          "A deal moves to **Quote sent** the day the quote leaves your outbox.",
+          "A deal moves to **Won** when there is a firm commitment, such as a signed agreement or a deposit.",
+          "A deal moves to **Lost** after an agreed number of follow-ups with no reply, so it does not sit in limbo forever.",
+        ],
+      },
+      {
+        p: "Marking deals as lost feels uncomfortable, but it is useful. When you record a short reason, such as price, timing or chose a competitor, you start to see patterns you can act on.",
+      },
+      { h2: "Let automation do the boring parts" },
+      {
+        p: "Once the stages are clear, you can let the CRM handle some of the moving and reminding. This is where a pipeline starts saving real time:",
+      },
+      {
+        ul: [
+          "Website form submissions create a new deal in **New lead** automatically, tagged with where the enquiry came from.",
+          "When a deal enters **Quote sent**, the CRM sets a task to follow up a few days later.",
+          "If a deal sits in one stage for too long, you get a reminder rather than discovering it a month later.",
+          "When a deal is marked **Won**, a welcome email or onboarding checklist goes out.",
+        ],
+      },
+      {
+        p: "Start with one or two of these, not all four. Automations are easy to switch on and easy to forget about, so I prefer adding them one at a time and checking each one works properly before the next.",
+      },
+      { h2: "The weekly review habit" },
+      {
+        p: "A pipeline only helps if you look at it. The simplest habit I recommend is a fifteen-minute review at the same time each week. Open the board and go column by column:",
+      },
+      {
+        ol: [
+          "Check **New lead**: has everyone had a reply?",
+          "Check **In conversation**: does each deal have a clear next step and a date?",
+          "Check **Quote sent**: who needs a follow-up this week?",
+          "Move anything that has gone cold to **Lost**, with a reason.",
+          "Look at **Won** for the week and make sure each new customer has been handed over properly.",
+        ],
+      },
+      {
+        p: "That is it. Over a few weeks, you will notice which stage deals tend to get stuck in. That tells you where to focus, whether it is replying faster, making quotes clearer or following up more consistently.",
+      },
+      { h2: "A quick setup checklist" },
+      {
+        ul: [
+          "Pick four to six stages that match how you actually sell.",
+          "Write a one-line rule for entering each stage.",
+          "Connect your website forms so new enquiries land in the first stage.",
+          "Add a follow-up task when a quote is sent.",
+          "Add a field for the reason a deal was lost.",
+          "Book a recurring fifteen-minute pipeline review in your calendar.",
+        ],
+      },
+      {
+        p: "You do not need a complicated system to stay on top of your sales. A small, honest pipeline that you check every week will do more for you than a detailed one nobody updates.",
+      },
+      {
+        p: "If you would like help setting up a pipeline in your CRM, connecting it to your website forms or adding a few sensible automations, get in touch. I'm happy to look at what you have now and suggest a simple next step.",
+      },
+    ],
+  },
+  {
     slug: "trust-signals-make-visitors-believe-you-before-they-call",
     title: "Trust signals: how to make visitors believe you before they call",
     excerpt:
