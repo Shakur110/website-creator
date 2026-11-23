@@ -43,6 +43,94 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "why-your-shopify-store-is-slow-and-the-apps-behind-it",
+    title: "Why your Shopify store is slow (and the apps behind it)",
+    excerpt:
+      "How Shopify apps quietly add code to your store, how to audit what you have installed, and how to clean up leftovers so pages load faster.",
+    category: "Shopify",
+    date: "2026-11-30",
+    body: [
+      {
+        p: "Your Shopify store used to feel quick. Now product pages take a moment too long to appear, the cart drawer stutters on your phone, and you are not sure what changed. You have not touched the theme in months, so it is hard to see where the slowdown came from.",
+      },
+      {
+        p: "In most of the stores I am asked to look at, the answer is the same: apps. Not one bad app, but a slow build-up of them over time. The good news is that this is usually fixable without a redesign.",
+      },
+      { h2: "How apps slow a store down" },
+      {
+        p: "Most Shopify apps add something to your storefront so they can do their job. A reviews app shows stars on product pages. A pop-up app loads its form. A chat widget, a currency switcher, an upsell tool and a loyalty badge all need their own code to run in your visitor's browser.",
+      },
+      {
+        p: "Each one on its own might be small. But every app adds files the browser has to download and run before the page feels ready. Some load on every single page, even pages where they do nothing. Stack eight or ten of these and your shoppers feel it, especially on a mobile connection.",
+      },
+      { h2: "The leftover code problem" },
+      {
+        p: "This is the part most store owners do not know about. When you uninstall an app, Shopify removes the app itself, but **some apps leave code behind in your theme**. Older apps in particular used to paste snippets straight into theme files. Uninstalling them does not always take those snippets out.",
+      },
+      {
+        p: "The result is a store that still tries to load scripts for apps you stopped paying for a year ago. Sometimes those scripts fail quietly. Sometimes they slow the page or break something small, like a button that no longer responds on the first tap.",
+      },
+      {
+        p: "Newer apps that use theme app extensions (blocks you add and remove in the theme editor) are much cleaner here, because turning off the block removes its code from the page. It is still worth checking.",
+      },
+      { h2: "How to audit your installed apps" },
+      {
+        p: "Set aside an hour. You do not need to be technical for most of this. Here is the process I follow:",
+      },
+      {
+        ol: [
+          "Open Settings, then Apps and sales channels, and write down every installed app.",
+          "Next to each one, note what it does and whether you can point to a real reason it is there today.",
+          "Mark any apps that do the same job as another app. Decide which one to keep.",
+          "Mark apps you installed to test and never really used.",
+          "For each app you plan to keep, check whether it loads on every page or only where it is needed. Many apps have a setting for this.",
+          "Before removing anything, duplicate your live theme so you have a safe backup.",
+          "Uninstall the apps you no longer need, then follow each app's own removal instructions, as some ask you to delete code or blocks by hand.",
+        ],
+      },
+      {
+        p: "If you are unsure what an app is doing, ask its support team directly whether it adds code to your theme and how to remove it fully. Good app developers will tell you.",
+      },
+      { h2: "Cleaning out what was left behind" },
+      {
+        p: "Once the apps are gone, look for traces of them. In the theme editor, check each template for app blocks or sections that now show nothing. Remove them.",
+      },
+      {
+        p: "If your theme is older or has been edited by different people, there may be leftover snippets in the code. This is where I would suggest getting help unless you are comfortable editing theme files, because deleting the wrong line can break your layout. Working on a duplicate theme first, then publishing it once you are happy, keeps your live store safe.",
+      },
+      { h2: "Apps are not the only cause" },
+      {
+        p: "While you are tidying up, check a few other common culprits:",
+      },
+      {
+        ul: [
+          "**Large images.** Product photos uploaded straight from a camera or phone can be far bigger than needed. Resize them before uploading and keep a consistent size across your catalogue.",
+          "**Autoplay video and big sliders.** A homepage slideshow with five large images, or a background video, is heavy on mobile. Often one strong image does a better job.",
+          "**An outdated or heavily customised theme.** Older themes were not built with today's performance in mind. A modern, well-supported theme can make a noticeable difference.",
+          "**Too many fonts.** Each extra font or weight is another file to download. Two fonts are usually plenty.",
+        ],
+      },
+      { h2: "A quick checklist for keeping your store fast" },
+      {
+        ul: [
+          "Review your installed apps every few months, not just when things feel slow.",
+          "Before installing a new app, ask what it adds to the storefront and whether your theme can already do the job.",
+          "Test new apps on a duplicate theme where possible.",
+          "Always remove app blocks and leftover code after uninstalling.",
+          "Resize images before uploading them.",
+          "Check your store on your own phone, on mobile data, after every change.",
+        ],
+      },
+      { h2: "Why this matters for sales" },
+      {
+        p: "Shoppers rarely complain that a store is slow. They just leave and buy somewhere else. A faster store makes browsing feel easier, which helps people get from product page to checkout without giving up halfway. Cleaning up apps is one of the simplest improvements you can make, and it often saves you money on subscriptions you forgot you were paying for.",
+      },
+      {
+        p: "If your Shopify store feels sluggish and you would like a second pair of eyes on your apps and theme, get in touch. I am happy to help with your store, your website, or the CRM and automations behind them.",
+      },
+    ],
+  },
+  {
     slug: "building-a-simple-sales-pipeline-in-your-crm",
     title: "Building a simple sales pipeline in your CRM",
     excerpt:
