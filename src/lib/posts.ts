@@ -43,6 +43,114 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "website-redesign-vs-refresh-which-one-do-you-actually-need",
+    title: "Website redesign vs refresh: which one do you actually need?",
+    excerpt:
+      "How to tell whether your website needs a full redesign or a lighter refresh, what each one covers, and how to decide before you spend.",
+    category: "Redesign",
+    date: "2026-12-01",
+    body: [
+      {
+        p: "You know your website is not doing its job. Maybe it looks dated next to competitors, or enquiries have slowed, or you simply wince when you send someone the link. The question is how much to change. Start again from scratch, or tidy up what you already have?",
+      },
+      {
+        p: "I get asked this a lot, and the honest answer is that many businesses need less than they think, while a few need more. Here is how I help clients work out which camp they are in.",
+      },
+      { h2: "What I mean by a refresh" },
+      {
+        p: "A refresh keeps the structure of your site and improves what sits on top of it. The pages stay roughly where they are, the platform stays the same, and the way the site is built does not change much. You are polishing, not rebuilding.",
+      },
+      { p: "A typical refresh might include:" },
+      {
+        ul: [
+          "Updating colours, fonts and spacing so the site looks current and consistent",
+          "Rewriting the homepage headline and key service descriptions",
+          "Replacing old or stock photos with real ones of your team and work",
+          "Adding reviews, clearer calls to action and an easier contact form",
+          "Fixing mobile layout problems and slow-loading images",
+          "Updating plugins, apps or theme settings that have fallen behind",
+        ],
+      },
+      {
+        p: "A refresh is usually quicker and less disruptive. Your search rankings, page addresses and the habits of returning visitors stay largely intact.",
+      },
+      { h2: "What I mean by a redesign" },
+      {
+        p: "A redesign goes deeper. It rethinks how the site is organised, what each page is for, and often how it is built. Sometimes it means moving to a different platform, for example from an old custom build to WordPress with Elementor, or from a basic site builder to Shopify when you start selling products properly.",
+      },
+      {
+        p: "A redesign usually involves planning a new page structure, writing fresh content, designing new layouts, rebuilding the site, and carefully moving across anything that still works, such as blog posts, product data and page addresses that bring in search traffic.",
+      },
+      {
+        p: "It takes longer and costs more than a refresh, in both money and your own time. You will be answering questions, reviewing drafts and supplying content. That investment is worth it when the problems are in the foundations, not the paintwork.",
+      },
+      { h2: "Signs a refresh is enough" },
+      {
+        p: "In my experience, a refresh is often the right call when the basics are sound. Ask yourself whether these are true:",
+      },
+      {
+        ul: [
+          "You can update text and images yourself without breaking anything",
+          "The platform is still supported and receiving updates",
+          "Your services or products have not changed much since the site was built",
+          "The main menu still makes sense to a first-time visitor",
+          "The complaints are mostly about looks, wording or a few slow pages",
+        ],
+      },
+      {
+        p: "If you nodded along to most of those, you can probably get a big improvement by working on the content, design details and calls to action, without starting over.",
+      },
+      { h2: "Signs you need a full redesign" },
+      {
+        p: "A redesign makes more sense when the site is fighting you. These are the situations where I usually recommend one:",
+      },
+      {
+        ul: [
+          "Your business has changed: new services, a new audience, or you now sell online",
+          "Nobody on your team can edit the site, or every change needs a developer",
+          "The platform or theme is no longer supported, or updates keep breaking things",
+          "The site does not work properly on phones, and patching it has not helped",
+          "Pages have been bolted on for years and the menu no longer makes sense",
+          "You need features the current setup cannot handle, such as booking, a shop or CRM integration",
+        ],
+      },
+      {
+        p: "When several of these apply, a refresh tends to become an expensive patch. You pay to polish something that still holds you back.",
+      },
+      { h2: "A simple way to decide" },
+      {
+        p: "Before you contact anyone, walk through these steps. They take an hour or two and will make any conversation with a designer far more useful.",
+      },
+      {
+        ol: [
+          "Write down what the website should achieve: calls, bookings, sales or quote requests.",
+          'List what is getting in the way. Be specific, for example "the contact form is buried" rather than "it looks old".',
+          "Sort each problem into surface (words, images, styling) or structure (platform, navigation, features).",
+          "Check which pages bring in visitors, using whatever analytics or search reports you have, so you know what to protect.",
+          "Try editing a page yourself. If that is painful or impossible, note it as a structural problem.",
+          "If most problems are surface level, plan a refresh. If the structural list is longer, plan a redesign.",
+        ],
+      },
+      {
+        p: "This also helps you avoid a common trap: redesigning because the site feels boring to you. You see your website far more often than your customers do. If it is clear, fast and trusted, it may be doing better than you think.",
+      },
+      { h2: "A middle path worth considering" },
+      {
+        p: "Sometimes the right answer is a staged approach. Start with a refresh on the pages that matter most, usually the homepage, main service pages and contact page. Watch how enquiries respond over a few months. If the site still holds you back, you plan a redesign with a much clearer idea of what you need.",
+      },
+      {
+        p: "The reverse also happens. A business commits to a redesign but launches in phases, getting the core pages live first and adding the blog, resources or extra features afterwards. This keeps momentum and avoids a project that drags on for months.",
+      },
+      { h2: "Whichever you choose, protect what works" },
+      {
+        p: "Both a refresh and a redesign can go wrong if you change things that were quietly working. Before any changes go live, make sure you have a full backup, keep the page addresses that bring in traffic or set up proper redirects, and test your forms, checkout and booking tools on a phone as well as a computer.",
+      },
+      {
+        p: "If you are not sure whether your site needs a refresh or a redesign, I am happy to take a look and give you a straight answer. Get in touch about your website, Shopify store, CRM or automations, and we can work out the most sensible next step together.",
+      },
+    ],
+  },
+  {
     slug: "why-your-shopify-store-is-slow-and-the-apps-behind-it",
     title: "Why your Shopify store is slow (and the apps behind it)",
     excerpt:
