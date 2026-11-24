@@ -315,3 +315,7 @@
     animation: none !important;
   }
 }
+.marquee-reverse {
+  animation-direction: reverse;
+  animation-duration: 55s;
+}

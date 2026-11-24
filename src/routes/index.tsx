@@ -17,6 +17,13 @@ import { CtaBand, ProjectCard, ProjectImage, Reveal, SectionHead } from "@/compo
 import { PostCard } from "@/components/site/blog";
 import { Testimonials } from "@/components/site/testimonials";
 import {
+  AvailabilityBadge,
+  CountUp,
+  PipelineConsole,
+  ServiceMarquee,
+} from "@/components/site/live";
+import { NotesWall } from "@/components/site/notes";
+import {
   featuredProjects,
   portrait,
   projects,
@@ -48,6 +55,20 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const heroServices = [
+  "WordPress websites",
+  "Shopify stores",
+  "Wix websites",
+  "Website redesigns",
+  "Landing pages",
+  "CRM setup & pipelines",
+  "Lead capture & follow-up",
+  "Email & SMS automation",
+  "Booking & reminders",
+  "AI chat assistants",
+  "AI workflow automation",
+];
+
 const serviceIcons = [LayoutTemplate, RefreshCcw, ShoppingBag, Target, Workflow, Bot];
 
 const process = [
@@ -78,7 +99,7 @@ function Index() {
   const grid = featuredProjects.filter((p) => p.slug !== hero.slug).slice(0, 4);
   const platforms = toolGroups[0]?.items ?? [];
   const latestPosts = publishedPosts().slice(0, 3);
-  const stats = [
+  const stats: [string, string][] = [
     [siteStats.websites, "Websites delivered"],
     [siteStats.since, "Freelancing since"],
     ["3", "Services in one place: web, CRM, AI"],
@@ -93,12 +114,19 @@ function Index() {
           aria-hidden
           className="pointer-events-none absolute -right-48 -top-48 h-[40rem] w-[40rem] rounded-full bg-brand-soft blur-3xl"
         />
-        <div className="container-x relative grid items-center gap-14 pb-20 pt-32 md:pt-40 lg:grid-cols-12 lg:pb-28">
+        <div className="container-x relative pt-28 md:pt-32">
+          <div className="animate-rise">
+            <PipelineConsole />
+          </div>
+        </div>
+        <div className="container-x relative grid items-center gap-14 pb-14 pt-12 md:pt-16 lg:grid-cols-12 lg:pb-16">
           <div className="lg:col-span-6">
-            <p className="chip animate-rise bg-white">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden />
-              Web design · CRM automation · AI tools
-            </p>
+            <div className="animate-rise">
+              <AvailabilityBadge>
+                Available for new projects
+                <span className="hidden sm:inline"> · Web, Shopify, CRM &amp; AI</span>
+              </AvailabilityBadge>
+            </div>
             <h1
               className="display animate-rise mt-7 text-5xl sm:text-6xl lg:text-7xl"
               style={{ animationDelay: "80ms" }}
@@ -147,6 +175,9 @@ function Index() {
             </Link>
           </div>
         </div>
+        <div className="container-x relative pb-12 pt-4 lg:pb-16">
+          <ServiceMarquee items={heroServices} />
+        </div>
       </section>
 
       {/* Stats + platforms */}
@@ -156,7 +187,9 @@ function Index() {
             {stats.map(([n, l]) => (
               <div key={l}>
                 <dt className="sr-only">{l}</dt>
-                <dd className="text-4xl font-bold tracking-tight text-brand">{n}</dd>
+                <dd className="text-4xl font-bold tracking-tight text-brand">
+                  {n === siteStats.since ? n : <CountUp value={n} />}
+                </dd>
                 <dd className="mt-1 text-sm text-muted-foreground">{l}</dd>
               </div>
             ))}
@@ -338,6 +371,8 @@ function Index() {
           </div>
         </section>
       )}
+
+      <NotesWall />
 
       <CtaBand />
     </>
