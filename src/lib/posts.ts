@@ -43,6 +43,96 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "using-ai-to-save-hours-on-admin-workflows-worth-automating",
+    title: "Using AI to save hours on admin: workflows worth automating",
+    excerpt:
+      "Four admin workflows where AI and simple automation save real time each week: email triage, invoice reminders, data entry and call notes.",
+    category: "AI Tools",
+    date: "2026-12-02",
+    body: [
+      {
+        p: "Most small business owners I work with did not start a business to sort emails, chase invoices or copy details from one app into another. Yet that admin quietly eats an hour here and an hour there, usually in the evenings. The work still needs doing, but a lot of it no longer needs you to do it by hand.",
+      },
+      {
+        p: "This goes beyond using an AI chat tool yourself: it is about workflows where AI does a small, repeatable job in the background every time something happens. Here are the four I set up most often, and how to decide whether each one is worth it for you.",
+      },
+      { h2: "First, how to spot admin worth automating" },
+      {
+        p: "Not every task is a good candidate. The best ones share a few traits:",
+      },
+      {
+        ul: [
+          "**It happens often**, at least several times a week.",
+          "**It follows a pattern.** You could explain the steps to a new assistant in a few minutes.",
+          "**The input is text**: emails, form entries, notes, invoices.",
+          "**A small mistake is easy to catch and fix**, rather than costly or embarrassing.",
+          "**You can name the result you want**, such as a label, a reply draft or a filled-in record.",
+        ],
+      },
+      {
+        p: "If a task ticks most of those boxes, it is a good place to start. If it involves judgement calls about money, legal matters or sensitive customer situations, keep a person in charge of it.",
+      },
+      { h2: "1. Email triage: sorting the inbox before you open it" },
+      {
+        p: "A busy shared inbox mixes new enquiries, supplier messages, invoices, newsletters and the occasional complaint. Triage means sorting those before a human reads them.",
+      },
+      {
+        p: "A simple workflow looks like this: when a new email arrives, an AI step reads it and decides which category it belongs to. The automation then applies a label, moves it to the right folder, and flags anything that looks urgent. For new enquiries it can also pull out the key details, such as the name, what they want and their deadline, and send them to your CRM.",
+      },
+      {
+        p: "The saving is opening your inbox to three things that need you today, not forty in no particular order. I suggest letting it prepare a draft reply for common questions, but not send it. You read, tweak and press send.",
+      },
+      { h2: "2. Invoice reminders that go out on time" },
+      {
+        p: "Chasing late payments is awkward, so it gets put off. Ironically, that is exactly why it suits automation. Your accounting or invoicing software may already have basic reminders built in, and that is the first place to look.",
+      },
+      {
+        p: "Where AI helps is with the tone and the exceptions. A workflow can check which invoices are overdue, draft a polite reminder that mentions the invoice number and amount, and adjust the wording depending on how late it is. A gentle nudge a few days after the due date reads differently from a firmer note a few weeks later.",
+      },
+      {
+        p: "I always build in a rule: if a client has replied about the invoice, or you have marked them as a special case, the reminders stop and the task comes to you. Nobody wants an automated chaser landing in the middle of a conversation about a payment plan.",
+      },
+      { h2: "3. Data entry between your apps" },
+      {
+        p: "This is the least exciting workflow and often the one that saves the most time. Think of all the places you retype the same information: a form submission into the CRM, an order into a spreadsheet, a new client into your invoicing tool, a booking into your calendar.",
+      },
+      {
+        p: "Plain automation already handles neat, structured data well. AI becomes useful when the information arrives messy. For example, someone emails a long message describing their project, and you want their budget, timeline and location in separate CRM fields. An AI step can read the message, pull out those details and fill them in, ready for you to check.",
+      },
+      { h2: "4. Turning calls into CRM notes and next steps" },
+      {
+        p: "After a sales or discovery call, the useful details often live only in your head or a scribbled notepad. A day later they are fuzzy. A workflow can take a call transcript or your rough notes, produce a short summary, list agreed actions with dates, and add both to the contact's record in your CRM.",
+      },
+      {
+        p: "It can also create follow-up tasks automatically, so the promise to send a quote by Friday becomes an actual reminder on Thursday. Always tell people if a call is being recorded or transcribed, and check your local rules on consent.",
+      },
+      { h2: "How to set one up without breaking anything" },
+      {
+        p: "Whichever workflow you pick, I follow the same steps. They keep things safe and make it easy to see whether it is working:",
+      },
+      {
+        ol: [
+          "Write down the task as it happens today, step by step, including who does what.",
+          "Pick one workflow only. Resist automating everything in the same week.",
+          "Start in draft mode: the automation suggests, labels or drafts, and a person approves.",
+          "Run it for two weeks and note every mistake it makes.",
+          "Adjust the instructions, then let it act on its own only for the parts it handles reliably.",
+          "Keep a simple log so you can see what it did and when.",
+        ],
+      },
+      {
+        p: "Also be careful about what data you send to AI tools. Use business accounts with clear privacy settings, and avoid passing payment details or sensitive personal information through a workflow unless you are sure how it is stored.",
+      },
+      { h2: "What a good result looks like" },
+      {
+        p: "A well-built admin workflow is boring in the best way. Enquiries arrive already sorted, reminders go out without you dreading them, and your CRM is up to date without a Friday afternoon catch-up session. If it handles the routine cases and passes the odd ones to you, it is doing its job.",
+      },
+      {
+        p: "If you would like help choosing the right first workflow, or connecting your website, CRM and email so the admin looks after itself, get in touch. I am happy to look at how things run today and suggest where automation would genuinely help.",
+      },
+    ],
+  },
+  {
     slug: "website-redesign-vs-refresh-which-one-do-you-actually-need",
     title: "Website redesign vs refresh: which one do you actually need?",
     excerpt:
