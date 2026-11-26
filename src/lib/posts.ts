@@ -43,6 +43,106 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "calls-to-action-that-work-where-to-put-them-and-what-to-say",
+    title: "Calls to action that work: where to put them and what to say",
+    excerpt:
+      "How to choose one main call to action, word your buttons clearly and place them down the page so visitors know exactly what to do next.",
+    category: "Websites",
+    date: "2026-12-03",
+    body: [
+      {
+        p: "A visitor lands on your website, reads a bit, likes what they see, and then leaves. Not because they were not interested, but because nothing told them clearly what to do next. The button was vague, buried at the bottom, or competing with five other links.",
+      },
+      {
+        p: "A call to action (CTA) is simply the step you want someone to take: book a call, request a quote, shop the collection. Getting it right is one of the cheapest improvements you can make to a website. Here is how I approach CTAs on the sites I build.",
+      },
+      { h2: "Start with one main action per page" },
+      {
+        p: "The most common problem I see is not a missing button. It is too many of them. When a homepage asks people to call, email, book, download a guide, follow on social media and sign up for a newsletter, visitors have to make a decision before they have even decided they trust you. Many simply do nothing.",
+      },
+      {
+        p: "So before thinking about wording or colours, decide on the **primary action** for each page. For most service businesses that is booking a call or requesting a quote. For a shop it is viewing products or adding to cart. Everything else on the page should support that one action.",
+      },
+      { h2: "Primary vs secondary calls to action" },
+      {
+        p: "Not everyone is ready to book on their first visit. That is where a secondary CTA helps. It is a lower-commitment option for people who are interested but not ready yet.",
+      },
+      {
+        ul: [
+          '**Primary:** the action you most want, such as "Book a free consultation". Make it a solid, high-contrast button.',
+          '**Secondary:** a softer step, such as "See our recent work" or "View pricing options". Make it an outline button or a text link so it does not compete.',
+          "**Keep it to two.** If you find yourself adding a third, one of them probably belongs on a different page.",
+        ],
+      },
+      {
+        p: "The visual difference matters. If both buttons look identical, you have not really chosen a primary action; you have just given people two equal choices.",
+      },
+      { h2: "What to say on the button" },
+      {
+        p: 'Generic labels like "Submit", "Learn more" or "Click here" tell visitors almost nothing. Good button text describes what happens next, ideally in the visitor\'s own terms. A few swaps I make regularly:',
+      },
+      {
+        ul: [
+          '"Submit" becomes "Send my quote request".',
+          '"Contact us" becomes "Book a 20-minute call".',
+          '"Learn more" becomes "See how the service works".',
+          '"Shop now" becomes "Shop winter candles" when the page is about a specific collection.',
+        ],
+      },
+      {
+        p: 'It also helps to answer the hidden worry right next to the button with a short line of text. Something like "No obligation, reply within one working day" or "Free delivery over a set order value" (if you offer it) removes a reason to hesitate. Only promise what you can actually deliver.',
+      },
+      { h2: "Where to put your calls to action" },
+      {
+        p: "People do not all read a page the same way. Some are ready to act straight away, others scroll to the bottom first. Your CTA should be there wherever they decide.",
+      },
+      {
+        ol: [
+          "**At the top.** Put the primary button in the hero section, next to your headline, so ready visitors do not have to hunt.",
+          '**After key sections.** Repeat it after your services, after your reviews and after any process explanation. These are natural moments when someone thinks "yes, this is for me".',
+          "**At the bottom.** End every page with a clear closing section that restates the offer and shows the button again.",
+          '**In the header.** A small button in the menu bar, such as "Get a quote", keeps the action one tap away on every page.',
+          "**On mobile.** Check the button is easy to tap with a thumb, and consider a tap-to-call or sticky button for service businesses that get most enquiries by phone.",
+        ],
+      },
+      {
+        p: "Repeating the same CTA is not pushy, as long as it is the same action each time. What feels pushy is a different demand in every section.",
+      },
+      { h2: "Make what happens after the click just as clear" },
+      {
+        p: "A great button that leads to a long, confusing form undoes all the good work. Keep forms to the fields you genuinely need, say how quickly you will reply, and show a clear thank-you message or page once someone has sent it.",
+      },
+      {
+        p: "Behind the scenes, this is also where your follow-up starts. If the form sends the enquiry into a CRM and triggers an instant confirmation email, the person who clicked gets reassurance straight away, and you get a lead that does not sit forgotten in an inbox.",
+      },
+      { h2: "A quick CTA checklist for your website" },
+      {
+        p: "Open your homepage and your main service or product page on your phone and run through these:",
+      },
+      {
+        ul: [
+          "Can I tell the main action within five seconds of landing?",
+          "Is there only one primary button style, with secondary options clearly quieter?",
+          'Does every button say what happens next, rather than "Submit" or "Click here"?',
+          "Does the primary CTA appear at the top, after key sections and at the bottom?",
+          "Is the button big enough to tap easily on a phone?",
+          "Does the form ask only what I need, and say when I will hear back?",
+          "Have I tested the form myself this month to make sure it still arrives?",
+        ],
+      },
+      {
+        p: "If you answer no to two or three of these, that is normal, and each fix is usually small. Together they can make a noticeable difference to how many visitors turn into enquiries.",
+      },
+      { h2: "Small changes, clearer path" },
+      {
+        p: "Calls to action are not about tricks or pressure. They are about making the next step obvious for people who already want to work with you or buy from you. Pick one main action, name it clearly, and put it where visitors are when they decide.",
+      },
+      {
+        p: "If you would like a second pair of eyes on your website or Shopify store, or help connecting your forms to a CRM so every enquiry gets a quick reply, feel free to get in touch. I am happy to take a look and suggest a few practical changes.",
+      },
+    ],
+  },
+  {
     slug: "using-ai-to-save-hours-on-admin-workflows-worth-automating",
     title: "Using AI to save hours on admin: workflows worth automating",
     excerpt:
