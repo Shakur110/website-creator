@@ -518,4 +518,4 @@ export const responseNote =
   "I usually reply within one business day. Based in Nigeria (GMT+1), working with clients in the US, UK, Canada and Australia.";
 
 /** Portrait photo URL. Leave empty to hide the photo block until you add one. */
-export const portrait = "/about/onjoko-tunde-portrait-navy.webp";
+export const portrait = "/about/onjoko-tunde-portrait-suit.webp";
