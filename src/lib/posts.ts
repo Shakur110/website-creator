@@ -43,6 +43,123 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "email-automation-sequences-every-service-business-should-have",
+    title: "Email automation sequences every service business should have",
+    excerpt:
+      "Four simple email sequences that welcome new contacts, follow up enquiries, ask for reviews and win back past customers automatically.",
+    category: "CRM & Automation",
+    date: "2026-12-04",
+    body: [
+      {
+        p: "You put real effort into getting someone to contact you or book a job. Then life gets busy, and the emails that should follow never get sent. The new subscriber hears nothing, the finished job never gets a review request, and last year's customers quietly forget you exist.",
+      },
+      {
+        p: "Email automation fixes this by sending the right message at the right moment without you remembering to do it. You do not need dozens of complicated flows. For most service businesses, four simple sequences cover the moments that matter most.",
+      },
+      {
+        h2: "Why sequences beat one-off emails",
+      },
+      {
+        p: "A one-off email depends on you finding the time to write and send it. A sequence is a short series of emails that starts automatically when something happens: a form is submitted, a job is marked complete, or a customer has not booked in a while.",
+      },
+      {
+        p: "You write the emails once, set the timing, and the system takes it from there. Most email platforms and CRMs can do this, for example HubSpot, Zoho or Mailchimp. The tool matters less than having the right sequences in place and keeping them honest and useful.",
+      },
+      {
+        h2: "1. The welcome sequence",
+      },
+      {
+        p: "This starts when someone joins your list, whether through a newsletter sign-up, a free guide or a checkout. They have just shown interest, so this is when they are most likely to read what you send.",
+      },
+      {
+        ul: [
+          "**Email 1 (straight away):** say thank you, deliver anything you promised, and explain what they will hear from you and how often.",
+          "**Email 2 (two or three days later):** introduce who you are and what you do best, with one or two examples of the kind of work you take on.",
+          "**Email 3 (about a week later):** answer a common question people ask before hiring you, and point to the easiest way to get in touch.",
+        ],
+      },
+      {
+        p: "Keep it short and friendly. Do not push a sale in the first message.",
+      },
+      {
+        h2: "2. The enquiry follow-up sequence",
+      },
+      {
+        p: "This one starts when someone fills in a contact or quote form. Many enquiries are lost not because the person chose someone else, but because nobody replied quickly or followed up after the first reply.",
+      },
+      {
+        ul: [
+          "**Instant confirmation:** a short email saying you have their message, when they can expect a reply, and what happens next.",
+          "**Next-day nudge:** if they have not booked a call or replied to your quote, a polite check-in asking if they have any questions.",
+          "**A few days later:** a final, low-pressure message offering help, then the sequence stops.",
+        ],
+      },
+      {
+        p: "The key is that the sequence should stop as soon as the person replies or books. Most CRMs let you set this as an exit rule, so nobody gets a chaser after they have already said yes.",
+      },
+      {
+        h2: "3. The post-service review request",
+      },
+      {
+        p: "Reviews are one of the most persuasive things a service business can show, yet most happy customers never leave one simply because nobody asked at the right time.",
+      },
+      {
+        p: "Trigger this sequence when a job is marked as complete in your CRM or booking system. Send the first email a day or two after the work is done, while the experience is still fresh. Thank them, ask how it went, and include a direct link to where you would like the review left. If there is no response, one gentle reminder a week later is plenty.",
+      },
+      {
+        p: "One tip: make the first question open, such as asking how everything went. If someone had a problem, you want to hear about it privately and fix it, rather than finding out from a public review.",
+      },
+      {
+        h2: "4. The re-engagement sequence",
+      },
+      {
+        p: "Past customers are often the easiest people to win work from, because they already know and trust you. This sequence starts when someone has not booked or bought for a set period that suits your business, perhaps six months for a cleaning company or a year for a web project.",
+      },
+      {
+        ul: [
+          "A friendly check-in that reminds them who you are and what you helped with.",
+          "A useful tip or seasonal reminder related to your service, such as a maintenance check or an annual refresh.",
+          "A simple invitation to book again, with a clear link or button.",
+        ],
+      },
+      {
+        p: "If someone does not respond after the sequence, that is fine. It is better to let them rest than to keep emailing people who are no longer interested.",
+      },
+      {
+        h2: "How to set these up: a simple checklist",
+      },
+      {
+        ol: [
+          "Decide which of the four sequences matters most to you right now and start there. One working sequence beats four half-finished ones.",
+          "Make sure your website forms, booking tool or shop actually send contacts into your email platform or CRM.",
+          'Add a clear trigger for each sequence, such as a form submission, a tag like "job complete", or a date of last booking.',
+          "Write each email in your own voice, keep it brief, and give it one clear next step.",
+          "Set exit rules so people leave the sequence when they reply, book or unsubscribe.",
+          "Send a test contact through the whole sequence yourself before switching it on.",
+          "Check the results every month and rewrite any email that nobody opens or clicks.",
+        ],
+      },
+      {
+        h2: "A few mistakes to avoid",
+      },
+      {
+        p: "The most common problem I see is sequences that run forever. People keep receiving emails long after they have hired someone else or already become a customer. Exit rules and tidy contact records solve most of this.",
+      },
+      {
+        p: "The second is writing emails that sound like a corporate brochure. Your customers chose a small business because they wanted a personal service. Write the way you would speak to them on the phone.",
+      },
+      {
+        p: "Finally, remember the basics: only email people who have agreed to hear from you, make unsubscribing easy, and keep your contact list clean.",
+      },
+      {
+        h2: "Getting it running",
+      },
+      {
+        p: "If you would like help connecting your website forms to a CRM, setting up these sequences, or tidying up the automations you already have, feel free to get in touch. I am happy to look at what you have and suggest the simplest setup that fits your business.",
+      },
+    ],
+  },
+  {
     slug: "calls-to-action-that-work-where-to-put-them-and-what-to-say",
     title: "Calls to action that work: where to put them and what to say",
     excerpt:
