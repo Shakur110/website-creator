@@ -12,6 +12,7 @@ import {
 import { CtaBand, PageHero, Reveal } from "@/components/site/parts";
 import { services } from "@/lib/projects";
 import { faqs } from "@/lib/faqs";
+import { shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -29,6 +30,11 @@ export const Route = createFileRoute("/services")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...shareTags(
+        "/services",
+        "Services — Onjoko Tunde",
+        "Websites, CRM automation and AI tools for growing businesses.",
+      ),
     ],
     scripts: [
       {

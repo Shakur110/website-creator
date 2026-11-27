@@ -32,6 +32,7 @@ import {
   toolGroups,
 } from "@/lib/projects";
 import { publishedPosts } from "@/lib/posts";
+import { shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,6 +51,11 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...shareTags(
+        "/",
+        "Onjoko Tunde — Websites, CRM Automation & AI Tools",
+        "Websites, CRM automation and AI tools that help growing businesses win and keep more clients.",
+      ),
     ],
   }),
   component: Index,

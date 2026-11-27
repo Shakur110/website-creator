@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand, PageHero, Reveal } from "@/components/site/parts";
 import { portrait, toolGroups } from "@/lib/projects";
+import { shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -18,6 +19,11 @@ export const Route = createFileRoute("/about")({
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...shareTags(
+        "/about",
+        "About Onjoko Tunde",
+        "Websites, CRM automation and AI tools for growing businesses.",
+      ),
     ],
   }),
   component: About,

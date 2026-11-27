@@ -3,6 +3,7 @@ import { AlertCircle, ArrowUpRight } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { PageHero } from "@/components/site/parts";
 import { contactLinks, responseNote } from "@/lib/projects";
+import { shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -12,13 +13,18 @@ export const Route = createFileRoute("/contact")({
         name: "description",
         content: "Tell me about your business, your website goals, or a project you're planning.",
       },
-      { property: "og:title", content: "Let's build something meaningful — Onjoko Tunde" },
+      { property: "og:title", content: "Let's talk about your website — Onjoko Tunde" },
       {
         property: "og:description",
         content: "Enquire about website design, redesign, ecommerce or landing page projects.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...shareTags(
+        "/contact",
+        "Let's talk about your website — Onjoko Tunde",
+        "Enquire about website design, redesign, ecommerce or landing page projects.",
+      ),
     ],
   }),
   component: Contact,

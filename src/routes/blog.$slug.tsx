@@ -11,6 +11,7 @@ import {
   TableOfContents,
 } from "@/components/site/blog";
 import { getPost, publishedPosts } from "@/lib/posts";
+import { shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -42,6 +43,7 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         { property: "article:published_time", content: post.date },
         { name: "twitter:card", content: "summary_large_image" },
+        ...shareTags(`/blog/${post.slug}`, post.title, post.excerpt),
       ],
       scripts: [
         {

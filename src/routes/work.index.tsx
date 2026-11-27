@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { CtaBand, PageHero, ProjectCard, Reveal } from "@/components/site/parts";
 import { CATEGORIES, projects, siteStats } from "@/lib/projects";
+import { shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/work/")({
   head: () => ({
@@ -19,6 +20,11 @@ export const Route = createFileRoute("/work/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...shareTags(
+        "/work",
+        "Selected Work — Onjoko Tunde",
+        "A portfolio of business, healthcare, education and specialist service websites.",
+      ),
     ],
   }),
   component: Work,

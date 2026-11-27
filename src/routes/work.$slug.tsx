@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { BrowserFrame, CtaBand, ProjectImage, Reveal, domainOf } from "@/components/site/parts";
 import { getNextProject, getProject } from "@/lib/projects";
+import { shareTags } from "@/lib/seo";
 
 /** Trim to a length on a word boundary, for search-result descriptions. */
 const summary = (text: string, max = 155) => {
@@ -33,6 +34,7 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:description", content: summary(p.overview) },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
+        ...shareTags(`/work/${p.slug}`, `${p.title} — ${p.category}`, summary(p.overview)),
       ],
     };
   },

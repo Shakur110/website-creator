@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { CtaBand, PageHero, Reveal } from "@/components/site/parts";
 import { PostCard } from "@/components/site/blog";
 import { publishedPosts } from "@/lib/posts";
+import { shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -20,6 +21,11 @@ export const Route = createFileRoute("/blog/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...shareTags(
+        "/blog",
+        "Blog — Onjoko Tunde",
+        "Practical advice on websites, CRM automation and AI tools for business owners.",
+      ),
     ],
   }),
   component: Blog,
