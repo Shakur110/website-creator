@@ -29,7 +29,7 @@ import {
 } from "@/components/site/live";
 import { NotesWall } from "@/components/site/notes";
 import { LeadFlowDemo } from "@/components/site/leadflow";
-import { WordRise } from "@/components/site/effects";
+import { AutoVideo, WordRise } from "@/components/site/effects";
 import { BookCallButton, EmailButton } from "@/components/site/contact-actions";
 import {
   contactLinks,
@@ -177,15 +177,11 @@ function Index() {
           <div className="animate-rise lg:col-span-6" style={{ animationDelay: "300ms" }}>
             <div className="relative">
               <div className="overflow-hidden rounded-2xl border border-border bg-navy frame">
-                <video
+                <AutoVideo
                   className="aspect-[16/10] w-full object-cover"
                   src="/showreel.mp4"
                   poster="/showreel-poster.jpg"
                   autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
                   aria-label={`Showreel of ${projects.length} featured client websites`}
                 />
               </div>
