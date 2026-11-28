@@ -1,7 +1,7 @@
 // Social share previews (X, LinkedIn, WhatsApp, Facebook, Slack).
 // Every page adds shareTags(...) to its head so links show the preview image.
 
-export const SITE_URL = "https://onjokoshakur.vercel.app";
+export const SITE_URL = "https://www.onjokoshakur.com";
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export const shareTags = (path: string, title: string, description: string) => [
