@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { BrowserFrame, CtaBand, ProjectImage, Reveal, domainOf } from "@/components/site/parts";
 import { getNextProject, getProject } from "@/lib/projects";
+import { BookCallButton } from "@/components/site/contact-actions";
 import { shareTags } from "@/lib/seo";
 
 /** Trim to a length on a word boundary, for search-result descriptions. */
@@ -76,7 +77,7 @@ function CaseStudy() {
         <div className="container-x relative pt-32 md:pt-40">
           <Link
             to="/work"
-            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-brand"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-brand-ink"
           >
             <ArrowLeft className="h-4 w-4" /> All work
           </Link>
@@ -100,9 +101,7 @@ function CaseStudy() {
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
                 </a>
               )}
-              <Link to="/contact" className="btn btn-outline">
-                Start a similar project
-              </Link>
+              <BookCallButton className="btn btn-outline" label="Discuss a similar project" />
             </div>
           </div>
           <div className="animate-rise mt-14" style={{ animationDelay: "150ms" }}>
@@ -133,7 +132,7 @@ function CaseStudy() {
                       href={p.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="font-semibold text-brand underline-offset-4 hover:underline"
+                      className="font-semibold text-brand-ink underline-offset-4 hover:underline"
                     >
                       {domainOf(p.liveUrl)}
                     </a>
@@ -154,7 +153,7 @@ function CaseStudy() {
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {p.highlights.map((h) => (
                   <li key={h} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand-ink">
                       <Check className="h-3.5 w-3.5" />
                     </span>
                     <span className="leading-relaxed">{h}</span>
@@ -221,11 +220,11 @@ function CaseStudy() {
         >
           <div className="md:col-span-5">
             <p className="eyebrow">Next project</p>
-            <h2 className="display mt-3 text-4xl transition-colors group-hover:text-brand md:text-5xl">
+            <h2 className="display mt-3 text-4xl transition-colors group-hover:text-brand-ink md:text-5xl">
               {next.title}
             </h2>
             <p className="mt-3 text-muted-foreground">{next.industry}</p>
-            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand">
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-ink">
               View case study{" "}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>

@@ -510,7 +510,7 @@ export const contactLinks = {
   fiverr: "",
   phone: "+2348131155547",
   whatsapp: "https://wa.me/2348131155547",
-  calendly: "", // booking link, e.g. https://calendly.com/yourname/intro
+  calendly: "https://calendly.com/onjokoshakur/30min", // Free 15-Minute Website Review
 };
 
 /** Shown under the contact details to reassure clients in other time zones. */

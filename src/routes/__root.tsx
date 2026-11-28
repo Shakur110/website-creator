@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { MobileCta, SiteHeader, SiteFooter } from "../components/site/Chrome";
+import { EmailModalProvider } from "../components/site/contact-actions";
 
 function NotFoundComponent() {
   return (
@@ -152,13 +153,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <SiteHeader />
-      <main>
-        <Outlet />
-      </main>
-      <SiteFooter />
-      <MobileCta />
+      <EmailModalProvider>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <SiteHeader />
+        <main>
+          <Outlet />
+        </main>
+        <SiteFooter />
+        <MobileCta />
+      </EmailModalProvider>
     </QueryClientProvider>
   );
 }

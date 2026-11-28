@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Globe } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { contactLinks, type Project } from "@/lib/projects";
+import { type Project } from "@/lib/projects";
+import { BookCallButton, EmailButton } from "@/components/site/contact-actions";
 
 export function Reveal({
   children,
@@ -109,14 +110,14 @@ export function BrowserFrame({
   fallback?: ReactNode;
 }) {
   return (
-    <div className={`overflow-hidden rounded-2xl border border-border bg-white frame ${className}`}>
+    <div className={`overflow-hidden rounded-2xl border border-border bg-card frame ${className}`}>
       <div className="flex items-center gap-3 border-b border-border bg-surface px-4 py-2.5">
         <div className="flex gap-1.5" aria-hidden>
           <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
           <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
           <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
         </div>
-        <div className="flex min-w-0 flex-1 items-center gap-1.5 truncate rounded-full bg-white px-3 py-1 text-[11px] text-muted-foreground">
+        <div className="flex min-w-0 flex-1 items-center gap-1.5 truncate rounded-full bg-card px-3 py-1 text-[11px] text-muted-foreground">
           <Globe className="h-3 w-3 shrink-0" />
           <span className="truncate">{domainOf(url) || " "}</span>
         </div>
@@ -191,7 +192,7 @@ export function ProjectCard({ project }: { project: Project }) {
             <p className="text-sm font-medium text-muted-foreground">
               {project.industry} · {project.category}
             </p>
-            <h3 className="mt-1.5 text-2xl font-bold tracking-tight transition-colors group-hover:text-brand md:text-3xl">
+            <h3 className="mt-1.5 text-2xl font-bold tracking-tight transition-colors group-hover:text-brand-ink md:text-3xl">
               {project.title}
             </h3>
           </div>
@@ -205,7 +206,7 @@ export function ProjectCard({ project }: { project: Project }) {
           href={project.liveUrl}
           target="_blank"
           rel="noreferrer"
-          className="chip mt-4 transition-colors hover:border-brand hover:text-brand"
+          className="chip mt-4 transition-colors hover:border-brand hover:text-brand-ink"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
           Live · {domainOf(project.liveUrl)}
@@ -242,48 +243,35 @@ export function SectionHead({
 export function CtaBand({
   title = (
     <>
-      Have a project in mind? <em>Let's build it.</em>
+      Have a project in mind? <em>Let's talk.</em>
     </>
   ),
-  copy = "Tell me about your business and what your website needs to do. I'll reply with ideas, a timeline and a clear quote.",
-  button = "Start a project",
+  copy = "Book a free 15-minute call, or send me an email about your business and what your website, CRM or automations need to do.",
 }: {
   title?: ReactNode;
   copy?: string;
-  button?: string;
 }) {
   return (
-    <section className="container-x py-20 md:py-28">
-      <Reveal className="relative overflow-hidden rounded-[2rem] bg-navy px-6 py-16 text-white md:px-16 md:py-24">
+    <section id="contact" className="container-x scroll-mt-24 py-20 md:py-28">
+      <Reveal className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-brand to-navy px-6 py-16 text-white md:px-16 md:py-24">
         <div
           aria-hidden
-          className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand/60 blur-3xl"
+          className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:40px_40px]"
         />
         <div
           aria-hidden
-          className="absolute -bottom-32 left-1/3 h-80 w-80 rounded-full bg-sky/20 blur-3xl"
+          className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-sky/25 blur-3xl"
         />
         <div className="relative">
-          <h2 className="display max-w-4xl text-4xl text-white md:text-6xl [&_em]:text-sky">
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-sky">// Contact</p>
+          <h2 className="display mt-4 max-w-4xl text-4xl text-white md:text-6xl [&_em]:text-sky">
             {title}
           </h2>
           <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <p className="max-w-lg text-lg leading-relaxed text-white/75">{copy}</p>
+            <p className="max-w-lg text-lg leading-relaxed text-white/80">{copy}</p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/contact" className="btn btn-light">
-                {button}
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-              {contactLinks.calendly && (
-                <a
-                  href={contactLinks.calendly}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn border border-white/30 text-white hover:border-white"
-                >
-                  Book a call
-                </a>
-              )}
+              <BookCallButton className="btn btn-light" />
+              <EmailButton className="btn border border-white/35 text-white hover:border-white hover:bg-white/10" />
             </div>
           </div>
         </div>

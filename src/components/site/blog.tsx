@@ -125,9 +125,6 @@ export function PostCover({ post, className = "" }: { post: Post; className?: st
         <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white">
           {post.category}
         </span>
-        <p className="mt-3 line-clamp-2 max-w-md text-lg font-bold leading-snug text-white md:text-xl">
-          {post.title}
-        </p>
       </div>
     </div>
   );
@@ -138,7 +135,7 @@ export function PostCard({ post, featured = false }: { post: Post; featured?: bo
     <Link
       to="/blog/$slug"
       params={{ slug: post.slug }}
-      className={`group flex h-full overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-xl hover:shadow-brand/10 ${
+      className={`group flex h-full overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-xl hover:shadow-brand/10 ${
         featured ? "flex-col md:flex-row" : "flex-col"
       }`}
     >
@@ -146,11 +143,11 @@ export function PostCard({ post, featured = false }: { post: Post; featured?: bo
         <PostCover post={post} />
       </div>
       <div className={`flex flex-1 flex-col p-6 ${featured ? "md:justify-center md:p-10" : ""}`}>
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-ink">
           {featured ? `Latest · ${post.category}` : post.category}
         </p>
         <h3
-          className={`mt-3 font-bold leading-snug tracking-tight transition-colors group-hover:text-brand ${
+          className={`mt-3 font-bold leading-snug tracking-tight transition-colors group-hover:text-brand-ink ${
             featured ? "text-2xl md:text-3xl" : "text-xl"
           }`}
         >
@@ -161,7 +158,7 @@ export function PostCard({ post, featured = false }: { post: Post; featured?: bo
         </p>
         <div className="mt-6 flex items-center justify-between">
           <PostMeta post={post} />
-          <ArrowUpRight className="h-4 w-4 text-brand" />
+          <ArrowUpRight className="h-4 w-4 text-brand-ink" />
         </div>
       </div>
     </Link>
@@ -196,13 +193,15 @@ export function TableOfContents({ blocks }: { blocks: Block[] }) {
   if (headings.length < 3) return null;
   return (
     <nav aria-label="In this article" className="rounded-2xl border border-border bg-surface p-6">
-      <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand">In this article</p>
+      <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-ink">
+        In this article
+      </p>
       <ol className="mt-4 space-y-2.5 text-sm">
         {headings.map((h) => (
           <li key={h}>
             <a
               href={`#${headingId(h)}`}
-              className="text-muted-foreground transition-colors hover:text-brand"
+              className="text-muted-foreground transition-colors hover:text-brand-ink"
             >
               {h}
             </a>
@@ -229,7 +228,7 @@ export function ShareButtons({ title }: { title: string }) {
     { label: "WhatsApp", icon: MessageCircle, href: `https://wa.me/?text=${t}%20${u}` },
   ];
   const btn =
-    "flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white transition-colors hover:border-brand hover:bg-brand hover:text-white";
+    "flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-brand hover:bg-brand hover:text-white";
   return (
     <div className="flex items-center gap-2">
       <span className="mr-1 text-sm font-semibold">Share</span>

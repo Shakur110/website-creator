@@ -69,7 +69,7 @@ export function NotesWall() {
   };
 
   const field =
-    "w-full rounded-xl border border-border bg-white px-4 py-3 text-sm outline-none transition-colors focus:border-brand";
+    "w-full rounded-xl border border-border bg-card px-4 py-3 text-sm outline-none transition-colors focus:border-brand";
 
   return (
     <section className="py-24 md:py-32" aria-labelledby="notes-title">

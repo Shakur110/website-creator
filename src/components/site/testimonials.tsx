@@ -26,13 +26,13 @@ export function Testimonials() {
         <div className={`mt-14 grid gap-6 ${cols}`}>
           {testimonials.map((t, i) => (
             <Reveal key={`${t.name}-${i}`} delay={(i % 3) * 60} className="h-full">
-              <figure className="flex h-full flex-col rounded-2xl border border-border bg-white p-8">
-                <Quote className="h-8 w-8 text-brand" aria-hidden />
+              <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-8">
+                <Quote className="h-8 w-8 text-brand-ink" aria-hidden />
                 <blockquote className="mt-5 flex-1 text-lg leading-relaxed">“{t.quote}”</blockquote>
                 <figcaption className="mt-8 flex items-center gap-4 border-t border-border pt-6">
                   <span
                     aria-hidden
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-soft font-bold text-brand"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-soft font-bold text-brand-ink"
                   >
                     {t.name.charAt(0)}
                   </span>
@@ -45,7 +45,7 @@ export function Testimonials() {
                       <Link
                         to="/work/$slug"
                         params={{ slug: t.project }}
-                        className="mt-1 block font-semibold text-brand hover:underline"
+                        className="mt-1 block font-semibold text-brand-ink hover:underline"
                       >
                         View the project
                       </Link>

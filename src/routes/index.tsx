@@ -3,15 +3,20 @@ import {
   ArrowRight,
   ArrowUpRight,
   Bot,
+  CalendarDays,
+  Clock,
+  Code2,
+  Globe2,
   LayoutTemplate,
-  Workflow,
+  MapPin,
   MessagesSquare,
   PenTool,
+  Plus,
   RefreshCcw,
   Rocket,
   ShoppingBag,
   Target,
-  Code2,
+  Workflow,
 } from "lucide-react";
 import { CtaBand, ProjectCard, ProjectImage, Reveal, SectionHead } from "@/components/site/parts";
 import { PostCard } from "@/components/site/blog";
@@ -23,7 +28,9 @@ import {
   ServiceMarquee,
 } from "@/components/site/live";
 import { NotesWall } from "@/components/site/notes";
+import { BookCallButton, EmailButton } from "@/components/site/contact-actions";
 import {
+  contactLinks,
   featuredProjects,
   portrait,
   projects,
@@ -31,31 +38,42 @@ import {
   siteStats,
   toolGroups,
 } from "@/lib/projects";
+import { faqs } from "@/lib/faqs";
 import { publishedPosts } from "@/lib/posts";
 import { shareTags } from "@/lib/seo";
+
+const TITLE = "Onjoko Tunde — Websites, CRM Automation & AI Tools";
+const DESCRIPTION =
+  "Websites, CRM automation and AI tools that help growing businesses win and keep more clients.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Onjoko Tunde — Website Design, CRM Automation & AI Tools" },
+      { title: "Onjoko Tunde — Website Design, Shopify, CRM Automation & AI Tools" },
       {
         name: "description",
         content:
           "100+ websites since 2021. I build WordPress, Elementor, Shopify and Wix websites and connect them to CRM automations and AI tools for businesses in the US, UK, Canada and Australia.",
       },
-      { property: "og:title", content: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
-      {
-        property: "og:description",
-        content:
-          "Websites, CRM automation and AI tools that help growing businesses win and keep more clients.",
-      },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      ...shareTags(
-        "/",
-        "Onjoko Tunde — Websites, CRM Automation & AI Tools",
-        "Websites, CRM automation and AI tools that help growing businesses win and keep more clients.",
-      ),
+      ...shareTags("/", TITLE, DESCRIPTION),
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Index,
@@ -90,25 +108,24 @@ const process = [
   },
   {
     icon: Code2,
-    title: "Build & refine",
-    text: "I build the site on the right platform, test it on phones, tablets and desktops, and refine it with your feedback.",
+    title: "Build & automate",
+    text: "I build the site on the right platform, connect your CRM and automations, and test everything on every screen size.",
   },
   {
     icon: Rocket,
     title: "Launch & handover",
-    text: "I launch the site, connect your domain, forms and CRM, and show you how to run it all yourself.",
+    text: "I launch, connect your domain, forms and CRM, and show you how to run it all yourself.",
   },
 ];
 
 function Index() {
   const hero = (featuredProjects.find((p) => p.slug === "thrive-wm") ?? featuredProjects[0])!;
   const grid = featuredProjects.filter((p) => p.slug !== hero.slug).slice(0, 4);
-  const platforms = toolGroups[0]?.items ?? [];
   const latestPosts = publishedPosts().slice(0, 3);
   const stats: [string, string][] = [
     [siteStats.websites, "Websites delivered"],
     [siteStats.since, "Freelancing since"],
-    ["3", "Services in one place: web, CRM, AI"],
+    [`${projects.length}`, "Featured case studies"],
     ["4", "Core markets: US, UK, CA, AU"],
   ];
 
@@ -116,16 +133,15 @@ function Index() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-48 -top-48 h-[40rem] w-[40rem] rounded-full bg-brand-soft blur-3xl"
-        />
-        <div className="container-x relative pt-28 md:pt-32">
-          <div className="animate-rise">
+        <div className="container-x relative pt-24 md:pt-28">
+          <p className="animate-rise font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+            Welcome to <span className="text-brand-ink">onjoko.os</span>
+          </p>
+          <div className="animate-rise mt-3" style={{ animationDelay: "60ms" }}>
             <PipelineConsole />
           </div>
         </div>
-        <div className="container-x relative grid items-center gap-14 pb-14 pt-12 md:pt-16 lg:grid-cols-12 lg:pb-16">
+        <div className="container-x relative grid items-center gap-14 pb-12 pt-12 md:pt-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <div className="animate-rise">
               <AvailabilityBadge>
@@ -151,13 +167,8 @@ function Index() {
               className="animate-rise mt-9 flex flex-wrap gap-3"
               style={{ animationDelay: "220ms" }}
             >
-              <Link to="/work" className="group btn btn-primary">
-                See my work
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link to="/contact" className="btn btn-outline">
-                Start a project
-              </Link>
+              <BookCallButton label="Book a free call" />
+              <EmailButton />
             </div>
           </div>
           <div className="animate-rise lg:col-span-6" style={{ animationDelay: "300ms" }}>
@@ -168,47 +179,202 @@ function Index() {
               aria-label={`${hero.title} case study`}
             >
               <ProjectImage project={hero} eager />
-              <div className="absolute -bottom-6 left-4 right-4 flex items-center justify-between gap-4 rounded-2xl border border-border bg-white/95 px-5 py-4 shadow-lg backdrop-blur md:left-auto md:right-6 md:w-80">
+              <div className="absolute -bottom-6 left-4 right-4 flex items-center justify-between gap-4 rounded-2xl border border-border bg-card/90 px-5 py-4 shadow-xl shadow-black/30 backdrop-blur md:left-auto md:right-6 md:w-80">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-ink">
                     Featured project
                   </p>
                   <p className="mt-1 font-bold">{hero.title}</p>
                   <p className="text-sm text-muted-foreground">{hero.industry}</p>
                 </div>
-                <ArrowUpRight className="h-5 w-5 shrink-0 text-brand" />
+                <ArrowUpRight className="h-5 w-5 shrink-0 text-brand-ink" />
               </div>
             </Link>
           </div>
         </div>
-        <div className="container-x relative pb-12 pt-4 lg:pb-16">
+        <div className="relative pb-10 pt-8">
           <ServiceMarquee items={heroServices} />
         </div>
       </section>
 
-      {/* Stats + platforms */}
-      <section className="border-y border-border bg-surface">
-        <div className="container-x grid gap-10 py-12 md:grid-cols-12 md:items-center">
-          <dl className="grid grid-cols-2 gap-8 md:col-span-7 md:grid-cols-4">
-            {stats.map(([n, l]) => (
-              <div key={l}>
-                <dt className="sr-only">{l}</dt>
-                <dd className="text-4xl font-bold tracking-tight text-brand">
-                  {n === siteStats.since ? n : <CountUp value={n} />}
-                </dd>
-                <dd className="mt-1 text-sm text-muted-foreground">{l}</dd>
+      {/* About */}
+      <section
+        id="about"
+        className="scroll-mt-24 border-y border-border bg-surface/60 py-24 md:py-32"
+      >
+        <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-center">
+          {portrait && (
+            <Reveal className="lg:col-span-5">
+              <div className="relative">
+                <div className="aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-border frame">
+                  <img
+                    src={portrait}
+                    alt="Onjoko Tunde"
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <p className="absolute -bottom-4 left-5 rounded-full border border-border bg-card px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground shadow-lg">
+                  <span className="text-emerald-400">●</span> Onjoko Tunde · since 2021
+                </p>
               </div>
-            ))}
-          </dl>
-          <div className="md:col-span-5">
-            <p className="text-sm font-semibold">Platforms I build on</p>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {platforms.map((p) => (
-                <li key={p} className="chip bg-white">
-                  {p}
-                </li>
-              ))}
+            </Reveal>
+          )}
+          <Reveal
+            className={portrait ? "lg:col-span-6 lg:col-start-7" : "lg:col-span-10"}
+            delay={80}
+          >
+            <p className="eyebrow">About</p>
+            <h2 className="display mt-4 text-4xl md:text-5xl">
+              The web designer behind <em>the systems.</em>
+            </h2>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
+              <p>
+                I'm Onjoko Tunde. Since 2021 I've designed and built more than 100 websites for
+                clients from therapy practices and dental clinics to manufacturers and maritime
+                consultancies.
+              </p>
+              <p>
+                A good website brings in enquiries, but leads often get lost in inboxes. So I also
+                set up CRMs, automated follow-up and booking, and practical AI tools, so the whole
+                journey from first visit to paying client runs smoothly.
+              </p>
+            </div>
+            <ul className="mt-7 flex flex-wrap gap-2">
+              <li className="chip">
+                <MapPin className="h-3.5 w-3.5" /> Lagos, Nigeria
+              </li>
+              <li className="chip">
+                <Clock className="h-3.5 w-3.5" /> GMT+1
+              </li>
+              <li className="chip">
+                <Globe2 className="h-3.5 w-3.5" /> Remote · US, UK, CA, AU
+              </li>
             </ul>
+            <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+              {stats.map(([n, l]) => (
+                <div key={l} className="bg-card p-5">
+                  <dt className="sr-only">{l}</dt>
+                  <dd className="text-3xl font-bold tracking-tight text-brand-ink">
+                    {n === siteStats.since ? n : <CountUp value={n} />}
+                  </dd>
+                  <dd className="mt-1 text-xs leading-snug text-muted-foreground">{l}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="mt-8">
+              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                Platforms I build on
+              </p>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {(toolGroups[0]?.items ?? []).map((p) => (
+                  <li key={p} className="chip bg-card">
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Intro statement */}
+      <section className="container-x py-24 md:py-28">
+        <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
+          <h2 className="display text-4xl md:col-span-7 md:text-5xl">
+            Websites, Shopify, CRM and AI for businesses in the{" "}
+            <em>US, UK, Canada &amp; Australia.</em>
+          </h2>
+          <p className="text-lg leading-relaxed text-muted-foreground md:col-span-5">
+            One partner for the whole journey: a website that wins trust, a CRM that captures every
+            lead, automations that follow up for you and AI tools that save hours every week.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="container-x scroll-mt-24 pb-24 md:pb-32">
+        <SectionHead
+          eyebrow="Services"
+          title={
+            <>
+              Web, Shopify, CRM <em>and AI, done right.</em>
+            </>
+          }
+          intro="Tap a service to see what's included."
+        />
+        <div className="mt-12 grid items-start gap-4 md:grid-cols-2">
+          {services.map((s, i) => {
+            const Icon = serviceIcons[i] ?? LayoutTemplate;
+            return (
+              <Reveal key={s.n} delay={(i % 2) * 60}>
+                <details className="group rounded-2xl border border-border bg-card transition-colors open:border-brand-ink/50 hover:border-brand-ink/40">
+                  <summary className="flex cursor-pointer list-none items-start gap-5 p-6 md:p-7 [&::-webkit-details-marker]:hidden">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand-ink">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="flex-1">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                        {s.n}
+                      </span>
+                      <span className="mt-1 block text-xl font-bold tracking-tight">{s.title}</span>
+                      <span className="mt-2 block leading-relaxed text-muted-foreground">
+                        {s.short}
+                      </span>
+                    </span>
+                    <Plus className="mt-1 h-5 w-5 shrink-0 text-brand-ink transition-transform duration-300 group-open:rotate-45" />
+                  </summary>
+                  <div className="border-t border-border px-6 pb-6 pt-5 md:px-7">
+                    <p className="leading-relaxed text-muted-foreground">{s.description}</p>
+                    <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+                      {s.includes.map((x) => (
+                        <li key={x} className="flex gap-2.5 text-sm">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-ink" />
+                          {x}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href={contactLinks.calendly}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-ink hover:underline"
+                    >
+                      <CalendarDays className="h-4 w-4" /> Book a call about this
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </details>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Featured work */}
+      <section className="border-y border-border bg-surface/60 py-24 md:py-32">
+        <div className="container-x">
+          <SectionHead
+            eyebrow="Featured work"
+            title={
+              <>
+                Recent websites for <em>real businesses.</em>
+              </>
+            }
+            intro={`${projects.length} highlights from ${siteStats.websites} websites I've built for clinics, consultancies, academies, manufacturers and service companies.`}
+          />
+          <div className="mt-14 grid gap-x-10 gap-y-16 md:grid-cols-2">
+            {grid.map((p, i) => (
+              <Reveal key={p.slug} delay={(i % 2) * 80}>
+                <ProjectCard project={p} />
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-16 flex justify-center">
+            <Link to="/work" className="group btn btn-outline">
+              See all work
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </section>
@@ -227,97 +393,41 @@ function Index() {
               rel="noreferrer"
               tabIndex={i >= projects.length ? -1 : undefined}
               aria-hidden={i >= projects.length ? true : undefined}
-              className="chip shrink-0 whitespace-nowrap bg-white transition-colors hover:border-brand hover:text-brand"
+              className="chip shrink-0 whitespace-nowrap bg-card transition-colors hover:border-brand-ink hover:text-brand-ink"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
               {p.liveUrl?.replace(/^https?:\/\//, "")}
             </a>
           ))}
         </div>
       </section>
 
-      {/* Selected work */}
-      <section className="container-x py-24 md:py-32">
-        <SectionHead
-          eyebrow="Selected work"
-          title={
-            <>
-              Recent websites for <em>real businesses.</em>
-            </>
-          }
-          intro={`${projects.length} highlights from ${siteStats.websites} websites I've built for clinics, consultancies, academies, manufacturers and service companies.`}
-        />
-        <div className="mt-16 grid gap-x-10 gap-y-16 md:grid-cols-2">
-          {grid.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 2) * 80}>
-              <ProjectCard project={p} />
-            </Reveal>
-          ))}
-        </div>
-        <div className="mt-16 flex justify-center">
-          <Link to="/work" className="group btn btn-outline">
-            See all featured projects
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-      </section>
-
       <Testimonials />
 
-      {/* Services */}
-      <section className="bg-surface py-24 md:py-32">
-        <div className="container-x">
-          <SectionHead
-            eyebrow="Services"
-            title={
-              <>
-                Websites, CRM and <em>AI, in one place.</em>
-              </>
-            }
-          />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s, i) => {
-              const Icon = serviceIcons[i] ?? LayoutTemplate;
-              return (
-                <Reveal key={s.n} delay={i * 60}>
-                  <Link
-                    to="/services"
-                    className="group flex h-full flex-col rounded-2xl border border-border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-xl hover:shadow-brand/10"
-                  >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-white">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <h3 className="mt-6 text-xl font-bold tracking-tight">{s.title}</h3>
-                    <p className="mt-3 flex-1 leading-relaxed text-muted-foreground">{s.short}</p>
-                    <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
-                      Learn more <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </Link>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Process */}
-      <section className="container-x py-24 md:py-32">
+      <section id="process" className="container-x scroll-mt-24 py-24 md:py-32">
         <SectionHead
-          eyebrow="How it works"
+          eyebrow="How I work"
           title={
             <>
-              A simple process, <em>wherever you are.</em>
+              Strategy. Build. <em>Launch.</em>
             </>
           }
           intro="I work remotely with clients across time zones, with clear updates at every step."
         />
-        <ol className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <ol className="relative mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <span
+            aria-hidden
+            className="absolute left-0 right-0 top-[2.85rem] hidden h-px bg-gradient-to-r from-transparent via-brand-ink/40 to-transparent lg:block"
+          />
           {process.map((step, i) => (
             <Reveal key={step.title} delay={i * 60} className="h-full">
-              <li className="relative h-full rounded-2xl border border-border p-7">
-                <span className="text-sm font-bold text-brand">Step {i + 1}</span>
-                <step.icon className="absolute right-7 top-7 h-5 w-5 text-muted-foreground" />
-                <h3 className="mt-4 text-xl font-bold tracking-tight">{step.title}</h3>
+              <li className="relative h-full rounded-2xl border border-border bg-card p-7">
+                <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-brand-ink/50 bg-background font-mono text-sm text-brand-ink">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <step.icon className="absolute right-7 top-9 h-5 w-5 text-muted-foreground" />
+                <h3 className="mt-6 text-xl font-bold tracking-tight">{step.title}</h3>
                 <p className="mt-3 leading-relaxed text-muted-foreground">{step.text}</p>
               </li>
             </Reveal>
@@ -325,41 +435,43 @@ function Index() {
         </ol>
       </section>
 
-      {/* About preview */}
-      <section className="container-x pb-24 md:pb-32">
-        <Reveal className="grid gap-12 rounded-[2rem] bg-brand-soft p-8 md:grid-cols-12 md:items-center md:p-16">
-          {portrait && (
-            <div className="aspect-[4/5] overflow-hidden rounded-2xl md:col-span-4">
-              <img
-                src={portrait}
-                alt="Onjoko Tunde"
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          )}
-          <div className={portrait ? "md:col-span-7 md:col-start-6" : "md:col-span-10"}>
-            <p className="eyebrow">About me</p>
+      {/* FAQ */}
+      <section
+        id="faq"
+        className="scroll-mt-24 border-y border-border bg-surface/60 py-24 md:py-32"
+      >
+        <div className="container-x grid gap-12 md:grid-cols-12">
+          <Reveal className="md:col-span-4">
+            <p className="eyebrow">FAQ</p>
             <h2 className="display mt-4 text-4xl md:text-5xl">
-              Hi, I'm Onjoko. <em>I build websites that work.</em>
+              Questions, <em>answered.</em>
             </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Since 2021 I've built more than 100 websites for clients from therapy practices and
-              dental clinics to manufacturers and maritime consultancies. Today I also set up CRM
-              automations and AI tools, so your website doesn't just look good: it captures leads,
-              follows up and saves you hours every week.
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              Don't see yours? Ask me directly and I'll get back to you.
             </p>
-            <Link to="/about" className="group btn btn-primary mt-8">
-              More about me
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </Reveal>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <EmailButton label="Ask a question" />
+            </div>
+          </Reveal>
+          <Reveal className="md:col-span-8" delay={80}>
+            <div className="divide-y divide-border rounded-2xl border border-border bg-card">
+              {faqs.map((f) => (
+                <details key={f.q} className="group px-6 py-5 md:px-8">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold [&::-webkit-details-marker]:hidden">
+                    {f.q}
+                    <Plus className="h-5 w-5 shrink-0 text-brand-ink transition-transform duration-300 group-open:rotate-45" />
+                  </summary>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* Blog */}
       {latestPosts.length > 0 && (
-        <section className="container-x pb-8">
+        <section className="container-x py-24 md:py-32">
           <SectionHead
             eyebrow="From the blog"
             title={
@@ -367,6 +479,7 @@ function Index() {
                 Advice for <em>business owners.</em>
               </>
             }
+            intro="A new article every day on websites, Shopify, CRM automation and AI tools."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {latestPosts.map((post, i) => (
@@ -374,6 +487,12 @@ function Index() {
                 <PostCard post={post} />
               </Reveal>
             ))}
+          </div>
+          <div className="mt-12 flex justify-center">
+            <Link to="/blog" className="group btn btn-outline">
+              Read the blog
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </section>
       )}

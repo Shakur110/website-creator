@@ -112,7 +112,7 @@ export function PipelineConsole() {
 /** Pulsing "available" badge. */
 export function AvailabilityBadge({ children }: { children: React.ReactNode }) {
   return (
-    <p className="chip bg-white">
+    <p className="chip bg-card">
       <span className="relative flex h-2 w-2" aria-hidden>
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60 motion-reduce:hidden" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -134,7 +134,7 @@ export function ServiceMarquee({ items }: { items: string[] }) {
           <li
             key={`${s}-${i}`}
             aria-hidden={i >= items.length ? true : undefined}
-            className="shrink-0 whitespace-nowrap rounded-full bg-brand-soft px-4 py-2 text-sm font-medium text-brand"
+            className="shrink-0 whitespace-nowrap rounded-full bg-brand-soft px-4 py-2 text-sm font-medium text-brand-ink"
           >
             {s}
           </li>

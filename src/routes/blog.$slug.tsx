@@ -81,7 +81,7 @@ function Article() {
           <div className="mx-auto max-w-3xl">
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-brand"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-brand-ink"
             >
               <ArrowLeft className="h-4 w-4" /> All articles
             </Link>
@@ -110,7 +110,7 @@ function Article() {
             <PostBody blocks={post.body} />
             <div className="mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-border pt-8">
               <ShareButtons title={post.title} />
-              <Link to="/blog" className="text-sm font-semibold text-brand hover:underline">
+              <Link to="/blog" className="text-sm font-semibold text-brand-ink hover:underline">
                 More articles
               </Link>
             </div>
