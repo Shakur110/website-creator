@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUp, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BookCallButton, EmailButton } from "@/components/site/contact-actions";
+import { ThemeToggle } from "@/components/site/theme";
 import { contactLinks } from "@/lib/projects";
 
 /** Three pages (Home, Work, Blog); the rest are sections of the homepage. */
@@ -13,6 +14,21 @@ const nav: { label: string; to: "/" | "/work" | "/blog"; hash?: string }[] = [
   { label: "Process", to: "/", hash: "process" },
   { label: "FAQ", to: "/", hash: "faq" },
   { label: "Blog", to: "/blog" },
+];
+
+const skills = [
+  "Website design",
+  "WordPress & Elementor",
+  "Shopify stores",
+  "Wix",
+  "Landing pages",
+  "CRM pipelines",
+  "Lead follow-up automation",
+  "Email & SMS flows",
+  "Booking & reminders",
+  "AI chat assistants",
+  "AI workflow automation",
+  "Speed & SEO basics",
 ];
 
 export function SiteHeader() {
@@ -53,9 +69,11 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle />
           <EmailButton className="btn btn-outline !px-4 !py-2.5" label="Email" />
           <BookCallButton className="btn btn-primary !px-4 !py-2.5" />
         </div>
+        <ThemeToggle className="ml-auto lg:hidden" />
         <button
           type="button"
           className="flex h-11 w-11 items-center justify-center rounded-full border border-border lg:hidden"
@@ -102,6 +120,23 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border bg-surface">
+      <div
+        className="marquee overflow-hidden border-b border-border py-4 [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]"
+        aria-label="Skills"
+      >
+        <ul className="marquee-track flex w-max gap-8 font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+          {[...skills, ...skills].map((s, i) => (
+            <li
+              key={i}
+              aria-hidden={i >= skills.length ? true : undefined}
+              className="flex shrink-0 items-center gap-8"
+            >
+              {s}
+              <span className="text-brand-ink">✦</span>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="container-x grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-5">
           <Logo />

@@ -28,6 +28,8 @@ import {
   ServiceMarquee,
 } from "@/components/site/live";
 import { NotesWall } from "@/components/site/notes";
+import { LeadFlowDemo } from "@/components/site/leadflow";
+import { WordRise } from "@/components/site/effects";
 import { BookCallButton, EmailButton } from "@/components/site/contact-actions";
 import {
   contactLinks,
@@ -149,11 +151,12 @@ function Index() {
                 <span className="hidden sm:inline"> · Web, Shopify, CRM &amp; AI</span>
               </AvailabilityBadge>
             </div>
-            <h1
-              className="display animate-rise mt-7 text-5xl sm:text-6xl lg:text-7xl"
-              style={{ animationDelay: "80ms" }}
-            >
-              Websites and automations that turn visitors into <em>clients.</em>
+            <h1 className="display mt-7 text-5xl sm:text-6xl lg:text-7xl">
+              <WordRise
+                text="Websites and automations that turn visitors into"
+                accent="clients."
+                delay={120}
+              />
             </h1>
             <p
               className="animate-rise mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground"
@@ -172,24 +175,36 @@ function Index() {
             </div>
           </div>
           <div className="animate-rise lg:col-span-6" style={{ animationDelay: "300ms" }}>
-            <Link
-              to="/work/$slug"
-              params={{ slug: hero.slug }}
-              className="group relative block"
-              aria-label={`${hero.title} case study`}
-            >
-              <ProjectImage project={hero} eager />
-              <div className="absolute -bottom-6 left-4 right-4 flex items-center justify-between gap-4 rounded-2xl border border-border bg-card/90 px-5 py-4 shadow-xl shadow-black/30 backdrop-blur md:left-auto md:right-6 md:w-80">
-                <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-ink">
-                    Featured project
-                  </p>
-                  <p className="mt-1 font-bold">{hero.title}</p>
-                  <p className="text-sm text-muted-foreground">{hero.industry}</p>
-                </div>
-                <ArrowUpRight className="h-5 w-5 shrink-0 text-brand-ink" />
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl border border-border bg-navy frame">
+                <video
+                  className="aspect-[16/10] w-full object-cover"
+                  src="/showreel.mp4"
+                  poster="/showreel-poster.jpg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={`Showreel of ${projects.length} featured client websites`}
+                />
               </div>
-            </Link>
+              <Link
+                to="/work"
+                className="group absolute -bottom-6 left-4 right-4 flex items-center justify-between gap-4 rounded-2xl border border-border bg-card/90 px-5 py-4 shadow-xl shadow-black/20 backdrop-blur md:left-auto md:right-6 md:w-80"
+              >
+                <div>
+                  <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-brand-ink">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-red-500" /> Showreel
+                  </p>
+                  <p className="mt-1 font-bold">{projects.length} featured websites</p>
+                  <p className="text-sm text-muted-foreground">
+                    From {siteStats.websites} built since 2021
+                  </p>
+                </div>
+                <ArrowUpRight className="h-5 w-5 shrink-0 text-brand-ink transition-transform group-hover:rotate-45" />
+              </Link>
+            </div>
           </div>
         </div>
         <div className="relative pb-10 pt-8">
@@ -308,7 +323,7 @@ function Index() {
             const Icon = serviceIcons[i] ?? LayoutTemplate;
             return (
               <Reveal key={s.n} delay={(i % 2) * 60}>
-                <details className="group rounded-2xl border border-border bg-card transition-colors open:border-brand-ink/50 hover:border-brand-ink/40">
+                <details className="spotlight group rounded-2xl border border-border bg-card transition-colors open:border-brand-ink/50 hover:border-brand-ink/40">
                   <summary className="flex cursor-pointer list-none items-start gap-5 p-6 md:p-7 [&::-webkit-details-marker]:hidden">
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand-ink">
                       <Icon className="h-5 w-5" />
@@ -351,8 +366,26 @@ function Index() {
         </div>
       </section>
 
-      {/* Featured work */}
+      {/* Speed to lead demo */}
       <section className="border-y border-border bg-surface/60 py-24 md:py-32">
+        <div className="container-x">
+          <SectionHead
+            eyebrow="Speed to lead"
+            title={
+              <>
+                Watch a lead get <em>booked in minutes.</em>
+              </>
+            }
+            intro="An example of the automation I connect to your website: instant replies, CRM tracking, follow-up and an AI assistant that books the call."
+          />
+          <div className="mt-14">
+            <LeadFlowDemo />
+          </div>
+        </div>
+      </section>
+
+      {/* Featured work */}
+      <section className="py-24 md:py-32">
         <div className="container-x">
           <SectionHead
             eyebrow="Featured work"
@@ -422,7 +455,7 @@ function Index() {
           />
           {process.map((step, i) => (
             <Reveal key={step.title} delay={i * 60} className="h-full">
-              <li className="relative h-full rounded-2xl border border-border bg-card p-7">
+              <li className="spotlight relative h-full rounded-2xl border border-border bg-card p-7">
                 <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-brand-ink/50 bg-background font-mono text-sm text-brand-ink">
                   {String(i + 1).padStart(2, "0")}
                 </span>

@@ -6,7 +6,6 @@ import {
   PostCard,
   PostCover,
   PostMeta,
-  ReadingProgress,
   ShareButtons,
   TableOfContents,
 } from "@/components/site/blog";
@@ -75,7 +74,6 @@ function Article() {
   const { post, more } = Route.useLoaderData();
   return (
     <>
-      <ReadingProgress />
       <article>
         <header className="container-x pt-32 md:pt-40">
           <div className="mx-auto max-w-3xl">

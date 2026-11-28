@@ -14,6 +14,9 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { MobileCta, SiteHeader, SiteFooter } from "../components/site/Chrome";
 import { EmailModalProvider } from "../components/site/contact-actions";
+import { earlyScript } from "../components/site/theme";
+import { BootIntro } from "../components/site/boot";
+import { ScrollProgress, SpotlightTracker } from "../components/site/effects";
 
 function NotFoundComponent() {
   return (
@@ -94,6 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [
+      { children: earlyScript },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -154,6 +158,9 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <EmailModalProvider>
+        <BootIntro />
+        <ScrollProgress />
+        <SpotlightTracker />
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <SiteHeader />
         <main>

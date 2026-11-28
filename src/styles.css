@@ -40,13 +40,52 @@
 }
 
 /*
- * Dark "control panel" theme in Onjoko's colours: deep navy base, royal blue for
- * buttons and fills, sky blue for accent text. Contrast (WCAG): body text 15:1,
- * muted text 7:1, sky accent text 9:1 on the background; white on royal blue 6.4:1.
+ * Onjoko's colours. White is the default; `.dark` on <html> switches to the
+ * dark navy "control panel" theme (toggle in the header).
+ * Light contrast: text 16:1, muted 6:1, royal-blue text 6.4:1 on white.
+ * Dark contrast: text 15:1, muted 7:1, sky text 9:1 on navy.
  */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   --radius: 1rem;
+  --background: oklch(1 0 0);
+  --surface: oklch(0.975 0.008 265);
+  --foreground: oklch(0.18 0.03 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.03 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.03 265);
+  --primary: oklch(0.5 0.22 265);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.975 0.008 265);
+  --secondary-foreground: oklch(0.18 0.03 265);
+  --muted: oklch(0.975 0.008 265);
+  --muted-foreground: oklch(0.5 0.02 265);
+  --accent: oklch(0.95 0.03 265);
+  --accent-foreground: oklch(0.18 0.03 265);
+  --brand: oklch(0.5 0.22 265);
+  --brand-hover: oklch(0.42 0.2 265);
+  --brand-ink: oklch(0.5 0.22 265);
+  --brand-soft: oklch(0.95 0.03 265);
+  --navy: oklch(0.22 0.08 265);
+  --sky: oklch(0.8 0.1 250);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.012 265);
+  --input: oklch(0.9 0.014 265);
+  --ring: oklch(0.5 0.22 265);
+  --line: oklch(0.18 0.03 265 / 0.045);
+  --glow: oklch(0.5 0.22 265 / 0.1);
+  --outline-btn: oklch(0.18 0.03 265 / 0.2);
+  --shadow-frame:
+    0 40px 80px -40px oklch(0.3 0.12 265 / 0.35), 0 0 0 1px oklch(0.18 0.03 265 / 0.06);
+}
+
+.dark {
+  color-scheme: dark;
+  --line: oklch(1 0 0 / 0.03);
+  --glow: oklch(0.5 0.22 265 / 0.22);
+  --outline-btn: oklch(1 0 0 / 0.2);
   --background: oklch(0.14 0.035 266);
   --surface: oklch(0.175 0.04 266);
   --foreground: oklch(0.97 0.006 265);
@@ -86,12 +125,10 @@
   body {
     background-color: var(--color-background);
     background-image:
-      radial-gradient(60rem 40rem at 85% -10%, oklch(0.5 0.22 265 / 0.22), transparent 70%),
-      radial-gradient(40rem 30rem at -10% 20%, oklch(0.8 0.1 250 / 0.07), transparent 70%),
-      linear-gradient(oklch(1 0 0 / 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(1 0 0 / 0.025) 1px, transparent 1px);
+      radial-gradient(60rem 40rem at 85% -10%, var(--glow), transparent 70%),
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
     background-size:
-      auto,
       auto,
       56px 56px,
       56px 56px;
@@ -110,17 +147,14 @@
   }
 }
 
-/* Headlines: tight, bold sans. An <em> inside becomes a blue serif italic accent. */
+/* Headlines: tight, bold sans. An <em> inside is highlighted in blue (no italics). */
 @utility display {
   font-family: var(--font-sans);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.02;
   & em {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: -0.01em;
+    font-style: normal;
     color: var(--brand-ink);
   }
 }
@@ -184,11 +218,10 @@
 }
 
 @utility btn-outline {
-  border: 1px solid oklch(1 0 0 / 0.2);
+  border: 1px solid var(--outline-btn);
   color: var(--foreground);
   &:hover {
     border-color: var(--foreground);
-    background: oklch(1 0 0 / 0.05);
   }
 }
 
@@ -227,7 +260,7 @@
 @utility prose-article {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: oklch(0.84 0.02 265);
+  color: color-mix(in oklch, var(--foreground) 82%, var(--background));
   & > * + * {
     margin-top: 1.4em;
   }
@@ -337,4 +370,54 @@
 .marquee-reverse {
   animation-direction: reverse;
   animation-duration: 55s;
+}
+
+/* Returning visitors / reduced motion: never show the boot intro, not even for a frame. */
+.booted .boot-intro {
+  display: none;
+}
+
+/* Spotlight that follows the cursor across cards (see effects.tsx). */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in oklch, var(--brand) 14%, transparent),
+    transparent 70%
+  );
+}
+.spotlight:hover::after {
+  opacity: 1;
+}
+
+/* Headline words rise in one after another */
+.word-rise > span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.45em);
+  animation: word-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@keyframes word-rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-rise > span {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
