@@ -366,11 +366,11 @@ export const getNextProject = (slug: string) => {
 export const services = [
   {
     n: "01",
-    title: "Website Design",
+    title: "Website Development",
     short:
-      "Professional website design for businesses that need a strong and credible online presence.",
+      "Professional websites designed and developed for businesses that need a strong, credible online presence.",
     description:
-      "Professional website design for businesses that want to establish a credible online presence, communicate their value, and create a strong first impression.",
+      "Professional website design and development for businesses that want to establish a credible online presence, communicate their value, and create a strong first impression.",
     includes: [
       "Business websites",
       "Corporate websites",

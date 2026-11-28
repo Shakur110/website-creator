@@ -85,13 +85,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
       {
         name: "description",
-        content: "Web designer and CRM and AI automation specialist for growing businesses.",
+        content:
+          "Website developer and AI expert: websites, CRM automation and AI tools for growing businesses.",
       },
       { name: "author", content: "Onjoko Tunde" },
       { property: "og:title", content: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
       {
         property: "og:description",
-        content: "Web designer and CRM and AI automation specialist for growing businesses.",
+        content:
+          "Website developer and AI expert: websites, CRM automation and AI tools for growing businesses.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -105,11 +107,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "ProfessionalService",
           name: "Onjoko Tunde — Websites, CRM Automation & AI Tools",
           description:
-            "Website design and redesign on WordPress, Elementor, Shopify and Wix, Shopify store help, CRM setup and automation, and AI tools for businesses in the US, UK, Canada and Australia.",
+            "Website development and redesign on WordPress, Elementor, Shopify and Wix, Shopify store help, CRM setup and automation, and AI tools for businesses in the US, UK, Canada and Australia.",
           founder: {
             "@type": "Person",
             name: "Onjoko Tunde",
-            jobTitle: "Web Designer & CRM and AI Automation Specialist",
+            jobTitle: "Website Developer & AI Expert",
           },
           areaServed: ["US", "GB", "CA", "AU"],
           telephone: "+2348131155547",

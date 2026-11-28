@@ -17,7 +17,7 @@ const nav: { label: string; to: "/" | "/work" | "/blog"; hash?: string }[] = [
 ];
 
 const skills = [
-  "Website design",
+  "Website development",
   "WordPress & Elementor",
   "Shopify stores",
   "Wix",
@@ -184,7 +184,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="container-x flex flex-wrap items-center justify-between gap-4 border-t border-border py-6 font-mono text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} Onjoko Tunde · Web · Shopify · CRM · AI</p>
+        <p>© {new Date().getFullYear()} Onjoko Tunde · Website Developer &amp; AI Expert</p>
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

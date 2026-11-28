@@ -44,18 +44,18 @@ import { faqs } from "@/lib/faqs";
 import { publishedPosts } from "@/lib/posts";
 import { shareTags } from "@/lib/seo";
 
-const TITLE = "Onjoko Tunde — Websites, CRM Automation & AI Tools";
+const TITLE = "Onjoko Tunde — Website Developer & AI Expert";
 const DESCRIPTION =
-  "Websites, CRM automation and AI tools that help growing businesses win and keep more clients.";
+  "Website developer and AI expert. I build websites and the CRM and AI automations behind them, so growing businesses win and keep more clients.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Onjoko Tunde — Website Design, Shopify, CRM Automation & AI Tools" },
+      { title: "Onjoko Tunde — Website Developer & AI Expert" },
       {
         name: "description",
         content:
-          "100+ websites since 2021. I build WordPress, Elementor, Shopify and Wix websites and connect them to CRM automations and AI tools for businesses in the US, UK, Canada and Australia.",
+          "Website developer and AI expert. 100+ websites since 2021. I build WordPress, Elementor, Shopify and Wix websites and connect them to CRM automations and AI tools for businesses in the US, UK, Canada and Australia.",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -151,7 +151,13 @@ function Index() {
                 <span className="hidden sm:inline"> · Web, Shopify, CRM &amp; AI</span>
               </AvailabilityBadge>
             </div>
-            <h1 className="display mt-7 text-5xl sm:text-6xl lg:text-7xl">
+            <p
+              className="animate-rise mt-7 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-brand-ink"
+              style={{ animationDelay: "40ms" }}
+            >
+              Website Developer <span className="text-muted-foreground">&amp;</span> AI Expert
+            </p>
+            <h1 className="display mt-4 text-5xl sm:text-6xl lg:text-7xl">
               <WordRise
                 text="Websites and automations that turn visitors into"
                 accent="clients."
@@ -162,9 +168,9 @@ function Index() {
               className="animate-rise mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground"
               style={{ animationDelay: "160ms" }}
             >
-              I design and build WordPress, Shopify and Wix websites, then connect them to CRM
-              automations and AI tools so every lead is captured, followed up and booked. For
-              businesses in the US, UK, Canada and Australia.
+              I build WordPress, Shopify and Wix websites, then set up the CRM automations and AI
+              tools behind them, so every lead is captured, followed up and booked. For businesses
+              in the US, UK, Canada and Australia.
             </p>
             <div
               className="animate-rise mt-9 flex flex-wrap gap-3"
@@ -237,18 +243,18 @@ function Index() {
           >
             <p className="eyebrow">About</p>
             <h2 className="display mt-4 text-4xl md:text-5xl">
-              The web designer behind <em>the systems.</em>
+              Website developer <em>and AI expert.</em>
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
               <p>
-                I'm Onjoko Tunde. Since 2021 I've designed and built more than 100 websites for
-                clients from therapy practices and dental clinics to manufacturers and maritime
-                consultancies.
+                I'm Onjoko Tunde, a website developer and AI expert. Since 2021 I've built more than
+                100 websites for clients from therapy practices and dental clinics to manufacturers
+                and maritime consultancies.
               </p>
               <p>
-                A good website brings in enquiries, but leads often get lost in inboxes. So I also
-                set up CRMs, automated follow-up and booking, and practical AI tools, so the whole
-                journey from first visit to paying client runs smoothly.
+                Websites are only half the job. Leads often get lost in inboxes, so I also set up
+                CRMs, automated follow-up and booking, AI chat assistants and AI workflows, so the
+                whole journey from first visit to paying client runs on its own.
               </p>
             </div>
             <ul className="mt-7 flex flex-wrap gap-2">
@@ -405,29 +411,6 @@ function Index() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Live client sites */}
-      <section
-        aria-label="Live client websites"
-        className="marquee overflow-hidden border-b border-border py-6"
-      >
-        <div className="marquee-track flex w-max gap-3">
-          {[...projects, ...projects].map((p, i) => (
-            <a
-              key={`${p.slug}-${i}`}
-              href={p.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              tabIndex={i >= projects.length ? -1 : undefined}
-              aria-hidden={i >= projects.length ? true : undefined}
-              className="chip shrink-0 whitespace-nowrap bg-card transition-colors hover:border-brand-ink hover:text-brand-ink"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
-              {p.liveUrl?.replace(/^https?:\/\//, "")}
-            </a>
-          ))}
         </div>
       </section>
 

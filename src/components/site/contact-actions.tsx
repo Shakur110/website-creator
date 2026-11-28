@@ -60,7 +60,7 @@ export function EmailButton({
 }
 
 const types = [
-  "Website design",
+  "Website development",
   "Website redesign",
   "Shopify store",
   "Landing page",
