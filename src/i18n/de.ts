@@ -1,0 +1,397 @@
+import type { Dict } from "./en";
+
+export const de: Dict = {
+  nav: {
+    home: "Start",
+    about: "Über mich",
+    services: "Leistungen",
+    work: "Projekte",
+    process: "Ablauf",
+    faq: "FAQ",
+    blog: "Blog",
+  },
+  header: {
+    email: "E-Mail",
+    bookCall: "Termin buchen",
+    sendEmail: "E-Mail senden",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schließen",
+    language: "Sprache",
+  },
+  theme: {
+    light: "Hell",
+    dark: "Dunkel",
+    toLight: "Zum hellen Modus wechseln",
+    toDark: "Zum dunklen Modus wechseln",
+  },
+  footer: {
+    blurb:
+      "Webentwickler und KI-Experte. Websites, Shopify-Shops, CRM-Automatisierung und KI-Tools für Unternehmen in den USA, Großbritannien, Kanada und Australien. Über 100 Websites seit 2021.",
+    navigate: "Navigation",
+    contact: "Kontakt",
+    role: "Webentwickler & KI-Experte",
+    scrollTop: "Nach oben",
+    skills: [
+      "Webentwicklung",
+      "WordPress & Elementor",
+      "Shopify-Shops",
+      "Wix",
+      "Landingpages",
+      "CRM-Pipelines",
+      "Automatisches Lead-Follow-up",
+      "E-Mail- & SMS-Abläufe",
+      "Buchungen & Erinnerungen",
+      "KI-Chatassistenten",
+      "KI-Workflow-Automatisierung",
+      "SEO & KI-Suche",
+    ],
+  },
+  modal: {
+    eyebrow: "E-Mail senden",
+    title: "Erzählen Sie mir von",
+    titleEm: "Ihrem Projekt.",
+    close: "Schließen",
+    name: "Name",
+    email: "E-Mail",
+    company: "Unternehmen / Website (optional)",
+    type: "Was brauchen Sie?",
+    budget: "Budget (USD)",
+    details: "Projektdetails",
+    detailsPlaceholder: "Ihre Ziele, Zeitplan, Links zu Ihrer aktuellen Website…",
+    send: "E-Mail senden",
+    or: "oder",
+    bookShort: "15-Minuten-Gespräch buchen",
+    types: [
+      "Website-Entwicklung",
+      "Website-Relaunch",
+      "Shopify-Shop",
+      "Landingpage",
+      "CRM-Einrichtung & Automatisierung",
+      "KI-Tools & Automatisierung",
+      "Website + CRM + KI",
+      "Etwas anderes",
+    ],
+    budgets: [
+      "Unter 500 $",
+      "500 $ – 1.500 $",
+      "1.500 $ – 3.000 $",
+      "3.000 $ – 5.000 $",
+      "Über 5.000 $",
+    ],
+    notSure: "Noch unklar",
+    errName: "Bitte geben Sie Ihren Namen ein.",
+    errEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    errDetails: "Beschreiben Sie Ihr Projekt kurz (mindestens 10 Zeichen).",
+    sent: "Ihr E-Mail-Programm sollte sich jetzt mit Ihrer Nachricht öffnen. Klicken Sie auf Senden – ich antworte innerhalb eines Werktags.",
+    didntOpen: "Nichts geöffnet? Schreiben Sie mir direkt an",
+    orBook: ", oder buchen Sie stattdessen ein Gespräch.",
+  },
+  console: {
+    aria: "Beispiel einer automatisierten Lead-Pipeline",
+    pipeline: "Lead-Pipeline",
+    open: "AKTIV",
+    steps: ["Besucher", "Erfassung", "CRM", "Follow-up", "KI-Agent", "Gebucht"],
+  },
+  boot: {
+    welcome: "Willkommen bei",
+    skip: "Intro überspringen",
+    soundOn: "Ton an",
+    soundHint: "Am besten mit Ton",
+  },
+  home: {
+    title: "Onjoko Tunde — Webentwickler & KI-Experte",
+    description:
+      "Webentwickler und KI-Experte. Über 100 Websites seit 2021. Ich baue Websites mit WordPress, Elementor, Shopify und Wix und verbinde sie mit CRM-Automatisierungen und KI-Tools – für Unternehmen in den USA, Großbritannien, Kanada und Australien.",
+    welcome: "Willkommen bei",
+    available: "Verfügbar für neue Projekte",
+    availableSub: "Web, Shopify, CRM & KI",
+    role: "Webentwickler",
+    roleAnd: "&",
+    roleAi: "KI-Experte",
+    h1: "Websites und Automationen, die aus Besuchern",
+    h1Accent: "Kunden machen.",
+    heroCopy:
+      "Ich baue Websites mit WordPress, Shopify und Wix und richte die CRM-Automatisierungen und KI-Tools dahinter ein – so wird jede Anfrage erfasst, nachverfolgt und in einen Termin verwandelt. Für Unternehmen in den USA, Großbritannien, Kanada und Australien.",
+    bookFree: "Kostenloses Gespräch buchen",
+    showreel: "Showreel",
+    showreelAria: "Showreel mit {n} Kunden-Websites",
+    featuredSites: "{n} ausgewählte Websites",
+    fromBuilt: "Aus über {n} seit 2021",
+    heroServices: [
+      "WordPress-Websites",
+      "Shopify-Shops",
+      "Wix-Websites",
+      "Website-Relaunches",
+      "Landingpages",
+      "CRM & Pipelines",
+      "Lead-Erfassung & Follow-up",
+      "E-Mail- & SMS-Automatisierung",
+      "Buchungen & Erinnerungen",
+      "KI-Chatassistenten",
+      "KI-Workflow-Automatisierung",
+    ],
+    about: {
+      eyebrow: "Über mich",
+      title: "Webentwickler",
+      titleEm: "und KI-Experte.",
+      p1: "Ich bin Onjoko Tunde, Webentwickler und KI-Experte. Seit 2021 habe ich über 100 Websites gebaut – für Therapiepraxen und Zahnkliniken ebenso wie für Hersteller und maritime Beratungen.",
+      p2: "Die Website ist nur die halbe Arbeit. Anfragen gehen oft im Posteingang verloren, deshalb richte ich auch CRMs, automatische Nachfassaktionen und Buchungen, KI-Chatassistenten und KI-Workflows ein – damit der ganze Weg vom ersten Besuch bis zum zahlenden Kunden von selbst läuft.",
+      location: "Lagos, Nigeria",
+      remote: "Remote · US, UK, CA, AU",
+      since: "seit 2021",
+      stats: [
+        "Websites umgesetzt",
+        "Freelancer seit",
+        "Ausgewählte Projekte",
+        "Kernmärkte: US, UK, CA, AU",
+      ],
+      platforms: "Plattformen, mit denen ich arbeite",
+    },
+    intro: {
+      title: "Websites, Shopify, CRM und KI für Unternehmen in den",
+      titleEm: "USA, Großbritannien, Kanada & Australien.",
+      copy: "Ein Partner für den ganzen Weg: eine Website, die Vertrauen schafft, ein CRM, das jede Anfrage erfasst, Automationen, die für Sie nachfassen, und KI-Tools, die Ihnen jede Woche Stunden sparen.",
+    },
+    services: {
+      eyebrow: "Leistungen",
+      title: "Web, Shopify, CRM",
+      titleEm: "und KI – richtig gemacht.",
+      intro: "Tippen Sie auf eine Leistung, um zu sehen, was dazugehört.",
+      bookAbout: "Gespräch dazu buchen",
+      items: [
+        {
+          title: "Website-Entwicklung",
+          short:
+            "Professionelle Websites, gestaltet und entwickelt für Unternehmen, die einen starken, glaubwürdigen Online-Auftritt brauchen.",
+          description:
+            "Professionelles Webdesign und Entwicklung für Unternehmen, die online Vertrauen aufbauen, ihren Mehrwert klar vermitteln und einen starken ersten Eindruck hinterlassen wollen.",
+          includes: [
+            "Unternehmenswebsites",
+            "Corporate Websites",
+            "Websites für Dienstleister",
+            "Persönliche Websites und Berater-Websites",
+            "Mehrseitige Websites",
+          ],
+        },
+        {
+          title: "Website-Relaunch",
+          short:
+            "Aus veralteten Websites werden moderne, responsive und nutzerfreundliche Auftritte.",
+          description:
+            "Ich verwandle veraltete, uneinheitliche oder schwache Websites in moderne Auftritte, die die Qualität und Ausrichtung Ihres Unternehmens besser widerspiegeln.",
+          includes: [
+            "Kompletter Relaunch",
+            "Visuelle Modernisierung",
+            "Neue Seitenstruktur",
+            "Bessere Nutzerführung",
+            "Optimierung für Mobilgeräte",
+            "Bessere Inhalte und Navigation",
+          ],
+        },
+        {
+          title: "Shopify- & E-Commerce-Shops",
+          short:
+            "Shopify-Shops, die hochwertig aussehen, schnell laden und Besucher zu Käufern machen – plus WooCommerce auf WordPress.",
+          description:
+            "Neuer Shopify-Shop, Relaunch oder Hilfe mit Ihrem bestehenden Shop. Ich richte Themes ein und passe sie an, ordne Produkte und Kollektionen, verbinde die passenden Apps für Bewertungen, E-Mail-Erfassung und Abos und mache langsame Shops wieder schnell. Für WordPress-Websites arbeite ich mit WooCommerce.",
+          includes: [
+            "Shop-Einrichtung und Theme-Design",
+            "Theme-Anpassung und Shop-Relaunch",
+            "Produkte, Kollektionen und Checkout",
+            "Apps für Bewertungen, E-Mail-Erfassung und Abos",
+            "Mehr Geschwindigkeit und App-Bereinigung",
+            "Umzug Ihres Shops zu Shopify",
+            "WooCommerce-Shops auf WordPress",
+          ],
+        },
+        {
+          title: "Landingpages",
+          short:
+            "Fokussierte Landingpages mit klarer Botschaft, guter Nutzerführung und klaren Conversion-Zielen.",
+          description:
+            "Landingpages, die ein klares Angebot vermitteln, Besucher durch die wichtigsten Infos führen und zum Handeln motivieren.",
+          includes: [
+            "Landingpages zur Lead-Gewinnung",
+            "Kampagnen-Landingpages",
+            "Produkt-Landingpages",
+            "Leistungs-Landingpages",
+            "Anfrageformulare",
+            "Optimierte Handlungsaufforderungen",
+          ],
+        },
+        {
+          title: "CRM-Einrichtung & Automatisierung",
+          short:
+            "Verbinden Sie Ihre Website mit einem CRM, damit jede Anfrage automatisch erfasst, nachverfolgt und dokumentiert wird.",
+          description:
+            "Keine Anfragen mehr, die im Posteingang verloren gehen. Ich richte Ihr CRM ein, verbinde es mit Ihren Website-Formularen und baue Automationen, die bei Interessenten nachfassen, Kunden an Termine erinnern und Ihre Pipeline aktuell halten.",
+          includes: [
+            "CRM-Einrichtung und Pipelines",
+            "Website-Formulare mit dem CRM verbunden",
+            "Automatische Follow-up-E-Mails und SMS",
+            "Terminbuchung und Erinnerungen",
+            "Lead-Tags und Benachrichtigungen",
+            "Auswertung, woher Ihre Anfragen kommen",
+          ],
+        },
+        {
+          title: "KI-Tools & Workflow-Automatisierung",
+          short:
+            "Nutzen Sie KI, um Anfragen zu beantworten, Inhalte zu erstellen und wiederkehrende Verwaltungsarbeit loszuwerden.",
+          description:
+            "Praktische KI für kleine und wachsende Unternehmen. Ich helfe Ihnen, KI-Tools auszuwählen und einzurichten, die jede Woche Zeit sparen – vom Chatassistenten auf Ihrer Website bis zu automatisierten Abläufen zwischen Ihren Apps.",
+          includes: [
+            "KI-Chatassistenten für Ihre Website",
+            "KI-gestützte Inhalte und Texte",
+            "Automatisierte Abläufe zwischen Ihren Apps",
+            "Lead-Qualifizierung und -Zuweisung",
+            "Team-Schulung zu KI-Tools",
+            "Laufende Verbesserungen",
+          ],
+        },
+      ],
+    },
+    lead: {
+      eyebrow: "Schnelle Reaktion",
+      title: "So wird aus einer Anfrage",
+      titleEm: "in Minuten ein Termin.",
+      intro:
+        "Ein Beispiel für die Automatisierung, die ich mit Ihrer Website verbinde: sofortige Antworten, CRM-Erfassung, Follow-up und ein KI-Assistent, der den Termin bucht.",
+    },
+    work: {
+      eyebrow: "Ausgewählte Projekte",
+      title: "Aktuelle Websites für",
+      titleEm: "echte Unternehmen.",
+      intro:
+        "{n} Highlights aus über {total} Websites für Kliniken, Beratungen, Akademien, Hersteller und Dienstleister.",
+      seeAll: "Alle Projekte ansehen",
+    },
+    process: {
+      eyebrow: "So arbeite ich",
+      title: "Strategie. Umsetzung.",
+      titleEm: "Launch.",
+      intro:
+        "Ich arbeite remote mit Kunden in verschiedenen Zeitzonen – mit klaren Updates bei jedem Schritt.",
+      steps: [
+        {
+          title: "Erstgespräch",
+          text: "Wir sprechen über Ihr Unternehmen, Ihre Kunden und das Ziel der Website. Sie erhalten einen klaren Umfang und ein Angebot.",
+        },
+        {
+          title: "Struktur & Design",
+          text: "Ich plane Seiten und Inhalte und gestalte dann das Design, damit Sie es prüfen können, bevor gebaut wird.",
+        },
+        {
+          title: "Umsetzung & Automatisierung",
+          text: "Ich baue die Website auf der passenden Plattform, verbinde CRM und Automationen und teste alles auf jeder Bildschirmgröße.",
+        },
+        {
+          title: "Launch & Übergabe",
+          text: "Ich schalte live, verbinde Domain, Formulare und CRM und zeige Ihnen, wie Sie alles selbst verwalten.",
+        },
+      ],
+    },
+    faq: {
+      eyebrow: "FAQ",
+      title: "Fragen,",
+      titleEm: "beantwortet.",
+      intro: "Ihre Frage ist nicht dabei? Fragen Sie mich direkt – ich melde mich.",
+      ask: "Frage stellen",
+      items: [
+        {
+          q: "Auf welcher Plattform bauen Sie meine Website?",
+          a: "Das hängt davon ab, was Ihr Unternehmen braucht. Ich arbeite mit WordPress (oft mit Elementor), Wix und anderen Baukästen und empfehle eine Plattform passend zu Ihren Zielen, Ihrem Budget und dazu, wer die Website später pflegt.",
+        },
+        {
+          q: "Helfen Sie auch bei Shopify-Shops?",
+          a: "Ja. Ich baue neue Shopify-Shops, gestalte bestehende Themes neu und passe sie an, richte Produkte, Kollektionen und Apps wie Bewertungen, E-Mail-Erfassung und Abos ein und mache Shops schneller, die durch zu viele Apps ausgebremst werden.",
+        },
+        {
+          q: "Gehört mir die Website, wenn sie fertig ist?",
+          a: "Ja. Die Website, ihre Inhalte und die zugehörigen Konten laufen auf Ihren Namen, und ich übergebe beim Launch alles an Sie.",
+        },
+        {
+          q: "Wie lange dauert ein Projekt?",
+          a: "Das hängt von der Anzahl der Seiten, den Funktionen und davon ab, wie schnell die Inhalte bereitstehen. Nach unserem ersten Gespräch erhalten Sie mit dem Angebot einen klaren Zeitplan.",
+        },
+        {
+          q: "Arbeiten Sie mit Kunden in den USA, Großbritannien, Kanada und Australien?",
+          a: "Ja. Die meisten meiner Kunden sitzen im Ausland. Ich arbeite remote, teile regelmäßig den Fortschritt und lege Gespräche auf Zeiten, die zu Ihrer Zeitzone passen.",
+        },
+        {
+          q: "Können Sie meine Website mit einem CRM verbinden und Follow-ups automatisieren?",
+          a: "Ja. Ich kann Ihr CRM einrichten, Ihre Website-Formulare damit verbinden und Automationen wie Follow-up-E-Mails, Terminerinnerungen und Benachrichtigungen bei neuen Anfragen bauen.",
+        },
+        {
+          q: "Wie kann KI meinem Unternehmen helfen?",
+          a: "Typische Beispiele sind ein Chatassistent auf der Website, der häufige Fragen beantwortet, Hilfe beim Schreiben von Inhalten und automatisierte Abläufe, die Daten zwischen Ihren Apps übertragen. Ich schlage vor, was Ihnen wirklich Zeit spart.",
+        },
+        {
+          q: "Kann ich die Website nach dem Launch selbst bearbeiten?",
+          a: "Ja. Ich richte die Website so ein, dass Sie Texte, Bilder und Seiten selbst ändern können, und zeige Ihnen vor der Übergabe, wie das geht.",
+        },
+        {
+          q: "Was brauchen Sie von mir für den Start?",
+          a: "Eine kurze Beschreibung Ihres Unternehmens und Ihrer Ziele, Ihr Logo, vorhandene Texte oder Fotos und den Zugang zu Ihrer Domain, falls Sie eine haben. Um den Rest kümmere ich mich.",
+        },
+      ],
+    },
+    blog: {
+      eyebrow: "Aus dem Blog",
+      title: "Tipps für",
+      titleEm: "Unternehmer.",
+      intro:
+        "Jeden Tag ein neuer Artikel über Websites, Shopify, CRM-Automatisierung und KI-Tools.",
+      note: "Artikel auf Englisch.",
+      read: "Zum Blog",
+    },
+  },
+  leadflow: {
+    timeline: [
+      { title: "Formular abgeschickt", sub: "Ein Besucher fragt auf der Website ein Angebot an" },
+      { title: "Sofortige SMS-Antwort", sub: "Automatisch verschickt, Tag und Nacht" },
+      { title: "Im CRM angelegt", sub: "Neuer Lead · markiert als „Website-Anfrage“" },
+      { title: "Willkommens-E-Mail", sub: "Die erste einer kurzen Follow-up-Serie" },
+      { title: "KI-Assistent antwortet", sub: "Beantwortet Fragen, bietet echte Termine an" },
+      { title: "Termin gebucht", sub: "Im Kalender, Erinnerung eingeplant" },
+    ],
+    chat: [
+      "Hallo Sarah, danke für Ihre Anfrage! Wann passt Ihnen ein kurzes Beratungsgespräch?",
+      "Donnerstagnachmittag, wenn möglich",
+      "Gern, ich habe Do. 15:00 oder 16:30 Uhr frei. Was passt Ihnen?",
+      "15 Uhr bitte",
+      "Gebucht für Do. 15:00 Uhr ✓ Sie erhalten am Vortag eine Erinnerung.",
+    ],
+    assistant: "Buchungsassistent",
+    online: "rund um die Uhr online",
+    crmStatus: "CRM-Status",
+    booked: "Gebucht ✓",
+    newLead: "Neuer Lead",
+    waiting: "Wartet…",
+    note: "Beispielgespräch. Jedes Unternehmen bekommt eigene Texte und Buchungsregeln.",
+    cta: "Das will ich für mein Unternehmen",
+  },
+  notes: {
+    eyebrow: "Notiz anpinnen",
+    title: "Sagen Sie Hallo,",
+    titleEm: "bevor Sie gehen.",
+    intro:
+      "Nette Worte, Feedback oder ein kurzes Hallo sind willkommen. Notizen kommen an die Wand, sobald ich sie gelesen habe.",
+    note: "Ihre Notiz",
+    name: "Ihr Name",
+    city: "Stadt (optional)",
+    colour: "Farbe",
+    pin: "Anpinnen",
+    pending: "Wartet auf Freigabe",
+    errNote: "Schreiben Sie zuerst eine kurze Notiz.",
+    errName: "Geben Sie Ihren Namen an, damit Onjoko weiß, von wem sie ist.",
+    sent: "Ihr E-Mail-Programm sollte sich mit Ihrer Notiz öffnen. Klicken Sie auf Senden und ich pinne sie an die Wand.",
+  },
+  cta: {
+    eyebrow: "// Kontakt",
+    title: "Sie haben ein Projekt im Kopf?",
+    titleEm: "Lassen Sie uns reden.",
+    copy: "Buchen Sie ein kostenloses 15-Minuten-Gespräch oder schreiben Sie mir, was Ihre Website, Ihr CRM oder Ihre Automationen leisten sollen.",
+  },
+  testimonials: { eyebrow: "Kundenstimmen", title: "Was Kunden", titleEm: "sagen." },
+};

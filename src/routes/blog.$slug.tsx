@@ -9,8 +9,16 @@ import {
   ShareButtons,
   TableOfContents,
 } from "@/components/site/blog";
-import { getPost, publishedPosts } from "@/lib/posts";
-import { shareTags } from "@/lib/seo";
+import { getPost, publishedPosts, readingTime } from "@/lib/posts";
+import {
+  absUrl,
+  breadcrumbLd,
+  canonicalLink,
+  OG_IMAGE,
+  PERSON_ID,
+  shareTags,
+  WEBSITE_ID,
+} from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -42,18 +50,48 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         { property: "article:published_time", content: post.date },
         { name: "twitter:card", content: "summary_large_image" },
+        { property: "article:author", content: "Onjoko Tunde" },
+        { property: "article:section", content: post.category },
         ...shareTags(`/blog/${post.slug}`, post.title, post.excerpt),
       ],
+      links: [canonicalLink(`/blog/${post.slug}`)],
       scripts: [
         {
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.title,
-            description: post.excerpt,
-            datePublished: post.date,
-            author: { "@type": "Person", name: "Onjoko Tunde" },
+            "@graph": [
+              {
+                "@type": "BlogPosting",
+                "@id": `${absUrl(`/blog/${post.slug}`)}#article`,
+                mainEntityOfPage: absUrl(`/blog/${post.slug}`),
+                headline: post.title,
+                description: post.excerpt,
+                abstract: post.excerpt,
+                datePublished: post.date,
+                dateModified: post.date,
+                inLanguage: "en",
+                articleSection: post.category,
+                timeRequired: `PT${readingTime(post)}M`,
+                image: post.cover ? absUrl(post.cover) : OG_IMAGE,
+                author: {
+                  "@id": PERSON_ID,
+                  "@type": "Person",
+                  name: "Onjoko Tunde",
+                  url: absUrl("/"),
+                },
+                publisher: { "@id": PERSON_ID },
+                isPartOf: { "@id": WEBSITE_ID },
+                speakable: {
+                  "@type": "SpeakableSpecification",
+                  cssSelector: ["h1", "[data-summary]"],
+                },
+              },
+              breadcrumbLd([
+                ["Blog", "/blog"],
+                [post.title, `/blog/${post.slug}`],
+              ]),
+            ],
           }),
         },
       ],
@@ -85,7 +123,9 @@ function Article() {
             </Link>
             <p className="eyebrow mt-10">{post.category}</p>
             <h1 className="display mt-4 text-4xl md:text-6xl">{post.title}</h1>
-            <p className="mt-6 text-xl leading-relaxed text-muted-foreground">{post.excerpt}</p>
+            <p data-summary className="mt-6 text-xl leading-relaxed text-muted-foreground">
+              {post.excerpt}
+            </p>
             <div className="mt-8 flex items-center gap-3 border-t border-border pt-6">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
                 OT

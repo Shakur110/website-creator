@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -17,6 +18,8 @@ import { EmailModalProvider } from "../components/site/contact-actions";
 import { earlyScript } from "../components/site/theme";
 import { BootIntro } from "../components/site/boot";
 import { ScrollProgress, SpotlightTracker } from "../components/site/effects";
+import { LocaleProvider, localeFromPath, LOCALE_META } from "../i18n";
+import { siteGraphLd } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -82,14 +85,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
+      { title: "Onjoko Tunde — Website Developer & AI Expert" },
       {
         name: "description",
         content:
           "Website developer and AI expert: websites, CRM automation and AI tools for growing businesses.",
       },
       { name: "author", content: "Onjoko Tunde" },
-      { property: "og:title", content: "Onjoko Tunde — Websites, CRM Automation & AI Tools" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { name: "theme-color", content: "#2351de" },
+      { property: "og:title", content: "Onjoko Tunde — Website Developer & AI Expert" },
       {
         property: "og:description",
         content:
@@ -100,25 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       { children: earlyScript },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          name: "Onjoko Tunde — Websites, CRM Automation & AI Tools",
-          description:
-            "Website development and redesign on WordPress, Elementor, Shopify and Wix, Shopify store help, CRM setup and automation, and AI tools for businesses in the US, UK, Canada and Australia.",
-          founder: {
-            "@type": "Person",
-            name: "Onjoko Tunde",
-            jobTitle: "Website Developer & AI Expert",
-          },
-          areaServed: ["US", "GB", "CA", "AU"],
-          telephone: "+2348131155547",
-          email: "onjokoshakur@gmail.com",
-          foundingDate: "2021",
-        }),
-      },
+      { type: "application/ld+json", children: JSON.stringify(siteGraphLd()) },
     ],
     links: [
       {
@@ -126,6 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "alternate", type: "text/plain", title: "LLM summary", href: "/llms.txt" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -140,9 +128,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const usePathLocale = () => localeFromPath(useRouterState({ select: (s) => s.location.pathname }));
+
 function RootShell({ children }: { children: ReactNode }) {
+  const locale = usePathLocale();
   return (
-    <html lang="en">
+    <html lang={LOCALE_META[locale].hreflang}>
       <head>
         <HeadContent />
       </head>
@@ -156,21 +147,24 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const locale = usePathLocale();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <EmailModalProvider>
-        <BootIntro />
-        <ScrollProgress />
-        <SpotlightTracker />
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <SiteHeader />
-        <main>
-          <Outlet />
-        </main>
-        <SiteFooter />
-        <MobileCta />
-      </EmailModalProvider>
+      <LocaleProvider locale={locale}>
+        <EmailModalProvider>
+          <BootIntro />
+          <ScrollProgress />
+          <SpotlightTracker />
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <SiteHeader />
+          <main>
+            <Outlet />
+          </main>
+          <SiteFooter />
+          <MobileCta />
+        </EmailModalProvider>
+      </LocaleProvider>
     </QueryClientProvider>
   );
 }

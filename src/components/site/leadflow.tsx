@@ -1,61 +1,24 @@
 import { Bot, CalendarCheck, Database, FileInput, Mail, MessageSquare } from "lucide-react";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BookCallButton } from "@/components/site/contact-actions";
+import { useT } from "@/i18n";
 
 const timeline = [
-  {
-    t: "00:00",
-    icon: FileInput,
-    title: "Form submitted",
-    sub: "A visitor asks for a quote on the website",
-  },
-  {
-    t: "00:05",
-    icon: MessageSquare,
-    title: "Instant text reply",
-    sub: "Sent automatically, day or night",
-  },
-  {
-    t: "00:06",
-    icon: Database,
-    title: "Added to the CRM",
-    sub: "New lead · tagged “Website enquiry”",
-  },
-  { t: "00:30", icon: Mail, title: "Welcome email", sub: "First of a short follow-up sequence" },
-  {
-    t: "01:10",
-    icon: Bot,
-    title: "AI assistant replies",
-    sub: "Answers questions, offers real time slots",
-  },
-  {
-    t: "02:40",
-    icon: CalendarCheck,
-    title: "Appointment booked",
-    sub: "On your calendar, reminder scheduled",
-  },
+  { t: "00:00", icon: FileInput },
+  { t: "00:05", icon: MessageSquare },
+  { t: "00:06", icon: Database },
+  { t: "00:30", icon: Mail },
+  { t: "01:10", icon: Bot },
+  { t: "02:40", icon: CalendarCheck },
 ];
 
-type Msg = { from: "bot" | "lead"; text: ReactNode; at: number };
-const chat: Msg[] = [
-  {
-    from: "bot",
-    at: 1,
-    text: "Hi Sarah, thanks for your enquiry! When would suit you for a quick consultation?",
-  },
-  { from: "lead", at: 4, text: "Thursday afternoon if possible" },
-  { from: "bot", at: 4, text: "Great, I have Thu 3:00 PM or 4:30 PM. Which works for you?" },
-  { from: "lead", at: 5, text: "3pm please" },
-  {
-    from: "bot",
-    at: 5,
-    text: (
-      <>
-        Booked for Thu 3:00 PM <span className="text-emerald-500">✓</span> You'll get a reminder the
-        day before.
-      </>
-    ),
-  },
+/** Who sends each line of the example chat, and at which timeline step it appears. */
+const chat: { from: "bot" | "lead"; at: number }[] = [
+  { from: "bot", at: 1 },
+  { from: "lead", at: 4 },
+  { from: "bot", at: 4 },
+  { from: "lead", at: 5 },
+  { from: "bot", at: 5 },
 ];
 
 const STEP_MS = 1500;
@@ -65,6 +28,7 @@ const STEP_MS = 1500;
  * call while the conversation plays on a phone. Runs while on screen, then loops.
  */
 export function LeadFlowDemo() {
+  const L = useT().leadflow;
   const ref = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(timeline.length - 1);
 
@@ -95,7 +59,7 @@ export function LeadFlowDemo() {
     };
   }, []);
 
-  const shown = chat.filter((m) => m.at <= step);
+  const shown = chat.map((m, i) => ({ ...m, text: L.chat[i] ?? "" })).filter((m) => m.at <= step);
   // Show "typing…" just before the assistant's next message arrives.
   const typing = chat.some((m) => m.from === "bot" && m.at === step + 1);
   const booked = step >= timeline.length - 1;
@@ -109,7 +73,7 @@ export function LeadFlowDemo() {
           const now = i === step;
           return (
             <li
-              key={s.title}
+              key={s.t}
               className={`spotlight flex items-center gap-4 rounded-2xl border p-4 transition-all duration-500 ${
                 now
                   ? "border-brand-ink/60 bg-card shadow-lg shadow-brand/10"
@@ -130,8 +94,8 @@ export function LeadFlowDemo() {
                 <s.icon className="h-5 w-5" />
               </span>
               <span className="flex-1">
-                <span className="block font-semibold">{s.title}</span>
-                <span className="block text-sm text-muted-foreground">{s.sub}</span>
+                <span className="block font-semibold">{L.timeline[i]?.title}</span>
+                <span className="block text-sm text-muted-foreground">{L.timeline[i]?.sub}</span>
               </span>
               <span className="font-mono text-xs tabular-nums text-muted-foreground">{s.t}</span>
             </li>
@@ -148,9 +112,9 @@ export function LeadFlowDemo() {
                 <Bot className="h-4 w-4" />
               </span>
               <span>
-                <span className="block text-sm font-semibold">Booking assistant</span>
+                <span className="block text-sm font-semibold">{L.assistant}</span>
                 <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> online 24/7
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> {L.online}
                 </span>
               </span>
             </div>
@@ -189,18 +153,16 @@ export function LeadFlowDemo() {
                   : "text-muted-foreground"
               }`}
             >
-              <span className="font-mono uppercase tracking-[0.12em]">CRM status</span>
+              <span className="font-mono uppercase tracking-[0.12em]">{L.crmStatus}</span>
               <span className="font-semibold">
-                {booked ? "Booked ✓" : step >= 2 ? "New lead" : "Waiting…"}
+                {booked ? L.booked : step >= 2 ? L.newLead : L.waiting}
               </span>
             </div>
           </div>
         </div>
-        <p className="mt-4 text-center text-xs text-muted-foreground">
-          Example conversation. Every business gets its own wording and booking rules.
-        </p>
+        <p className="mt-4 text-center text-xs text-muted-foreground">{L.note}</p>
         <div className="mt-5 flex justify-center">
-          <BookCallButton label="Get this for my business" />
+          <BookCallButton label={L.cta} />
         </div>
       </div>
     </div>

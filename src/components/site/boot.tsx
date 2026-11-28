@@ -9,6 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Fragment, useEffect, useRef, useState } from "react";
+import { useT } from "@/i18n";
 
 const steps: { label: string; icon: LucideIcon }[] = [
   { label: "Capture", icon: FileInput },
@@ -41,6 +42,7 @@ function blip(ctx: AudioContext | null, freq: number, len = 0.07) {
  * Hidden instantly (no flash) for returning visitors and reduced-motion users.
  */
 export function BootIntro() {
+  const t = useT();
   const [pct, setPct] = useState(0);
   const [ms, setMs] = useState(0);
   const [leaving, setLeaving] = useState(false);
@@ -151,15 +153,15 @@ export function BootIntro() {
           aria-pressed={sound}
         >
           {sound ? <Volume2 className="h-4 w-4" /> : <VolumeX className="h-4 w-4" />}
-          {sound ? "Sound on" : "Best with sound on"}
+          {sound ? t.boot.soundOn : t.boot.soundHint}
         </button>
         <button type="button" onClick={finish} className="transition-colors hover:text-white">
-          Skip intro →
+          {t.boot.skip} →
         </button>
       </div>
 
       <div className="relative mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-6 md:px-10">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-sky">Welcome to</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-sky">{t.boot.welcome}</p>
         <h1 className="mt-3 text-5xl font-extrabold tracking-[-0.04em] sm:text-7xl md:text-8xl">
           ONJOKO TUNDE
         </h1>
@@ -193,7 +195,7 @@ export function BootIntro() {
               const on = i <= active;
               const last = i === steps.length - 1;
               return (
-                <Fragment key={st.label}>
+                <Fragment key={i}>
                   {i > 0 && (
                     <span
                       aria-hidden
@@ -210,7 +212,7 @@ export function BootIntro() {
                     }`}
                   >
                     <st.icon className="h-3.5 w-3.5" />
-                    {st.label}
+                    {t.console.steps[i + 1] ?? st.label}
                   </span>
                 </Fragment>
               );

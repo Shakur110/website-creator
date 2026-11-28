@@ -2,9 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { Quote } from "lucide-react";
 import { Reveal, SectionHead } from "@/components/site/parts";
 import { testimonials } from "@/lib/testimonials";
+import { useT } from "@/i18n";
 
 /** "What clients say" — renders nothing until testimonials.ts has entries. */
 export function Testimonials() {
+  const copy = useT().testimonials;
   if (testimonials.length === 0) return null;
   const cols =
     testimonials.length === 1
@@ -16,10 +18,10 @@ export function Testimonials() {
     <section className="border-t border-border py-24 md:py-32">
       <div className="container-x">
         <SectionHead
-          eyebrow="Testimonials"
+          eyebrow={copy.eyebrow}
           title={
             <>
-              What clients <em>say.</em>
+              {copy.title} <em>{copy.titleEm}</em>
             </>
           }
         />

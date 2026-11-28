@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { CtaBand, PageHero, ProjectCard, Reveal } from "@/components/site/parts";
 import { CATEGORIES, projects, siteStats } from "@/lib/projects";
-import { shareTags } from "@/lib/seo";
+import { absUrl, breadcrumbLd, canonicalLink, PERSON_ID, shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/work/")({
   head: () => ({
@@ -25,6 +25,33 @@ export const Route = createFileRoute("/work/")({
         "Selected Work — Onjoko Tunde",
         "A portfolio of business, healthcare, education and specialist service websites.",
       ),
+    ],
+    links: [canonicalLink("/work")],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "CollectionPage",
+              name: "Website projects by Onjoko Tunde",
+              url: absUrl("/work"),
+              author: { "@id": PERSON_ID },
+              mainEntity: {
+                "@type": "ItemList",
+                itemListElement: projects.map((p, i) => ({
+                  "@type": "ListItem",
+                  position: i + 1,
+                  name: p.title,
+                  url: absUrl(`/work/${p.slug}`),
+                })),
+              },
+            },
+            breadcrumbLd([["Work", "/work"]]),
+          ],
+        }),
+      },
     ],
   }),
   component: Work,

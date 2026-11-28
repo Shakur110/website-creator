@@ -1,0 +1,397 @@
+import type { Dict } from "./en";
+
+export const es: Dict = {
+  nav: {
+    home: "Inicio",
+    about: "Sobre mí",
+    services: "Servicios",
+    work: "Proyectos",
+    process: "Proceso",
+    faq: "Preguntas",
+    blog: "Blog",
+  },
+  header: {
+    email: "Email",
+    bookCall: "Agendar llamada",
+    sendEmail: "Enviar un email",
+    openMenu: "Abrir menú",
+    closeMenu: "Cerrar menú",
+    language: "Idioma",
+  },
+  theme: {
+    light: "Claro",
+    dark: "Oscuro",
+    toLight: "Cambiar a modo claro",
+    toDark: "Cambiar a modo oscuro",
+  },
+  footer: {
+    blurb:
+      "Desarrollador web y experto en IA. Sitios web, tiendas Shopify, automatización de CRM y herramientas de IA para empresas de Estados Unidos, Reino Unido, Canadá y Australia. Más de 100 sitios entregados desde 2021.",
+    navigate: "Navegación",
+    contact: "Contacto",
+    role: "Desarrollador web y experto en IA",
+    scrollTop: "Volver arriba",
+    skills: [
+      "Desarrollo web",
+      "WordPress y Elementor",
+      "Tiendas Shopify",
+      "Wix",
+      "Landing pages",
+      "Pipelines de CRM",
+      "Seguimiento automático de leads",
+      "Flujos de email y SMS",
+      "Reservas y recordatorios",
+      "Asistentes de chat con IA",
+      "Automatización con IA",
+      "SEO y búsqueda con IA",
+    ],
+  },
+  modal: {
+    eyebrow: "Enviar un email",
+    title: "Cuéntame sobre",
+    titleEm: "tu proyecto.",
+    close: "Cerrar",
+    name: "Nombre",
+    email: "Email",
+    company: "Empresa / sitio web (opcional)",
+    type: "¿Qué necesitas?",
+    budget: "Presupuesto (USD)",
+    details: "Detalles del proyecto",
+    detailsPlaceholder: "Tus objetivos, plazos, enlaces a tu sitio actual…",
+    send: "Enviar email",
+    or: "o",
+    bookShort: "agenda una llamada de 15 minutos",
+    types: [
+      "Desarrollo de sitio web",
+      "Rediseño de sitio web",
+      "Tienda Shopify",
+      "Landing page",
+      "Configuración y automatización de CRM",
+      "Herramientas de IA y automatización",
+      "Sitio web + CRM + IA",
+      "Otra cosa",
+    ],
+    budgets: [
+      "Menos de $500",
+      "$500 – $1.500",
+      "$1.500 – $3.000",
+      "$3.000 – $5.000",
+      "Más de $5.000",
+    ],
+    notSure: "Aún no lo sé",
+    errName: "Escribe tu nombre.",
+    errEmail: "Escribe un email válido.",
+    errDetails: "Cuéntame un poco sobre tu proyecto (al menos 10 caracteres).",
+    sent: "Tu aplicación de correo debería abrirse con tu mensaje listo. Pulsa enviar y te responderé en un día hábil.",
+    didntOpen: "¿No se abrió? Escríbeme directamente a",
+    orBook: ", o agenda una llamada.",
+  },
+  console: {
+    aria: "Ejemplo de un pipeline de leads automatizado",
+    pipeline: "pipeline de leads",
+    open: "ACTIVO",
+    steps: ["Visitante", "Captura", "CRM", "Seguimiento", "Agente IA", "Reservado"],
+  },
+  boot: {
+    welcome: "Bienvenido a",
+    skip: "Saltar intro",
+    soundOn: "Sonido activado",
+    soundHint: "Mejor con sonido",
+  },
+  home: {
+    title: "Onjoko Tunde — Desarrollador web y experto en IA",
+    description:
+      "Desarrollador web y experto en IA. Más de 100 sitios desde 2021. Creo sitios en WordPress, Elementor, Shopify y Wix y los conecto con automatizaciones de CRM y herramientas de IA para empresas de Estados Unidos, Reino Unido, Canadá y Australia.",
+    welcome: "Bienvenido a",
+    available: "Disponible para nuevos proyectos",
+    availableSub: "Web, Shopify, CRM e IA",
+    role: "Desarrollador web",
+    roleAnd: "y",
+    roleAi: "experto en IA",
+    h1: "Sitios web y automatizaciones que convierten visitantes en",
+    h1Accent: "clientes.",
+    heroCopy:
+      "Creo sitios en WordPress, Shopify y Wix y después configuro las automatizaciones de CRM y las herramientas de IA que los respaldan, para que cada lead se capture, reciba seguimiento y termine en una cita. Para empresas de Estados Unidos, Reino Unido, Canadá y Australia.",
+    bookFree: "Agendar llamada gratis",
+    showreel: "Showreel",
+    showreelAria: "Showreel de {n} sitios de clientes",
+    featuredSites: "{n} sitios destacados",
+    fromBuilt: "De más de {n} creados desde 2021",
+    heroServices: [
+      "Sitios WordPress",
+      "Tiendas Shopify",
+      "Sitios Wix",
+      "Rediseños web",
+      "Landing pages",
+      "CRM y pipelines",
+      "Captura y seguimiento de leads",
+      "Automatización de email y SMS",
+      "Reservas y recordatorios",
+      "Asistentes de chat con IA",
+      "Automatización con IA",
+    ],
+    about: {
+      eyebrow: "Sobre mí",
+      title: "Desarrollador web",
+      titleEm: "y experto en IA.",
+      p1: "Soy Onjoko Tunde, desarrollador web y experto en IA. Desde 2021 he creado más de 100 sitios para clientes de todo tipo: consultorios de terapia, clínicas dentales, fabricantes y consultoras marítimas.",
+      p2: "El sitio web es solo la mitad del trabajo. Los contactos suelen perderse en la bandeja de entrada, así que también configuro CRM, seguimiento y reservas automáticas, asistentes de chat con IA y flujos de trabajo con IA, para que todo el recorrido, desde la primera visita hasta el cliente que paga, funcione solo.",
+      location: "Lagos, Nigeria",
+      remote: "En remoto · US, UK, CA, AU",
+      since: "desde 2021",
+      stats: [
+        "Sitios entregados",
+        "Freelance desde",
+        "Casos destacados",
+        "Mercados: US, UK, CA, AU",
+      ],
+      platforms: "Plataformas con las que trabajo",
+    },
+    intro: {
+      title: "Sitios web, Shopify, CRM e IA para empresas de",
+      titleEm: "Estados Unidos, Reino Unido, Canadá y Australia.",
+      copy: "Un solo aliado para todo el recorrido: un sitio que genera confianza, un CRM que captura cada lead, automatizaciones que hacen el seguimiento por ti y herramientas de IA que te ahorran horas cada semana.",
+    },
+    services: {
+      eyebrow: "Servicios",
+      title: "Web, Shopify, CRM",
+      titleEm: "e IA, bien hechos.",
+      intro: "Toca un servicio para ver lo que incluye.",
+      bookAbout: "Agendar una llamada sobre esto",
+      items: [
+        {
+          title: "Desarrollo de sitios web",
+          short:
+            "Sitios profesionales diseñados y desarrollados para empresas que necesitan una presencia online sólida y creíble.",
+          description:
+            "Diseño y desarrollo de sitios profesionales para empresas que quieren transmitir credibilidad, comunicar su valor y causar una gran primera impresión.",
+          includes: [
+            "Sitios para empresas",
+            "Sitios corporativos",
+            "Sitios para servicios profesionales",
+            "Sitios personales y de consultores",
+            "Sitios de varias páginas",
+          ],
+        },
+        {
+          title: "Rediseño de sitios web",
+          short:
+            "Convierte un sitio anticuado en una experiencia moderna, adaptable y fácil de usar.",
+          description:
+            "Transformo sitios anticuados, inconsistentes o con bajo rendimiento en experiencias modernas que reflejan mejor la calidad y la dirección de la empresa.",
+          includes: [
+            "Rediseño completo",
+            "Modernización visual",
+            "Reestructuración del diseño",
+            "Mejoras de experiencia de usuario",
+            "Adaptación a móviles",
+            "Mejoras de contenido y navegación",
+          ],
+        },
+        {
+          title: "Tiendas Shopify y ecommerce",
+          short:
+            "Tiendas Shopify con aspecto premium, rápidas y que convierten visitantes en compradores, además de WooCommerce en WordPress.",
+          description:
+            "Una tienda Shopify nueva, un rediseño o ayuda con la que ya tienes. Configuro y personalizo temas, organizo productos y colecciones, conecto las apps adecuadas para reseñas, captura de emails y suscripciones, y acelero tiendas lentas. Para sitios WordPress trabajo con WooCommerce.",
+          includes: [
+            "Configuración de tienda y diseño del tema",
+            "Personalización y rediseño de la tienda",
+            "Productos, colecciones y checkout",
+            "Apps de reseñas, captura de emails y suscripciones",
+            "Mejoras de velocidad y limpieza de apps",
+            "Migración de tu tienda a Shopify",
+            "Tiendas WooCommerce en WordPress",
+          ],
+        },
+        {
+          title: "Landing pages",
+          short:
+            "Landing pages enfocadas, construidas con un mensaje claro, buena experiencia y objetivos de conversión.",
+          description:
+            "Landing pages que presentan una oferta clara, guían al visitante por la información importante y lo animan a actuar.",
+          includes: [
+            "Landing pages de captación de leads",
+            "Landing pages de campañas",
+            "Landing pages de producto",
+            "Landing pages de servicios",
+            "Formularios de contacto",
+            "Optimización de llamadas a la acción",
+          ],
+        },
+        {
+          title: "Configuración y automatización de CRM",
+          short:
+            "Conecta tu sitio a un CRM para que cada lead se capture, reciba seguimiento y quede registrado automáticamente.",
+          description:
+            "Deja de perder consultas en tu bandeja de entrada. Configuro tu CRM, lo conecto con los formularios de tu sitio y creo automatizaciones que hacen seguimiento a los leads, recuerdan las citas a los clientes y mantienen tu pipeline al día.",
+          includes: [
+            "Configuración de CRM y pipelines",
+            "Formularios del sitio conectados al CRM",
+            "Emails y SMS de seguimiento automáticos",
+            "Reserva de citas y recordatorios",
+            "Etiquetado de leads y notificaciones",
+            "Informes sobre el origen de los leads",
+          ],
+        },
+        {
+          title: "Herramientas de IA y automatización",
+          short:
+            "Usa la IA para responder consultas, crear contenido y quitarte de encima tareas administrativas repetitivas.",
+          description:
+            "IA práctica para pequeñas empresas y empresas en crecimiento. Te ayudo a elegir y configurar herramientas que ahorran tiempo cada semana, desde asistentes de chat en tu sitio hasta flujos automáticos entre las apps que ya usas.",
+          includes: [
+            "Asistentes de chat con IA para tu sitio",
+            "Contenido y textos asistidos por IA",
+            "Flujos automáticos entre tus apps",
+            "Calificación y asignación de leads",
+            "Formación del equipo en herramientas de IA",
+            "Mejoras continuas",
+          ],
+        },
+      ],
+    },
+    lead: {
+      eyebrow: "Respuesta inmediata",
+      title: "Mira cómo un lead",
+      titleEm: "reserva en minutos.",
+      intro:
+        "Un ejemplo de la automatización que conecto a tu sitio: respuestas al instante, registro en el CRM, seguimiento y un asistente de IA que agenda la llamada.",
+    },
+    work: {
+      eyebrow: "Proyectos destacados",
+      title: "Sitios recientes para",
+      titleEm: "empresas reales.",
+      intro:
+        "{n} proyectos destacados de más de {total} sitios que he creado para clínicas, consultoras, academias, fabricantes y empresas de servicios.",
+      seeAll: "Ver todos los proyectos",
+    },
+    process: {
+      eyebrow: "Cómo trabajo",
+      title: "Estrategia. Desarrollo.",
+      titleEm: "Lanzamiento.",
+      intro:
+        "Trabajo en remoto con clientes de distintas zonas horarias, con avances claros en cada paso.",
+      steps: [
+        {
+          title: "Llamada inicial",
+          text: "Hablamos de tu negocio, tus clientes y lo que debe lograr el sitio. Recibes un alcance y un presupuesto claros.",
+        },
+        {
+          title: "Estructura y diseño",
+          text: "Planifico las páginas y el contenido y luego diseño el aspecto para que lo revises antes de construir nada.",
+        },
+        {
+          title: "Desarrollo y automatización",
+          text: "Construyo el sitio en la plataforma adecuada, conecto tu CRM y tus automatizaciones y lo pruebo todo en cada tamaño de pantalla.",
+        },
+        {
+          title: "Lanzamiento y entrega",
+          text: "Lo publico, conecto tu dominio, formularios y CRM, y te enseño a gestionarlo todo por tu cuenta.",
+        },
+      ],
+    },
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      title: "Tus preguntas,",
+      titleEm: "respondidas.",
+      intro: "¿No ves la tuya? Pregúntame directamente y te responderé.",
+      ask: "Hacer una pregunta",
+      items: [
+        {
+          q: "¿En qué plataforma vas a crear mi sitio?",
+          a: "Depende de lo que necesite tu negocio. Trabajo con WordPress (a menudo con Elementor), Wix y otros constructores, y te recomendaré uno según tus objetivos, tu presupuesto y quién va a actualizar el sitio.",
+        },
+        {
+          q: "¿Ayudas con tiendas Shopify?",
+          a: "Sí. Creo tiendas Shopify nuevas, rediseño y personalizo temas existentes, configuro productos, colecciones y apps como reseñas, captura de emails y suscripciones, y acelero tiendas que van lentas por exceso de apps.",
+        },
+        {
+          q: "¿El sitio es mío cuando está terminado?",
+          a: "Sí. El sitio, su contenido y las cuentas en las que funciona quedan a tu nombre, y te lo entrego todo en el lanzamiento.",
+        },
+        {
+          q: "¿Cuánto tarda un proyecto?",
+          a: "Depende del número de páginas, las funciones y lo rápido que esté listo el contenido. Tras nuestra primera llamada te doy un calendario claro junto con el presupuesto.",
+        },
+        {
+          q: "¿Trabajas con clientes de Estados Unidos, Reino Unido, Canadá y Australia?",
+          a: "Sí. La mayoría de mis clientes están en el extranjero. Trabajo en remoto, comparto avances con frecuencia y programo las llamadas en horarios que te vengan bien.",
+        },
+        {
+          q: "¿Puedes conectar mi sitio a un CRM y automatizar el seguimiento?",
+          a: "Sí. Puedo configurar tu CRM, conectar los formularios de tu sitio y crear automatizaciones como emails de seguimiento, recordatorios de citas y avisos de nuevos leads.",
+        },
+        {
+          q: "¿Cómo puede ayudar la IA a mi negocio?",
+          a: "Ejemplos habituales: un asistente de chat en tu sitio que responde preguntas frecuentes, ayuda para redactar contenido y flujos automáticos que mueven información entre tus apps. Te propondré lo que de verdad te ahorre tiempo.",
+        },
+        {
+          q: "¿Podré actualizar el sitio yo mismo después del lanzamiento?",
+          a: "Sí. Configuro el sitio para que puedas editar textos, imágenes y páginas tú mismo, y te enseño cómo hacerlo antes de la entrega.",
+        },
+        {
+          q: "¿Qué necesitas de mí para empezar?",
+          a: "Una breve descripción de tu negocio y tus objetivos, tu logo, el contenido o las fotos que ya tengas y acceso a tu dominio si ya lo tienes. Yo me encargo del resto.",
+        },
+      ],
+    },
+    blog: {
+      eyebrow: "Del blog",
+      title: "Consejos para",
+      titleEm: "dueños de negocio.",
+      intro:
+        "Un artículo nuevo cada día sobre sitios web, Shopify, automatización de CRM y herramientas de IA.",
+      note: "Artículos en inglés.",
+      read: "Leer el blog",
+    },
+  },
+  leadflow: {
+    timeline: [
+      { title: "Formulario enviado", sub: "Un visitante pide presupuesto en el sitio" },
+      { title: "Respuesta por SMS al instante", sub: "Enviada automáticamente, de día o de noche" },
+      { title: "Añadido al CRM", sub: "Nuevo lead · etiqueta “Consulta web”" },
+      { title: "Email de bienvenida", sub: "El primero de una breve secuencia de seguimiento" },
+      { title: "Responde el asistente de IA", sub: "Resuelve dudas y ofrece horarios reales" },
+      { title: "Cita reservada", sub: "En tu calendario, con recordatorio programado" },
+    ],
+    chat: [
+      "¡Hola Sarah, gracias por tu consulta! ¿Cuándo te viene bien una breve consulta?",
+      "El jueves por la tarde si es posible",
+      "Perfecto, tengo el jueves a las 15:00 o a las 16:30. ¿Cuál te viene mejor?",
+      "A las 15:00, por favor",
+      "Reservado para el jueves a las 15:00 ✓ Recibirás un recordatorio el día antes.",
+    ],
+    assistant: "Asistente de reservas",
+    online: "en línea 24/7",
+    crmStatus: "Estado en CRM",
+    booked: "Reservado ✓",
+    newLead: "Nuevo lead",
+    waiting: "Esperando…",
+    note: "Conversación de ejemplo. Cada negocio tiene sus propios mensajes y reglas de reserva.",
+    cta: "Quiero esto para mi negocio",
+  },
+  notes: {
+    eyebrow: "Deja una nota",
+    title: "Saluda antes",
+    titleEm: "de irte.",
+    intro:
+      "Palabras amables, comentarios o un simple hola: todo es bienvenido. Las notas aparecen en el muro cuando las leo.",
+    note: "Tu nota",
+    name: "Tu nombre",
+    city: "Ciudad (opcional)",
+    colour: "Color",
+    pin: "Fijar nota",
+    pending: "Pendiente de publicar",
+    errNote: "Escribe primero una nota breve.",
+    errName: "Añade tu nombre para que Onjoko sepa de quién es.",
+    sent: "Tu aplicación de correo debería abrirse con tu nota lista. Pulsa enviar y la fijaré en el muro.",
+  },
+  cta: {
+    eyebrow: "// Contacto",
+    title: "¿Tienes un proyecto en mente?",
+    titleEm: "Hablemos.",
+    copy: "Agenda una llamada gratuita de 15 minutos o envíame un email sobre tu negocio y lo que necesitan hacer tu sitio, tu CRM o tus automatizaciones.",
+  },
+  testimonials: { eyebrow: "Testimonios", title: "Lo que dicen", titleEm: "los clientes." },
+};

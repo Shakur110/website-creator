@@ -1,5 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useT } from "@/i18n";
 
 /**
  * Runs in <head> before the page paints: applies the saved theme (white by default)
@@ -8,6 +9,7 @@ import { useEffect, useState } from "react";
 export const earlyScript = `(function(){try{var d=document.documentElement;if(localStorage.getItem('theme')==='dark')d.classList.add('dark');if(sessionStorage.getItem('booted')||matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('booted');}catch(e){}})();`;
 
 export function ThemeToggle({ className = "" }: { className?: string }) {
+  const t = useT().theme;
   const [dark, setDark] = useState(false);
   useEffect(() => setDark(document.documentElement.classList.contains("dark")), []);
   const toggle = () => {
@@ -24,11 +26,11 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
     <button
       type="button"
       onClick={toggle}
-      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-      className={`flex h-10 items-center gap-2 rounded-full border border-border px-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground ${className}`}
+      aria-label={dark ? t.toLight : t.toDark}
+      className={`flex h-11 items-center gap-2 rounded-full border border-border px-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground ${className}`}
     >
       {dark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-      {dark ? "Dark" : "Light"}
+      <span className="hidden sm:inline">{dark ? t.dark : t.light}</span>
     </button>
   );
 }

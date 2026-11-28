@@ -3,6 +3,7 @@ import { ArrowUpRight, Globe } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { type Project } from "@/lib/projects";
 import { BookCallButton, EmailButton } from "@/components/site/contact-actions";
+import { useT } from "@/i18n";
 
 export function Reveal({
   children,
@@ -240,17 +241,8 @@ export function SectionHead({
   );
 }
 
-export function CtaBand({
-  title = (
-    <>
-      Have a project in mind? <em>Let's talk.</em>
-    </>
-  ),
-  copy = "Book a free 15-minute call, or send me an email about your business and what your website, CRM or automations need to do.",
-}: {
-  title?: ReactNode;
-  copy?: string;
-}) {
+export function CtaBand({ title, copy }: { title?: ReactNode; copy?: string }) {
+  const c = useT().cta;
   return (
     <section id="contact" className="container-x scroll-mt-24 py-20 md:py-28">
       <Reveal className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-brand to-navy px-6 py-16 text-white md:px-16 md:py-24">
@@ -263,12 +255,16 @@ export function CtaBand({
           className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-sky/25 blur-3xl"
         />
         <div className="relative">
-          <p className="font-mono text-xs uppercase tracking-[0.14em] text-sky">// Contact</p>
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-sky">{c.eyebrow}</p>
           <h2 className="display mt-4 max-w-4xl text-4xl text-white md:text-6xl [&_em]:text-sky">
-            {title}
+            {title ?? (
+              <>
+                {c.title} <em>{c.titleEm}</em>
+              </>
+            )}
           </h2>
           <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <p className="max-w-lg text-lg leading-relaxed text-white/80">{copy}</p>
+            <p className="max-w-lg text-lg leading-relaxed text-white/80">{copy ?? c.copy}</p>
             <div className="flex flex-wrap gap-3">
               <BookCallButton className="btn btn-light" />
               <EmailButton className="btn border border-white/35 text-white hover:border-white hover:bg-white/10" />

@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { BrowserFrame, CtaBand, ProjectImage, Reveal, domainOf } from "@/components/site/parts";
 import { getNextProject, getProject } from "@/lib/projects";
 import { BookCallButton } from "@/components/site/contact-actions";
-import { shareTags } from "@/lib/seo";
+import { absUrl, breadcrumbLd, canonicalLink, PERSON_ID, shareTags } from "@/lib/seo";
 
 /** Trim to a length on a word boundary, for search-result descriptions. */
 const summary = (text: string, max = 155) => {
@@ -36,6 +36,30 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
         ...shareTags(`/work/${p.slug}`, `${p.title} — ${p.category}`, summary(p.overview)),
+      ],
+      links: [canonicalLink(`/work/${p.slug}`)],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "CreativeWork",
+                name: p.title,
+                description: summary(p.overview, 300),
+                genre: p.category,
+                url: absUrl(`/work/${p.slug}`),
+                creator: { "@id": PERSON_ID },
+                ...(p.liveUrl ? { sameAs: p.liveUrl } : {}),
+              },
+              breadcrumbLd([
+                ["Work", "/work"],
+                [p.title, `/work/${p.slug}`],
+              ]),
+            ],
+          }),
+        },
       ],
     };
   },

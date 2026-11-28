@@ -1,0 +1,392 @@
+import type { Dict } from "./en";
+
+export const fr: Dict = {
+  nav: {
+    home: "Accueil",
+    about: "À propos",
+    services: "Services",
+    work: "Réalisations",
+    process: "Méthode",
+    faq: "FAQ",
+    blog: "Blog",
+  },
+  header: {
+    email: "E-mail",
+    bookCall: "Réserver un appel",
+    sendEmail: "Envoyer un e-mail",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    language: "Langue",
+  },
+  theme: {
+    light: "Clair",
+    dark: "Sombre",
+    toLight: "Passer en mode clair",
+    toDark: "Passer en mode sombre",
+  },
+  footer: {
+    blurb:
+      "Développeur web et expert en IA. Sites web, boutiques Shopify, automatisation CRM et outils d'IA pour les entreprises aux États-Unis, au Royaume-Uni, au Canada et en Australie. Plus de 100 sites livrés depuis 2021.",
+    navigate: "Navigation",
+    contact: "Contact",
+    role: "Développeur web & expert en IA",
+    scrollTop: "Haut de page",
+    skills: [
+      "Développement web",
+      "WordPress & Elementor",
+      "Boutiques Shopify",
+      "Wix",
+      "Pages d'atterrissage",
+      "Pipelines CRM",
+      "Relance automatique des prospects",
+      "E-mails & SMS automatisés",
+      "Réservations & rappels",
+      "Assistants de chat IA",
+      "Automatisation par l'IA",
+      "SEO & recherche IA",
+    ],
+  },
+  modal: {
+    eyebrow: "Envoyer un e-mail",
+    title: "Parlez-moi de",
+    titleEm: "votre projet.",
+    close: "Fermer",
+    name: "Nom",
+    email: "E-mail",
+    company: "Entreprise / site web (facultatif)",
+    type: "De quoi avez-vous besoin ?",
+    budget: "Budget (USD)",
+    details: "Détails du projet",
+    detailsPlaceholder: "Vos objectifs, délais, liens vers votre site actuel…",
+    send: "Envoyer l'e-mail",
+    or: "ou",
+    bookShort: "réservez un appel de 15 minutes",
+    types: [
+      "Création de site web",
+      "Refonte de site web",
+      "Boutique Shopify",
+      "Page d'atterrissage",
+      "Mise en place CRM & automatisation",
+      "Outils d'IA & automatisation",
+      "Site + CRM + IA",
+      "Autre chose",
+    ],
+    budgets: [
+      "Moins de 500 $",
+      "500 $ – 1 500 $",
+      "1 500 $ – 3 000 $",
+      "3 000 $ – 5 000 $",
+      "5 000 $ et plus",
+    ],
+    notSure: "Je ne sais pas encore",
+    errName: "Veuillez indiquer votre nom.",
+    errEmail: "Veuillez indiquer une adresse e-mail valide.",
+    errDetails: "Décrivez brièvement votre projet (au moins 10 caractères).",
+    sent: "Votre messagerie devrait s'ouvrir avec votre message prêt. Appuyez sur envoyer et je vous réponds sous un jour ouvré.",
+    didntOpen: "Rien ne s'est ouvert ? Écrivez-moi directement à",
+    orBook: ", ou réservez plutôt un appel.",
+  },
+  console: {
+    aria: "Exemple de pipeline de prospects automatisé",
+    pipeline: "pipeline de prospects",
+    open: "EN LIGNE",
+    steps: ["Visiteur", "Capture", "CRM", "Relance", "Agent IA", "Réservé"],
+  },
+  boot: {
+    welcome: "Bienvenue chez",
+    skip: "Passer l'intro",
+    soundOn: "Son activé",
+    soundHint: "Mieux avec le son",
+  },
+  home: {
+    title: "Onjoko Tunde — Développeur web & expert en IA",
+    description:
+      "Développeur web et expert en IA. Plus de 100 sites depuis 2021. Je crée des sites WordPress, Elementor, Shopify et Wix et je les connecte à des automatisations CRM et à des outils d'IA pour les entreprises aux États-Unis, au Royaume-Uni, au Canada et en Australie.",
+    welcome: "Bienvenue sur",
+    available: "Disponible pour de nouveaux projets",
+    availableSub: "Web, Shopify, CRM & IA",
+    role: "Développeur web",
+    roleAnd: "&",
+    roleAi: "expert en IA",
+    h1: "Des sites et des automatisations qui transforment vos visiteurs en",
+    h1Accent: "clients.",
+    heroCopy:
+      "Je crée des sites WordPress, Shopify et Wix, puis je mets en place les automatisations CRM et les outils d'IA qui les accompagnent, pour que chaque prospect soit capté, relancé et transformé en rendez-vous. Pour les entreprises aux États-Unis, au Royaume-Uni, au Canada et en Australie.",
+    bookFree: "Réserver un appel gratuit",
+    showreel: "Démo",
+    showreelAria: "Démo de {n} sites clients",
+    featuredSites: "{n} sites à la une",
+    fromBuilt: "Parmi {n} créés depuis 2021",
+    heroServices: [
+      "Sites WordPress",
+      "Boutiques Shopify",
+      "Sites Wix",
+      "Refontes de sites",
+      "Pages d'atterrissage",
+      "CRM & pipelines",
+      "Capture & relance des prospects",
+      "Automatisation e-mail & SMS",
+      "Réservations & rappels",
+      "Assistants de chat IA",
+      "Automatisation par l'IA",
+    ],
+    about: {
+      eyebrow: "À propos",
+      title: "Développeur web",
+      titleEm: "et expert en IA.",
+      p1: "Je suis Onjoko Tunde, développeur web et expert en IA. Depuis 2021, j'ai créé plus de 100 sites pour des clients très variés : cabinets de thérapie, cliniques dentaires, fabricants, cabinets de conseil maritime…",
+      p2: "Le site n'est que la moitié du travail. Les demandes se perdent souvent dans la boîte mail, alors je mets aussi en place des CRM, des relances et réservations automatiques, des assistants de chat IA et des workflows IA, pour que tout le parcours, de la première visite au client payant, fonctionne tout seul.",
+      location: "Lagos, Nigeria",
+      remote: "À distance · US, UK, CA, AU",
+      since: "depuis 2021",
+      stats: ["Sites livrés", "Freelance depuis", "Études de cas", "Marchés : US, UK, CA, AU"],
+      platforms: "Plateformes utilisées",
+    },
+    intro: {
+      title: "Sites web, Shopify, CRM et IA pour les entreprises aux",
+      titleEm: "États-Unis, au Royaume-Uni, au Canada et en Australie.",
+      copy: "Un seul partenaire pour tout le parcours : un site qui inspire confiance, un CRM qui capte chaque prospect, des automatisations qui relancent à votre place et des outils d'IA qui vous font gagner des heures chaque semaine.",
+    },
+    services: {
+      eyebrow: "Services",
+      title: "Web, Shopify, CRM",
+      titleEm: "et IA, bien faits.",
+      intro: "Touchez un service pour voir ce qui est inclus.",
+      bookAbout: "Réserver un appel à ce sujet",
+      items: [
+        {
+          title: "Création de site web",
+          short:
+            "Des sites professionnels conçus et développés pour les entreprises qui veulent une présence en ligne solide et crédible.",
+          description:
+            "Conception et développement de sites professionnels pour les entreprises qui veulent asseoir leur crédibilité, présenter clairement leur valeur et faire forte impression dès la première visite.",
+          includes: [
+            "Sites d'entreprise",
+            "Sites corporate",
+            "Sites de professions libérales",
+            "Sites personnels et de consultants",
+            "Sites multipages",
+          ],
+        },
+        {
+          title: "Refonte de site web",
+          short:
+            "Transformez un site vieillissant en une expérience moderne, responsive et agréable.",
+          description:
+            "Je transforme les sites datés, incohérents ou peu performants en expériences modernes qui reflètent mieux la qualité et l'orientation de l'entreprise.",
+          includes: [
+            "Refonte complète",
+            "Modernisation visuelle",
+            "Restructuration de la mise en page",
+            "Amélioration de l'expérience utilisateur",
+            "Adaptation mobile",
+            "Contenu et navigation améliorés",
+          ],
+        },
+        {
+          title: "Boutiques Shopify & e-commerce",
+          short:
+            "Des boutiques Shopify haut de gamme, rapides, qui transforment les visiteurs en acheteurs, plus WooCommerce sur WordPress.",
+          description:
+            "Nouvelle boutique Shopify, refonte ou aide sur votre boutique actuelle. J'installe et personnalise les thèmes, j'organise produits et collections, je connecte les bonnes applis (avis, capture d'e-mails, abonnements) et j'accélère les boutiques trop lentes. Pour les sites WordPress, je travaille avec WooCommerce.",
+          includes: [
+            "Création de boutique et design du thème",
+            "Personnalisation et refonte de boutique",
+            "Produits, collections et paiement",
+            "Applis d'avis, de capture d'e-mails et d'abonnement",
+            "Optimisation de la vitesse et tri des applis",
+            "Migration vers Shopify",
+            "Boutiques WooCommerce sur WordPress",
+          ],
+        },
+        {
+          title: "Pages d'atterrissage",
+          short:
+            "Des pages ciblées, construites autour d'un message clair, d'une bonne expérience et d'objectifs de conversion.",
+          description:
+            "Des pages d'atterrissage qui présentent une offre claire, guident le visiteur vers l'essentiel et l'incitent à passer à l'action.",
+          includes: [
+            "Pages de génération de prospects",
+            "Pages de campagne",
+            "Pages produit",
+            "Pages de service",
+            "Formulaires de demande",
+            "Optimisation des appels à l'action",
+          ],
+        },
+        {
+          title: "Mise en place CRM & automatisation",
+          short:
+            "Connectez votre site à un CRM pour que chaque prospect soit capté, relancé et suivi automatiquement.",
+          description:
+            "Ne perdez plus de demandes dans votre boîte mail. J'installe votre CRM, je le relie aux formulaires de votre site et je crée des automatisations qui relancent les prospects, rappellent les rendez-vous et tiennent votre pipeline à jour.",
+          includes: [
+            "Installation du CRM et des pipelines",
+            "Formulaires du site reliés au CRM",
+            "Relances automatiques par e-mail et SMS",
+            "Prise de rendez-vous et rappels",
+            "Étiquetage des prospects et notifications",
+            "Suivi de la provenance des prospects",
+          ],
+        },
+        {
+          title: "Outils d'IA & automatisation des tâches",
+          short:
+            "Utilisez l'IA pour répondre aux demandes, créer du contenu et vous libérer des tâches administratives répétitives.",
+          description:
+            "Une IA pratique pour les petites entreprises et celles en croissance. Je vous aide à choisir et à installer des outils qui vous font gagner du temps chaque semaine, de l'assistant de chat sur votre site aux workflows automatisés entre vos applis.",
+          includes: [
+            "Assistants de chat IA pour votre site",
+            "Rédaction et contenus assistés par l'IA",
+            "Workflows automatisés entre vos applis",
+            "Qualification et routage des prospects",
+            "Formation de l'équipe aux outils d'IA",
+            "Améliorations continues",
+          ],
+        },
+      ],
+    },
+    lead: {
+      eyebrow: "Réactivité",
+      title: "Un prospect",
+      titleEm: "réservé en quelques minutes.",
+      intro:
+        "Un exemple de l'automatisation que je connecte à votre site : réponses instantanées, suivi dans le CRM, relances et un assistant IA qui fixe le rendez-vous.",
+    },
+    work: {
+      eyebrow: "Réalisations",
+      title: "Des sites récents pour",
+      titleEm: "de vraies entreprises.",
+      intro:
+        "{n} projets phares parmi {total} sites créés pour des cliniques, cabinets de conseil, écoles, fabricants et entreprises de services.",
+      seeAll: "Voir toutes les réalisations",
+    },
+    process: {
+      eyebrow: "Ma méthode",
+      title: "Stratégie. Création.",
+      titleEm: "Lancement.",
+      intro:
+        "Je travaille à distance avec des clients de tous les fuseaux horaires, avec des points clairs à chaque étape.",
+      steps: [
+        {
+          title: "Appel de découverte",
+          text: "Nous parlons de votre activité, de vos clients et des objectifs du site. Vous recevez un périmètre et un devis clairs.",
+        },
+        {
+          title: "Structure & design",
+          text: "Je planifie les pages et le contenu, puis je conçois le design pour que vous puissiez le valider avant la création.",
+        },
+        {
+          title: "Création & automatisation",
+          text: "Je crée le site sur la bonne plateforme, je connecte votre CRM et vos automatisations, et je teste tout sur chaque taille d'écran.",
+        },
+        {
+          title: "Lancement & passation",
+          text: "Je mets en ligne, je connecte votre domaine, vos formulaires et votre CRM, et je vous montre comment tout gérer vous-même.",
+        },
+      ],
+    },
+    faq: {
+      eyebrow: "FAQ",
+      title: "Vos questions,",
+      titleEm: "mes réponses.",
+      intro: "Votre question n'y est pas ? Posez-la-moi directement et je vous répondrai.",
+      ask: "Poser une question",
+      items: [
+        {
+          q: "Sur quelle plateforme allez-vous créer mon site ?",
+          a: "Cela dépend des besoins de votre entreprise. Je travaille sur WordPress (souvent avec Elementor), Wix et d'autres outils, et je vous recommande la plateforme adaptée à vos objectifs, à votre budget et à la personne qui mettra le site à jour.",
+        },
+        {
+          q: "Aidez-vous avec les boutiques Shopify ?",
+          a: "Oui. Je crée de nouvelles boutiques Shopify, je refais et personnalise les thèmes existants, j'installe produits, collections et applis (avis, capture d'e-mails, abonnements) et j'accélère les boutiques ralenties par trop d'applis.",
+        },
+        {
+          q: "Le site m'appartient-il une fois terminé ?",
+          a: "Oui. Le site, son contenu et les comptes associés sont à votre nom, et je vous remets tout au lancement.",
+        },
+        {
+          q: "Combien de temps dure un projet ?",
+          a: "Cela dépend du nombre de pages, des fonctionnalités et de la rapidité avec laquelle le contenu est prêt. Après notre premier appel, je vous donne un calendrier clair avec le devis.",
+        },
+        {
+          q: "Travaillez-vous avec des clients aux États-Unis, au Royaume-Uni, au Canada et en Australie ?",
+          a: "Oui. La plupart de mes clients sont à l'étranger. Je travaille à distance, je partage régulièrement l'avancement et je cale les appels sur votre fuseau horaire.",
+        },
+        {
+          q: "Pouvez-vous connecter mon site à un CRM et automatiser les relances ?",
+          a: "Oui. Je peux installer votre CRM, y relier les formulaires de votre site et créer des automatisations : e-mails de relance, rappels de rendez-vous, notifications de nouveaux prospects.",
+        },
+        {
+          q: "Comment l'IA peut-elle aider mon entreprise ?",
+          a: "Par exemple : un assistant de chat sur votre site qui répond aux questions fréquentes, de l'aide pour rédiger vos contenus et des workflows qui font circuler l'information entre vos applis. Je vous propose ce qui vous fera vraiment gagner du temps.",
+        },
+        {
+          q: "Pourrai-je modifier le site moi-même après le lancement ?",
+          a: "Oui. Je configure le site pour que vous puissiez modifier textes, images et pages vous-même, et je vous montre comment avant la passation.",
+        },
+        {
+          q: "De quoi avez-vous besoin pour commencer ?",
+          a: "Une courte description de votre entreprise et de vos objectifs, votre logo, les textes ou photos dont vous disposez déjà, et l'accès à votre nom de domaine si vous en avez un. Je m'occupe du reste.",
+        },
+      ],
+    },
+    blog: {
+      eyebrow: "Le blog",
+      title: "Des conseils pour",
+      titleEm: "les dirigeants.",
+      intro:
+        "Un nouvel article chaque jour sur les sites web, Shopify, l'automatisation CRM et les outils d'IA.",
+      note: "Articles en anglais.",
+      read: "Lire le blog",
+    },
+  },
+  leadflow: {
+    timeline: [
+      { title: "Formulaire envoyé", sub: "Un visiteur demande un devis sur le site" },
+      { title: "Réponse SMS instantanée", sub: "Envoyée automatiquement, jour et nuit" },
+      { title: "Ajouté au CRM", sub: "Nouveau prospect · étiqueté « Demande site web »" },
+      { title: "E-mail de bienvenue", sub: "Le premier d'une courte séquence de relance" },
+      { title: "L'assistant IA répond", sub: "Répond aux questions, propose de vrais créneaux" },
+      { title: "Rendez-vous réservé", sub: "Dans votre agenda, rappel programmé" },
+    ],
+    chat: [
+      "Bonjour Sarah, merci pour votre demande ! Quand seriez-vous disponible pour une courte consultation ?",
+      "Jeudi après-midi si possible",
+      "Parfait, j'ai jeudi 15 h ou 16 h 30. Lequel vous convient ?",
+      "15 h, merci",
+      "C'est réservé pour jeudi 15 h ✓ Vous recevrez un rappel la veille.",
+    ],
+    assistant: "Assistant de réservation",
+    online: "en ligne 24 h/24",
+    crmStatus: "Statut CRM",
+    booked: "Réservé ✓",
+    newLead: "Nouveau prospect",
+    waiting: "En attente…",
+    note: "Conversation d'exemple. Chaque entreprise a ses propres messages et règles de réservation.",
+    cta: "Je veux ça pour mon entreprise",
+  },
+  notes: {
+    eyebrow: "Épinglez un mot",
+    title: "Laissez un petit mot",
+    titleEm: "avant de partir.",
+    intro:
+      "Un mot gentil, un avis ou un simple bonjour : tout est bienvenu. Les mots sont affichés sur le mur une fois que je les ai lus.",
+    note: "Votre mot",
+    name: "Votre nom",
+    city: "Ville (facultatif)",
+    colour: "Couleur",
+    pin: "Épingler",
+    pending: "En attente d'affichage",
+    errNote: "Écrivez d'abord un petit mot.",
+    errName: "Ajoutez votre nom pour qu'Onjoko sache de qui il vient.",
+    sent: "Votre messagerie devrait s'ouvrir avec votre mot prêt. Appuyez sur envoyer et je l'épinglerai au mur.",
+  },
+  cta: {
+    eyebrow: "// Contact",
+    title: "Un projet en tête ?",
+    titleEm: "Parlons-en.",
+    copy: "Réservez un appel gratuit de 15 minutes, ou envoyez-moi un e-mail sur votre entreprise et ce que votre site, votre CRM ou vos automatisations doivent faire.",
+  },
+  testimonials: { eyebrow: "Témoignages", title: "Ce que disent", titleEm: "les clients." },
+};

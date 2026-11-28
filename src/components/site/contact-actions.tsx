@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import { contactLinks } from "@/lib/projects";
+import { useT } from "@/i18n";
 
 const ModalContext = createContext<{ open: () => void }>({ open: () => {} });
 
@@ -30,55 +31,39 @@ export function EmailModalProvider({ children }: { children: ReactNode }) {
 /** Opens Onjoko's Calendly booking page in a new tab. */
 export function BookCallButton({
   className = "btn btn-primary",
-  label = "Book a call",
+  label,
 }: {
   className?: string;
   label?: string;
 }) {
+  const t = useT();
   return (
     <a href={contactLinks.calendly} target="_blank" rel="noreferrer" className={className}>
       <CalendarDays className="h-4 w-4" />
-      {label}
+      {label ?? t.header.bookCall}
     </a>
   );
 }
 
 export function EmailButton({
   className = "btn btn-outline",
-  label = "Send an email",
+  label,
 }: {
   className?: string;
   label?: string;
 }) {
+  const t = useT();
   const { open } = useEmailModal();
   return (
     <button type="button" onClick={open} className={className}>
       <Mail className="h-4 w-4" />
-      {label}
+      {label ?? t.header.sendEmail}
     </button>
   );
 }
 
-const types = [
-  "Website development",
-  "Website redesign",
-  "Shopify store",
-  "Landing page",
-  "CRM setup & automation",
-  "AI tools & automation",
-  "Website + CRM + AI",
-  "Something else",
-];
-const budgets = [
-  "Under $500",
-  "$500 – $1,500",
-  "$1,500 – $3,000",
-  "$3,000 – $5,000",
-  "$5,000+",
-  "Not sure yet",
-];
-
 function EmailModal({ onClose }: { onClose: () => void }) {
+  const m = useT().modal;
   const [errors, setErrors] = useState<Partial<Record<"name" | "email" | "details", string>>>({});
   const [sent, setSent] = useState(false);
   const panel = useRef<HTMLDivElement>(null);
@@ -122,11 +107,9 @@ function EmailModal({ onClose }: { onClose: () => void }) {
     const email = get("email");
     const details = get("details");
     const next: Partial<Record<"name" | "email" | "details", string>> = {};
-    if (!name) next.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      next.email = "Please enter a valid email address.";
-    if (details.length < 10)
-      next.details = "Tell me a little about your project (at least 10 characters).";
+    if (!name) next.name = m.errName;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = m.errEmail;
+    if (details.length < 10) next.details = m.errDetails;
     setErrors(next);
     if (Object.keys(next).length) return;
     const company = get("company");
@@ -172,15 +155,15 @@ function EmailModal({ onClose }: { onClose: () => void }) {
       >
         <div className="flex items-start justify-between gap-6">
           <div>
-            <p className="eyebrow">Send an email</p>
+            <p className="eyebrow">{m.eyebrow}</p>
             <h2 id="email-modal-title" className="display mt-3 text-3xl">
-              Tell me about <em>your project.</em>
+              {m.title} <em>{m.titleEm}</em>
             </h2>
           </div>
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close"
+            aria-label={m.close}
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border transition-colors hover:bg-white/10"
           >
             <X className="h-4 w-4" />
@@ -189,24 +172,21 @@ function EmailModal({ onClose }: { onClose: () => void }) {
 
         {sent ? (
           <div role="status" className="mt-8 space-y-5">
-            <p className="leading-relaxed text-muted-foreground">
-              Your email app should now be open with your message ready. Press send and I'll reply
-              within one business day.
-            </p>
+            <p className="leading-relaxed text-muted-foreground">{m.sent}</p>
             <p className="text-sm text-muted-foreground">
-              Didn't open? Email me directly at{" "}
+              {m.didntOpen}{" "}
               <a
                 href={`mailto:${contactLinks.email}`}
                 className="font-semibold text-brand-ink underline"
               >
                 {contactLinks.email}
               </a>
-              , or skip email and book a call.
+              {m.orBook}
             </p>
             <div className="flex flex-wrap gap-3">
               <BookCallButton />
               <button type="button" onClick={onClose} className="btn btn-outline">
-                Close
+                {m.close}
               </button>
             </div>
           </div>
@@ -214,7 +194,7 @@ function EmailModal({ onClose }: { onClose: () => void }) {
           <form noValidate onSubmit={onSubmit} className="mt-7 grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="m-name" className={label}>
-                Name
+                {m.name}
               </label>
               <input
                 id="m-name"
@@ -228,7 +208,7 @@ function EmailModal({ onClose }: { onClose: () => void }) {
             </div>
             <div>
               <label htmlFor="m-email" className={label}>
-                Email
+                {m.email}
               </label>
               <input
                 id="m-email"
@@ -243,39 +223,39 @@ function EmailModal({ onClose }: { onClose: () => void }) {
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="m-company" className={label}>
-                Business / website (optional)
+                {m.company}
               </label>
               <input id="m-company" name="company" autoComplete="organization" className={field} />
             </div>
             <div>
               <label htmlFor="m-type" className={label}>
-                What do you need?
+                {m.type}
               </label>
               <select id="m-type" name="type" className={field}>
-                {types.map((t) => (
+                {m.types.map((t) => (
                   <option key={t}>{t}</option>
                 ))}
               </select>
             </div>
             <div>
               <label htmlFor="m-budget" className={label}>
-                Budget (USD)
+                {m.budget}
               </label>
-              <select id="m-budget" name="budget" defaultValue="Not sure yet" className={field}>
-                {budgets.map((b) => (
+              <select id="m-budget" name="budget" defaultValue={m.notSure} className={field}>
+                {[...m.budgets, m.notSure].map((b) => (
                   <option key={b}>{b}</option>
                 ))}
               </select>
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="m-details" className={label}>
-                Project details
+                {m.details}
               </label>
               <textarea
                 id="m-details"
                 name="details"
                 rows={4}
-                placeholder="Your goals, timeline, links to your current site…"
+                placeholder={m.detailsPlaceholder}
                 className={`${field} resize-none`}
                 aria-invalid={!!errors.details}
                 aria-describedby={errors.details ? "details-error" : undefined}
@@ -284,17 +264,17 @@ function EmailModal({ onClose }: { onClose: () => void }) {
             </div>
             <div className="flex flex-wrap items-center gap-3 sm:col-span-2">
               <button type="submit" className="btn btn-primary">
-                <Mail className="h-4 w-4" /> Send email
+                <Mail className="h-4 w-4" /> {m.send}
               </button>
               <span className="text-sm text-muted-foreground">
-                or{" "}
+                {m.or}{" "}
                 <a
                   href={contactLinks.calendly}
                   target="_blank"
                   rel="noreferrer"
                   className="font-semibold text-brand-ink underline-offset-4 hover:underline"
                 >
-                  book a 15-minute call
+                  {m.bookShort}
                 </a>
               </span>
             </div>

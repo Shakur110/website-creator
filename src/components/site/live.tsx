@@ -8,6 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Fragment, useEffect, useRef, useState } from "react";
+import { useT } from "@/i18n";
 
 const prefersReducedMotion = () =>
   typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -28,6 +29,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
  * through the pipeline Onjoko builds (visitor → capture → CRM → follow-up → AI → booked).
  */
 export function PipelineConsole() {
+  const c = useT().console;
   const [active, setActive] = useState(steps.length - 1);
   const [seconds, setSeconds] = useState(0);
   const [pct, setPct] = useState(100);
@@ -58,20 +60,20 @@ export function PipelineConsole() {
   return (
     <div
       className="overflow-hidden rounded-2xl border border-white/10 bg-navy font-mono text-[12px] text-white/80 shadow-xl shadow-navy/20"
-      aria-label="Example of an automated lead pipeline"
+      aria-label={c.aria}
       role="img"
     >
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-white/10 px-4 py-2.5">
         <span>
-          <span className="text-sky">onjoko.os</span> <span className="text-white/40">//</span> lead
-          pipeline
+          <span className="text-sky">onjoko.os</span> <span className="text-white/40">//</span>{" "}
+          {c.pipeline}
         </span>
         <span className="flex items-center gap-4">
           <span className="tabular-nums text-white/60">{time}</span>
           <span className="tabular-nums">{String(pct).padStart(3, "0")}%</span>
           <span className="flex items-center gap-1.5 text-emerald-400">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-            OPEN
+            {c.open}
           </span>
         </span>
       </div>
@@ -80,7 +82,7 @@ export function PipelineConsole() {
           const on = i <= active;
           const current = i === active;
           return (
-            <Fragment key={s.label}>
+            <Fragment key={i}>
               {i > 0 && (
                 <span
                   aria-hidden
@@ -99,7 +101,7 @@ export function PipelineConsole() {
                 }`}
               >
                 <s.icon className="h-3.5 w-3.5" />
-                {s.label}
+                {c.steps[i] ?? s.label}
               </span>
             </Fragment>
           );

@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { CtaBand, PageHero, Reveal } from "@/components/site/parts";
 import { PostCard } from "@/components/site/blog";
 import { publishedPosts } from "@/lib/posts";
-import { shareTags } from "@/lib/seo";
+import { breadcrumbLd, canonicalLink, shareTags } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -26,6 +26,34 @@ export const Route = createFileRoute("/blog/")({
         "Blog — Onjoko Tunde",
         "Practical advice on websites, CRM automation and AI tools for business owners.",
       ),
+    ],
+    links: [canonicalLink("/blog")],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Blog",
+              "@id": "https://www.onjokoshakur.com/blog#blog",
+              name: "Onjoko Tunde — Blog",
+              url: "https://www.onjokoshakur.com/blog",
+              inLanguage: "en",
+              author: { "@id": "https://www.onjokoshakur.com/#person" },
+              blogPost: publishedPosts()
+                .slice(0, 20)
+                .map((p) => ({
+                  "@type": "BlogPosting",
+                  headline: p.title,
+                  url: `https://www.onjokoshakur.com/blog/${p.slug}`,
+                  datePublished: p.date,
+                })),
+            },
+            breadcrumbLd([["Blog", "/blog"]]),
+          ],
+        }),
+      },
     ],
   }),
   component: Blog,
